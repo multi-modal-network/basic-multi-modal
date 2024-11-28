@@ -32,13 +32,13 @@ final class BasicTreatmentInterpreterIPv4 {
 
     private static final ImmutableMap<PiTableId, PiActionId> SET_OUTPUT_ACTIONS =
             ImmutableMap.<PiTableId, PiActionId>builder()
-                    .put(P4InfoConstants.INGRESS_TABLE_IPv4,
-                            P4InfoConstants.INGRESS_TABLE_IPv4_SET_OUTPUT)
+                    .put(P4InfoConstants.INGRESS_TABLE_IPV4,
+                            P4InfoConstants.INGRESS_TABLE_IPV4_SET_OUTPUT)
                     .build();
     private static final ImmutableMap<PiTableId, PiActionId> DROP_ACTIONS =
             ImmutableMap.<PiTableId, PiActionId>builder()
-                    .put(P4InfoConstants.INGRESS_TABLE_IPv4,
-                            P4InfoConstants.INGRESS_TABLE_IPv4_DROP)
+                    .put(P4InfoConstants.INGRESS_TABLE_IPV4,
+                            P4InfoConstants.INGRESS_TABLE_IPV4_DROP)
                     .build();
 
     BasicTreatmentInterpreterIPv4(BasicCapabilities capabilities) {

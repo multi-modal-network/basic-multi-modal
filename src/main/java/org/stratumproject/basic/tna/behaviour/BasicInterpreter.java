@@ -45,7 +45,6 @@ import org.onosproject.net.pi.runtime.PiActionParam;
 import org.onosproject.net.pi.runtime.PiPacketMetadata;
 import org.onosproject.net.pi.runtime.PiPacketOperation;
 import org.slf4j.Logger;
-import static org.slf4j.LoggerFactory.getLogger;
 import java.nio.ByteBuffer;
 import java.util.Collection;
 import java.util.List;
@@ -61,8 +60,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
-import org.json.JSONObject;
-import org.json.JSONArray;
 
 import static java.lang.String.format;
 import static java.util.stream.Collectors.toList;
@@ -72,13 +69,15 @@ import static org.onosproject.net.PortNumber.FLOOD;
 import static org.onosproject.net.PortNumber.TABLE;
 import static org.onosproject.net.flow.instructions.Instruction.Type.OUTPUT;
 import static org.onosproject.net.pi.model.PiPacketOperationType.PACKET_OUT;
+import static org.slf4j.LoggerFactory.getLogger;
 import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreter.mapTable0Treatment;
-import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreter1.mapTable1Treatment;
-import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreter2.mapTable2Treatment;
-import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreter3.mapTable3Treatment;
-import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreter4.mapTable4Treatment;
-import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreter5.mapTable5Treatment;
-import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreter6.mapTable6Treatment;
+import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreterFlexIP.mapTableFlexIPTreatment;
+import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreterID.mapTableIDTreatment;
+import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreterIPv4.mapTableIPv4Treatment;
+import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreterGEO.mapTableGEOTreatment;
+import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreterNDN.mapTableNDNTreatment;
+import static org.stratumproject.basic.tna.behaviour.BasicTreatmentInterpreterMF.mapTableMFTreatment;
+
 
 /**
  * Interpreter for fabric-tna pipeline.
@@ -88,7 +87,7 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
     private static final Logger log = getLogger(BasicInterpreter.class);
     private static final Set<PiTableId> TABLE0_CTRL_TBLS = ImmutableSet.of(
             P4InfoConstants.BASIC_INGRESS_TABLE0_TABLE0,
-            P4InfoConstants.INGRESS_TABLE_IPv4,
+            P4InfoConstants.INGRESS_TABLE_IPV4,
             P4InfoConstants.INGRESS_TABLE_MF,
             P4InfoConstants.INGRESS_TABLE_GEO,
             P4InfoConstants.INGRESS_TABLE_NDN,
@@ -97,12 +96,12 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
     private static final Map<Integer, PiTableId> TABLE_MAP =
             new ImmutableMap.Builder<Integer, PiTableId>()
                     .put(0, P4InfoConstants.BASIC_INGRESS_TABLE0_TABLE0)
-                    .put(1, P4InfoConstants.INGRESS_TABLE_IPv4)
-                    .put(2, P4InfoConstants.INGRESS_TABLE_MF)
-                    .put(3, P4InfoConstants.INGRESS_TABLE_GEO)
-                    .put(4, P4InfoConstants.INGRESS_TABLE_NDN)
-                    .put(5, P4InfoConstants.INGRESS_TABLE_ID)
-                    .put(6, P4InfoConstants.INGRESS_TABLE_FLEXIP)
+                    .put(P4InfoConstants.TABLEID_IPV4, P4InfoConstants.INGRESS_TABLE_IPV4)
+                    .put(P4InfoConstants.TABLEID_MF, P4InfoConstants.INGRESS_TABLE_MF)
+                    .put(P4InfoConstants.TABLEID_GEO, P4InfoConstants.INGRESS_TABLE_GEO)
+                    .put(P4InfoConstants.TABLEID_NDN, P4InfoConstants.INGRESS_TABLE_NDN)
+                    .put(P4InfoConstants.TABLEID_ID, P4InfoConstants.INGRESS_TABLE_ID)
+                    .put(P4InfoConstants.TABLEID_FLEXIP, P4InfoConstants.INGRESS_TABLE_FLEXIP)
                     .build();
     private static final ImmutableMap<Criterion.Type, PiMatchFieldId> CRITERION_MAP =
             ImmutableMap.<Criterion.Type, PiMatchFieldId>builder()
@@ -166,18 +165,18 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
             throws PiInterpreterException {
         if (TABLE0_CTRL_TBLS.contains(piTableId)) {
             return mapTable0Treatment(treatment, piTableId);
-        } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_IPv4)) {
-            return mapTable1Treatment(treatment, piTableId);
+        } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_IPV4)) {
+            return mapTableIPv4Treatment(treatment, piTableId);
         } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_MF)) {
-            return mapTable2Treatment(treatment, piTableId);
+            return mapTableMFTreatment(treatment, piTableId);
         } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_GEO)) {
-            return mapTable3Treatment(treatment, piTableId);
+            return mapTableGEOTreatment(treatment, piTableId);
         } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_NDN)) {
-            return mapTable4Treatment(treatment, piTableId);
+            return mapTableNDNTreatment(treatment, piTableId);
         } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_ID)) {
-            return mapTable5Treatment(treatment, piTableId);
+            return mapTableIDTreatment(treatment, piTableId);
         } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_FLEXIP)) {
-            return mapTable6Treatment(treatment, piTableId);
+            return mapTableFlexIPTreatment(treatment, piTableId);
         } else {
             throw new PiInterpreterException(format(
                     "Treatment mapping not supported for table '%s'", piTableId));
@@ -295,8 +294,6 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
                 byte[] payload = ethPkt.getPayload().serialize();
                 // 解析模态、计算路径、下发流表
                 handleModalPacket(pktType, ethPkt.getPayload().serialize(), deviceId);
-                // 解析各种模态
-                // parserPkt(pktType,payload);
                 // sendToMMQueue(ethPkt);
 
                 // 构造PakcetOut数据包发回原始数据
@@ -372,232 +369,96 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
         return hexAddr;
     }
 
-    public JSONObject generateIPFlows(int switchID, int port, int srcIdentifier, int dstIdentifier) {
-        String srcIP = String.format("172.20.%s.%s", vmx+1, srcIdentifier-64+12);
-        String dstIP = String.format("172.20.%s.%s", vmx+1, dstIdentifier-64+12);
-        int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
-        log.warn("generateIPFlows srcIdentifier:{}, dstIdentifier:{}, srcIP:{}, dstIP:{}",
-                srcIdentifier, dstIdentifier, srcIP, dstIP);
-        String deviceID = String.format("device:domain1:group4:level%d:s%d",level, switchID + vmx * 100);
-        JSONObject flowObject = new JSONObject();
-        flowObject.put("priority", 10);
-        flowObject.put("timeout", 0);
-        flowObject.put("isPermanent", "true");
-        flowObject.put("tableId",1);                // ip的tableId=1
-        flowObject.put("deviceId", deviceID);
-        flowObject.put("treatment", new JSONObject()
-                .put("instructions", new JSONArray()
-                        .put(new JSONObject()
-                                .put("type", "PROTOCOL_INDEPENDENT")
-                                .put("subtype", "ACTION")
-                                .put("actionId", "ingress.set_next_v4_hop")
-                                .put("actionParams", new JSONObject()
-                                        .put("dst_port", String.format("%s", port))))));
-        flowObject.put("clearDeferred", "true");
-        flowObject.put("selector", new JSONObject()
-                .put("criteria", new JSONArray()
-                        .put(new JSONObject()
-                                .put("type", "PROTOCOL_INDEPENDENT")
-                                .put("matches", new JSONArray()
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ethernet.ether_type")
-                                                .put("match", "exact")
-                                                .put("value", "0800"))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ipv4.srcAddr")
-                                                .put("match", "exact")
-                                                .put("value", ip2Hex(srcIP)))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ipv4.dstAddr")
-                                                .put("match", "exact")
-                                                .put("value", ip2Hex(dstIP)))))));
-        return new JSONObject().put("flows", new JSONArray().put(flowObject));
-    }
-
-    public JSONObject generateIDFlows(int switchID, int port, int srcIdentifier, int dstIdentifier) {
-        /*
-        {
-            "flows": [
-                {
-                    "priority": 10,
-                    "timeout": 0,
-                    "isPermanent": "true",
-                    "tableId": "5",     // id的tableId=5
-                    "deviceId": f"device:domain1:group4:level{math.floor(math.log2(switch))+1}:s{switch+300}",
-                    "treatment": {
-                        "instructions": [
-                            {
-                                "type": "PROTOCOL_INDEPENDENT",
-                                "subtype": "ACTION",
-                                "actionId": "ingress.set_next_id_hop",
-                                "actionParams": {
-                                    "dst_port": f"{port}"
-                                }
-                            }
-                        ]
-                    },
-                    "clearDeferred": "true",
-                    "selector": {
-                        "criteria": [
-                            {
-                                "type": "PROTOCOL_INDEPENDENT",
-                                "matches": [
-                                    {
-                                        "field": "hdr.ethernet.ether_type",
-                                        "match": "exact",
-                                        "value": "0812"
-                                    },
-                                    {
-                                        "field": "hdr.id.srcIdentity",
-                                        "match": "exact",
-                                        "value": decimal_to_8hex(identity_src)
-                                    },
-                                    {
-                                        "field": "hdr.id.dstIdentity",
-                                        "match": "exact",
-                                        "value": decimal_to_8hex(identity_dst)
-                                    },
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-         */
-        int srcIdentity = 202271720 + vmx * 100000 + srcIdentifier - 64;
-        int dstIdentity = 202271720 + vmx * 100000 + dstIdentifier - 64;
-        int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
-        log.warn("generateIDFlows srcIdentifier:{}, dstIdentifier:{}, srcIdentity:{}, dstIdentity:{}",
-                srcIdentifier, dstIdentifier, srcIdentity, dstIdentity);
-        String deviceID = String.format("device:domain1:group4:level%d:s%d",level, switchID + vmx * 100);
-        JSONObject flowObject = new JSONObject();
-        flowObject.put("priority", 10);
-        flowObject.put("timeout", 0);
-        flowObject.put("isPermanent", "true");
-        flowObject.put("tableId",5);                // id的tableId=5
-        flowObject.put("deviceId", deviceID);
-        flowObject.put("treatment", new JSONObject()
-                .put("instructions", new JSONArray()
-                        .put(new JSONObject()
-                                .put("type", "PROTOCOL_INDEPENDENT")
-                                .put("subtype", "ACTION")
-                                .put("actionId", "ingress.set_next_id_hop")
-                                .put("actionParams", new JSONObject()
-                                        .put("dst_port", String.format("%s", port))))));
-        flowObject.put("clearDeferred", "true");
-        flowObject.put("selector", new JSONObject()
-                .put("criteria", new JSONArray()
-                        .put(new JSONObject()
-                                .put("type", "PROTOCOL_INDEPENDENT")
-                                .put("matches", new JSONArray()
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ethernet.ether_type")
-                                                .put("match", "exact")
-                                                .put("value", "0812"))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.id.srcIdentity")
-                                                .put("match", "exact")
-                                                .put("value", decimal2Hex(srcIdentity,8)))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.id.dstIdentity")
-                                                .put("match", "exact")
-                                                .put("value", decimal2Hex(dstIdentity,8)))))));
-        return new JSONObject().put("flows", new JSONArray().put(flowObject));
-    }
-
-    public JSONObject generateMFFlows(int switchID, int port, int srcIdentifier, int dstIdentifier) {
-        int srcMFGuid = 1 + vmx * 100 + srcIdentifier - 64;
-        int dstMFGuid = 1 + vmx * 100 + dstIdentifier - 64;
-        int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
-        log.warn("generateMFFlows srcIdentifier:{}, dstIdentifier:{}, srcMFGuid:{}, dstMFGuid:{}",
-                srcIdentifier, dstIdentifier, srcMFGuid, dstMFGuid);
-        String deviceID = String.format("device:domain1:group4:level%d:s%d",level, switchID + vmx * 100);
-        JSONObject flowObject = new JSONObject();
-        flowObject.put("priority", 10);
-        flowObject.put("timeout", 0);
-        flowObject.put("isPermanent", "true");
-        flowObject.put("tableId",2);                // mf的tableId=2
-        flowObject.put("deviceId", deviceID);
-        flowObject.put("treatment", new JSONObject()
-                .put("instructions", new JSONArray()
-                        .put(new JSONObject()
-                                .put("type", "PROTOCOL_INDEPENDENT")
-                                .put("subtype", "ACTION")
-                                .put("actionId", "ingress.set_next_mf_hop")
-                                .put("actionParams", new JSONObject()
-                                        .put("dst_port", String.format("%s", port))))));
-        flowObject.put("clearDeferred", "true");
-        flowObject.put("selector", new JSONObject()
-                .put("criteria", new JSONArray()
-                        .put(new JSONObject()
-                                .put("type", "PROTOCOL_INDEPENDENT")
-                                .put("matches", new JSONArray()
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ethernet.ether_type")
-                                                .put("match", "exact")
-                                                .put("value", "27c0"))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.mf.src_guid")
-                                                .put("match", "exact")
-                                                .put("value", decimal2Hex(srcMFGuid,8)))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.mf.dest_guid")
-                                                .put("match", "exact")
-                                                .put("value", decimal2Hex(dstMFGuid,8)))))));
-        return new JSONObject().put("flows", new JSONArray().put(flowObject));
-    }
-
-    public JSONObject generateNDNFlows(int switchID, int port, int srcIdentifier, int dstIdentifier) {
-        int srcNDNName = 202271720 + vmx * 100000 + srcIdentifier - 64;
-        int dstNDNName = 202271720 + vmx * 100000 + dstIdentifier - 64;
-        int ndnContent = 2048 + vmx * 100 + srcIdentifier - 64;
-        int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
-        log.warn("generateNDNFlows srcIdentifier:{}, dstIdentifier:{}, srcNDNName:{}, dstNDNName:{}, ndnContent:{}",
-                srcIdentifier, dstIdentifier, srcNDNName, dstNDNName, ndnContent);
-        String deviceID = String.format("device:domain1:group4:level%d:s%d",level, switchID + vmx * 100);
-        JSONObject flowObject = new JSONObject();
-        flowObject.put("priority", 10);
-        flowObject.put("timeout", 0);
-        flowObject.put("isPermanent", "true");
-        flowObject.put("tableId",4);                // ndn的tableId=4
-        flowObject.put("deviceId", deviceID);
-        flowObject.put("treatment", new JSONObject()
-                .put("instructions", new JSONArray()
-                        .put(new JSONObject()
-                                .put("type", "PROTOCOL_INDEPENDENT")
-                                .put("subtype", "ACTION")
-                                .put("actionId", "ingress.set_next_ndn_hop")
-                                .put("actionParams", new JSONObject()
-                                        .put("dst_port", String.format("%s", port))))));
-        flowObject.put("clearDeferred", "true");
-        flowObject.put("selector", new JSONObject()
-                .put("criteria", new JSONArray()
-                        .put(new JSONObject()
-                                .put("type", "PROTOCOL_INDEPENDENT")
-                                .put("matches", new JSONArray()
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ethernet.ether_type")
-                                                .put("match", "exact")
-                                                .put("value", "8624"))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ndn.ndn_prefix.code")
-                                                .put("match", "exact")
-                                                .put("value", "06"))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ndn.name_tlv.components[0].value")
-                                                .put("match", "exact")
-                                                .put("value", decimal2Hex(srcNDNName,8)))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ndn.name_tlv.components[1].value")
-                                                .put("match", "exact")
-                                                .put("value", decimal2Hex(dstNDNName,8)))
-                                        .put(new JSONObject()
-                                                .put("field", "hdr.ndn.content_tlv.value")
-                                                .put("match", "exact")
-                                                .put("value", decimal2Hex(ndnContent,4)))))));
-        return new JSONObject().put("flows", new JSONArray().put(flowObject));
-    }
+    // API方式下发流表
+    // public JSONObject generateIDFlows(int switchID, int port, int srcIdentifier, int dstIdentifier) {
+    //     {
+    //         "flows": [
+    //             {
+    //                 "priority": 10,
+    //                 "timeout": 0,
+    //                 "isPermanent": "true",
+    //                 "tableId": "5",     // id的tableId=5
+    //                 "deviceId": f"device:domain1:group4:level{math.floor(math.log2(switch))+1}:s{switch+300}",
+    //                 "treatment": {
+    //                     "instructions": [
+    //                         {
+    //                             "type": "PROTOCOL_INDEPENDENT",
+    //                             "subtype": "ACTION",
+    //                             "actionId": "ingress.set_next_id_hop",
+    //                             "actionParams": {
+    //                                 "dst_port": f"{port}"
+    //                             }
+    //                         }
+    //                     ]
+    //                 },
+    //                 "clearDeferred": "true",
+    //                 "selector": {
+    //                     "criteria": [
+    //                         {
+    //                             "type": "PROTOCOL_INDEPENDENT",
+    //                             "matches": [
+    //                                 {
+    //                                     "field": "hdr.ethernet.ether_type",
+    //                                     "match": "exact",
+    //                                     "value": "0812"
+    //                                 },
+    //                                 {
+    //                                     "field": "hdr.id.srcIdentity",
+    //                                     "match": "exact",
+    //                                     "value": decimal_to_8hex(identity_src)
+    //                                 },
+    //                                 {
+    //                                     "field": "hdr.id.dstIdentity",
+    //                                     "match": "exact",
+    //                                     "value": decimal_to_8hex(identity_dst)
+    //                                 },
+    //                             ]
+    //                         }
+    //                     ]
+    //                 }
+    //             }
+    //         ]
+    //     }
+    //     int srcIdentity = 202271720 + vmx * 100000 + srcIdentifier - 64;
+    //     int dstIdentity = 202271720 + vmx * 100000 + dstIdentifier - 64;
+    //     int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
+    //     log.warn("generateIDFlows srcIdentifier:{}, dstIdentifier:{}, srcIdentity:{}, dstIdentity:{}",
+    //             srcIdentifier, dstIdentifier, srcIdentity, dstIdentity);
+    //     String deviceID = String.format("device:domain1:group4:level%d:s%d",level, switchID + vmx * 100);
+    //     JSONObject flowObject = new JSONObject();
+    //     flowObject.put("priority", 10);
+    //     flowObject.put("timeout", 0);
+    //     flowObject.put("isPermanent", "true");
+    //     flowObject.put("tableId",5);                // id的tableId=5
+    //     flowObject.put("deviceId", deviceID);
+    //     flowObject.put("treatment", new JSONObject()
+    //             .put("instructions", new JSONArray()
+    //                     .put(new JSONObject()
+    //                             .put("type", "PROTOCOL_INDEPENDENT")
+    //                             .put("subtype", "ACTION")
+    //                             .put("actionId", "ingress.set_next_id_hop")
+    //                             .put("actionParams", new JSONObject()
+    //                                     .put("dst_port", String.format("%s", port))))));
+    //     flowObject.put("clearDeferred", "true");
+    //     flowObject.put("selector", new JSONObject()
+    //             .put("criteria", new JSONArray()
+    //                     .put(new JSONObject()
+    //                             .put("type", "PROTOCOL_INDEPENDENT")
+    //                             .put("matches", new JSONArray()
+    //                                     .put(new JSONObject()
+    //                                             .put("field", "hdr.ethernet.ether_type")
+    //                                             .put("match", "exact")
+    //                                             .put("value", "0812"))
+    //                                     .put(new JSONObject()
+    //                                             .put("field", "hdr.id.srcIdentity")
+    //                                             .put("match", "exact")
+    //                                             .put("value", decimal2Hex(srcIdentity,8)))
+    //                                     .put(new JSONObject()
+    //                                             .put("field", "hdr.id.dstIdentity")
+    //                                             .put("match", "exact")
+    //                                             .put("value", decimal2Hex(dstIdentity,8)))))));
+    //     return new JSONObject().put("flows", new JSONArray().put(flowObject));
+    // }
 
     // public void postFlow(String modalType, int switchID, int port, int srcIdentifier, int dstIdentifier) {
     //     String IP = "218.199.84.171";
@@ -1346,70 +1207,6 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
                 e.printStackTrace();
             }
             executeAddFlow(modalType, srcHost, dstHost, buffer);
-        }
-    }
-
-    public void parserPkt(int pktType,byte[] payload) throws DeserializationException {
-        switch (pktType){
-            case 0x0800:      // IP
-                IP pkt;
-                pkt = IP.deserializer().deserialize(payload,0,payload.length);
-                log.warn("ip packet: {}",pkt);
-                break;
-            case 0x0812:      // ID
-                int src_id = 0;
-                int dst_id = 0;
-                for (int i=0;i<4;i++) {
-                    src_id |= ((payload[i]&0xff)<<(8*(3-i)));
-                }
-                for (int i=4;i<8;i++){
-                    dst_id |= ((payload[i]&0xff)<<(8*(7-i)));
-                }
-                log.warn("id packet: {} {}",src_id, dst_id);
-                break;
-            case 0x8947:      // GEO
-                int geoAreaPosLat = 0;
-                int getAreaPosLon = 0;
-                short disa = 0;
-                short disb = 0;
-                for(int i=40;i<44;i++){
-                    geoAreaPosLat |= ((payload[i]&0xff)<<(8*(43-i)));
-                }
-                for (int i=44;i<48;i++){
-                    getAreaPosLon |= ((payload[i]&0xff)<<(8*(47-i)));
-                }
-                for (int i=48;i<50;i++){
-                    disa |= ((payload[i]&0xff)<<(8*(49-i)));
-                }
-                for(int i=50;i<52;i++){
-                    disb |= ((payload[i]&0xff)<<(8*(51-i)));
-                }
-                log.warn("geo packet: {} {} {} {}", geoAreaPosLat, getAreaPosLon,disa, disb);
-                break;
-            case 0x27c0:      // MF
-                int mf_type = 0;
-                int src_guid = 0;
-                int dst_guid = 0;
-                ByteBuffer buffer = ByteBuffer.wrap(payload);
-                mf_type = buffer.getInt(0) & 0xffffffff;
-                src_guid = buffer.getInt(4) & 0xfffffff;
-                dst_guid = buffer.getInt(8) & 0xfffffff;
-                break;
-            case 0x8624:      // NDN
-                int name_component_src = 0;
-                int name_component_dst = 0;
-                short content = 0;
-                for(int i=8;i<12;i++){
-                    name_component_dst |= ((payload[i]&0xff)<<(8*(11-i)));
-                }
-                for(int i=14;i<18;i++){
-                    name_component_src |= ((payload[i]&0xff)<<(8*(17-i)));
-                }
-                for(int i=34;i<36;i++){
-                    content |= ((payload[i]&0xff)<<(8*(35-i)));
-                }
-                log.warn("ndn packet: {} {} {}", name_component_src, name_component_dst, content);
-                break;
         }
     }
 

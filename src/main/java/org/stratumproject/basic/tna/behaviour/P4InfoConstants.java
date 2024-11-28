@@ -45,12 +45,18 @@ public final class P4InfoConstants {
     public static final PiMatchFieldId CONTENT_TLV =
             PiMatchFieldId.of("hdr.ndn.content_tlv.value");
 
+    public static final int TABLEID_IPV4 = 1;
+    public static final int TABLEID_MF = 1;
+    public static final int TABLEID_GEO = 1;
+    public static final int TABLEID_NDN = 1;
+    public static final int TABLEID_ID = 1;
+    public static final int TABLEID_FLEXIP = 1;
 
-    public static final PiTableId INGRESS_TABLE_IPv4 =
+    public static final PiTableId INGRESS_TABLE_IPV4 =
            PiTableId.of("ingress.routing_v4_table");
-    public static final PiActionId INGRESS_TABLE_IPv4_SET_OUTPUT =
+    public static final PiActionId INGRESS_TABLE_IPV4_SET_OUTPUT =
             PiActionId.of("ingress.set_next_v4_hop");
-    public static final PiActionId INGRESS_TABLE_IPv4_DROP =
+    public static final PiActionId INGRESS_TABLE_IPV4_DROP =
             PiActionId.of("ingress.drop");
             
     public static final PiTableId INGRESS_TABLE_MF =
