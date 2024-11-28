@@ -46,11 +46,11 @@ public final class P4InfoConstants {
             PiMatchFieldId.of("hdr.ndn.content_tlv.value");
 
     public static final int TABLEID_IPV4 = 1;
-    public static final int TABLEID_MF = 1;
-    public static final int TABLEID_GEO = 1;
-    public static final int TABLEID_NDN = 1;
-    public static final int TABLEID_ID = 1;
-    public static final int TABLEID_FLEXIP = 1;
+    public static final int TABLEID_MF = 2;
+    public static final int TABLEID_GEO = 3;
+    public static final int TABLEID_NDN = 4;
+    public static final int TABLEID_ID = 5;
+    public static final int TABLEID_FLEXIP = 6;
 
     public static final PiTableId INGRESS_TABLE_IPV4 =
            PiTableId.of("ingress.routing_v4_table");

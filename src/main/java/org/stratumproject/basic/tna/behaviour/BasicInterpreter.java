@@ -303,8 +303,6 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
 //                log.warn("Send Packet: {}",outPakcet);
 //                mapOutboundPacket(outPakcet).forEach(op-> packetOut);
 
-
-
                 return new DefaultInboundPacket(receivedFrom, ethPkt, rawData);
             } catch (ImmutableByteSequence.ByteSequenceTrimException e) {
                 throw new PiInterpreterException(format(
