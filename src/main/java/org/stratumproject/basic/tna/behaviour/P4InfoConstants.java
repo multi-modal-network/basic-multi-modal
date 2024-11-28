@@ -46,47 +46,47 @@ public final class P4InfoConstants {
             PiMatchFieldId.of("hdr.ndn.content_tlv.value");
 
 
-    public static final PiTableId BASIC_INGRESS_TABLE1_TABLE1 =
+    public static final PiTableId INGRESS_TABLE_IPv4 =
            PiTableId.of("ingress.routing_v4_table");
-    public static final PiActionId BASIC_INGRESS_TABLE1_SET_OUTPUT =
+    public static final PiActionId INGRESS_TABLE_IPv4_SET_OUTPUT =
             PiActionId.of("ingress.set_next_v4_hop");
-    public static final PiActionId BASIC_INGRESS_TABLE1_DROP =
+    public static final PiActionId INGRESS_TABLE_IPv4_DROP =
             PiActionId.of("ingress.drop");
             
-    public static final PiTableId BASIC_INGRESS_TABLE2_TABLE2 =
+    public static final PiTableId INGRESS_TABLE_MF =
            PiTableId.of("ingress.routing_mf_table");
-    public static final PiActionId BASIC_INGRESS_TABLE2_SET_OUTPUT =
+    public static final PiActionId INGRESS_TABLE_MF_SET_OUTPUT =
             PiActionId.of("ingress.set_next_mf_hop");
-    public static final PiActionId BASIC_INGRESS_TABLE2_DROP =
+    public static final PiActionId INGRESS_TABLE_MF_DROP =
             PiActionId.of("ingress.drop");
             
-    public static final PiTableId BASIC_INGRESS_TABLE3_TABLE3 =
+    public static final PiTableId INGRESS_TABLE_GEO =
            PiTableId.of("ingress.routing_geo_table");
-    public static final PiActionId BASIC_INGRESS_TABLE3_SET_OUTPUT =
+    public static final PiActionId INGRESS_TABLE_GEO_SET_OUTPUT =
             PiActionId.of("ingress.geo_ucast_route");
-    public static final PiActionId BASIC_INGRESS_TABLE3_DROP =
+    public static final PiActionId INGRESS_TABLE_GEO_DROP =
             PiActionId.of("ingress.drop");
 
-    public static final PiTableId BASIC_INGRESS_TABLE4_TABLE4 =
+    public static final PiTableId INGRESS_TABLE_NDN =
            PiTableId.of("ingress.routing_ndn_table");
-    public static final PiActionId BASIC_INGRESS_TABLE4_SET_OUTPUT =
+    public static final PiActionId INGRESS_TABLE_NDN_SET_OUTPUT =
             PiActionId.of("ingress.set_next_ndn_hop");
-    public static final PiActionId BASIC_INGRESS_TABLE4_DROP =
+    public static final PiActionId INGRESS_TABLE_NDN_DROP =
             PiActionId.of("ingress.drop");
 
 
-    public static final PiTableId BASIC_INGRESS_TABLE5_TABLE5 =
+    public static final PiTableId INGRESS_TABLE_ID =
            PiTableId.of("ingress.routing_id_table");
-    public static final PiActionId BASIC_INGRESS_TABLE5_SET_OUTPUT =
+    public static final PiActionId INGRESS_TABLE_ID_SET_OUTPUT =
             PiActionId.of("ingress.set_next_id_hop");
-    public static final PiActionId BASIC_INGRESS_TABLE5_DROP =
+    public static final PiActionId INGRESS_TABLE_ID_DROP =
             PiActionId.of("ingress.drop");   
 
-    public static final PiTableId BASIC_INGRESS_TABLE6_TABLE6 =
+    public static final PiTableId INGRESS_TABLE_FLEXIP =
            PiTableId.of("ingress.routing_flexip_table");
-    public static final PiActionId BASIC_INGRESS_TABLE6_SET_OUTPUT =
+    public static final PiActionId INGRESS_TABLE_FLEXIP_SET_OUTPUT =
             PiActionId.of("ingress.set_next_flexip_hop");
-    public static final PiActionId BASIC_INGRESS_TABLE6_DROP =
+    public static final PiActionId INGRESS_TABLE_FLEXIP_DROP =
             PiActionId.of("ingress.drop");  
 
     // Header field IDs

@@ -24,7 +24,7 @@ import static org.stratumproject.basic.tna.behaviour.P4InfoConstants.PORT_NUM;
 /**
  * Treatment translation logic.
  */
-final class BasicTreatmentInterpreter1 {
+final class BasicTreatmentInterpreterMF {
 
     private final BasicCapabilities capabilities;
 
@@ -32,20 +32,20 @@ final class BasicTreatmentInterpreter1 {
 
     private static final ImmutableMap<PiTableId, PiActionId> SET_OUTPUT_ACTIONS =
             ImmutableMap.<PiTableId, PiActionId>builder()
-                    .put(P4InfoConstants.BASIC_INGRESS_TABLE1_TABLE1,
-                            P4InfoConstants.BASIC_INGRESS_TABLE1_SET_OUTPUT)
+                    .put(P4InfoConstants.INGRESS_TABLE_MF,
+                            P4InfoConstants.INGRESS_TABLE_MF_SET_OUTPUT)
                     .build();
     private static final ImmutableMap<PiTableId, PiActionId> DROP_ACTIONS =
             ImmutableMap.<PiTableId, PiActionId>builder()
-                    .put(P4InfoConstants.BASIC_INGRESS_TABLE1_TABLE1,
-                            P4InfoConstants.BASIC_INGRESS_TABLE1_DROP)
+                    .put(P4InfoConstants.INGRESS_TABLE_MF,
+                            P4InfoConstants.INGRESS_TABLE_MF_DROP)
                     .build();
 
-    BasicTreatmentInterpreter1(BasicCapabilities capabilities) {
+    BasicTreatmentInterpreterMF(BasicCapabilities capabilities) {
         this.capabilities = capabilities;
     }
 
-    static PiAction mapTable1Treatment(TrafficTreatment treatment, PiTableId tableId)
+    static PiAction mapTableMFTreatment(TrafficTreatment treatment, PiTableId tableId)
             throws PiInterpreterException {
         if (isDrop(treatment)) {
             return drop(tableId);

@@ -88,21 +88,21 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
     private static final Logger log = getLogger(BasicInterpreter.class);
     private static final Set<PiTableId> TABLE0_CTRL_TBLS = ImmutableSet.of(
             P4InfoConstants.BASIC_INGRESS_TABLE0_TABLE0,
-            P4InfoConstants.BASIC_INGRESS_TABLE1_TABLE1,
-            P4InfoConstants.BASIC_INGRESS_TABLE2_TABLE2,
-            P4InfoConstants.BASIC_INGRESS_TABLE3_TABLE3,
-            P4InfoConstants.BASIC_INGRESS_TABLE4_TABLE4,
-            P4InfoConstants.BASIC_INGRESS_TABLE5_TABLE5,
-            P4InfoConstants.BASIC_INGRESS_TABLE6_TABLE6);
+            P4InfoConstants.INGRESS_TABLE_IPv4,
+            P4InfoConstants.INGRESS_TABLE_MF,
+            P4InfoConstants.INGRESS_TABLE_GEO,
+            P4InfoConstants.INGRESS_TABLE_NDN,
+            P4InfoConstants.INGRESS_TABLE_ID,
+            P4InfoConstants.INGRESS_TABLE_FLEXIP);
     private static final Map<Integer, PiTableId> TABLE_MAP =
             new ImmutableMap.Builder<Integer, PiTableId>()
                     .put(0, P4InfoConstants.BASIC_INGRESS_TABLE0_TABLE0)
-                    .put(1, P4InfoConstants.BASIC_INGRESS_TABLE1_TABLE1)
-                    .put(2, P4InfoConstants.BASIC_INGRESS_TABLE2_TABLE2)
-                    .put(3, P4InfoConstants.BASIC_INGRESS_TABLE3_TABLE3)
-                    .put(4, P4InfoConstants.BASIC_INGRESS_TABLE4_TABLE4)
-                    .put(5, P4InfoConstants.BASIC_INGRESS_TABLE5_TABLE5)
-                    .put(6, P4InfoConstants.BASIC_INGRESS_TABLE6_TABLE6)
+                    .put(1, P4InfoConstants.INGRESS_TABLE_IPv4)
+                    .put(2, P4InfoConstants.INGRESS_TABLE_MF)
+                    .put(3, P4InfoConstants.INGRESS_TABLE_GEO)
+                    .put(4, P4InfoConstants.INGRESS_TABLE_NDN)
+                    .put(5, P4InfoConstants.INGRESS_TABLE_ID)
+                    .put(6, P4InfoConstants.INGRESS_TABLE_FLEXIP)
                     .build();
     private static final ImmutableMap<Criterion.Type, PiMatchFieldId> CRITERION_MAP =
             ImmutableMap.<Criterion.Type, PiMatchFieldId>builder()
@@ -166,17 +166,17 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
             throws PiInterpreterException {
         if (TABLE0_CTRL_TBLS.contains(piTableId)) {
             return mapTable0Treatment(treatment, piTableId);
-        } else if (piTableId.equals(P4InfoConstants.BASIC_INGRESS_TABLE1_TABLE1)) {
+        } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_IPv4)) {
             return mapTable1Treatment(treatment, piTableId);
-        } else if (piTableId.equals(P4InfoConstants.BASIC_INGRESS_TABLE2_TABLE2)) {
+        } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_MF)) {
             return mapTable2Treatment(treatment, piTableId);
-        } else if (piTableId.equals(P4InfoConstants.BASIC_INGRESS_TABLE3_TABLE3)) {
+        } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_GEO)) {
             return mapTable3Treatment(treatment, piTableId);
-        } else if (piTableId.equals(P4InfoConstants.BASIC_INGRESS_TABLE4_TABLE4)) {
+        } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_NDN)) {
             return mapTable4Treatment(treatment, piTableId);
-        } else if (piTableId.equals(P4InfoConstants.BASIC_INGRESS_TABLE5_TABLE5)) {
+        } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_ID)) {
             return mapTable5Treatment(treatment, piTableId);
-        } else if (piTableId.equals(P4InfoConstants.BASIC_INGRESS_TABLE6_TABLE6)) {
+        } else if (piTableId.equals(P4InfoConstants.INGRESS_TABLE_FLEXIP)) {
             return mapTable6Treatment(treatment, piTableId);
         } else {
             throw new PiInterpreterException(format(
@@ -517,7 +517,7 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
         flowObject.put("priority", 10);
         flowObject.put("timeout", 0);
         flowObject.put("isPermanent", "true");
-        flowObject.put("tableId",2);                // mf的tableId=4
+        flowObject.put("tableId",2);                // mf的tableId=2
         flowObject.put("deviceId", deviceID);
         flowObject.put("treatment", new JSONObject()
                 .put("instructions", new JSONArray()
