@@ -1,0 +1,6 @@
+/mvn-src/src/test/java/org/stratumproject/basic/tna/utils/TestUtils.java
+/mvn-src/src/test/java/org/stratumproject/basic/tna/behaviour/pipeliner/AbstractObjectiveTranslatorTest.java
+/mvn-src/src/test/java/org/stratumproject/basic/tna/behaviour/pipeliner/BasicPipelinerTest.java
+/mvn-src/src/test/java/org/stratumproject/basic/tna/behaviour/BasicInterpreterTest.java
+/mvn-src/src/test/java/org/stratumproject/basic/tna/behaviour/pipeliner/ForwardingObjectiveTranslatorTest.java
+/mvn-src/src/test/java/org/stratumproject/basic/tna/behaviour/BasicUtilsTest.java

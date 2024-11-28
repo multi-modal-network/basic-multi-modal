@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+Copyright 2020-present Open Networking Foundation
+SPDX-License-Identifier: Apache-2.0
+-->
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="basic-tna-1.0.1-SNAPSHOT">
+    <feature name="basic-tna" version="1.0.1-SNAPSHOT"
+             description="ONOS OSGi bundle archetype.">
+        <bundle>mvn:org.stratumproject/basic-tna/1.0.1-SNAPSHOT</bundle>
+        <!--
+       <bundle>mvn:${trellis.api.groupId}/${trellis.api.artifactId}/${trellis.api.version}</bundle>
+       -->
+    </feature>
+</features>

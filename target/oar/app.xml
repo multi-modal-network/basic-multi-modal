@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2020-present Open Networking Foundation
+SPDX-License-Identifier: Apache-2.0
+-->
+<app name="org.stratumproject.basic-tna" origin="Open Networking Foundation"
+     version="1.0.1-SNAPSHOT"
+     category="Pipeline" url="https://stratumproject.org"
+     title="BASIC-TNA Pipeconf"
+     featuresRepo="mvn:org.stratumproject/basic-tna/1.0.1-SNAPSHOT/xml/features"
+     features="basic-tna" apps="org.onosproject.protocols.p4runtime">
+    <description>ONOS OSGi bundle archetype.</description>
+    <artifact>mvn:org.stratumproject/basic-tna/1.0.1-SNAPSHOT</artifact>
+</app>

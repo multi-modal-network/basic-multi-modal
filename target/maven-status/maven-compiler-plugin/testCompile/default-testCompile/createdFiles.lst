@@ -1,0 +1,6 @@
+org/stratumproject/basic/tna/behaviour/pipeliner/ForwardingObjectiveTranslatorTest.class
+org/stratumproject/basic/tna/behaviour/pipeliner/BasicPipelinerTest.class
+org/stratumproject/basic/tna/behaviour/BasicUtilsTest.class
+org/stratumproject/basic/tna/behaviour/pipeliner/AbstractObjectiveTranslatorTest.class
+org/stratumproject/basic/tna/behaviour/BasicInterpreterTest.class
+org/stratumproject/basic/tna/utils/TestUtils.class
