@@ -1195,7 +1195,7 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
         }
         if (modalType == "ip" || modalType == "id" || modalType == "geo" || modalType == "mf" || modalType == "ndn" || modalType == "flexip") {
             log.warn("modalType: {}, srcHost: {}, dstHost: {}", modalType, srcHost, dstHost);
-            String path = "/home/onos/Desktop/ngsdn-tutorial/mininet/flows.out";
+            String path = "/home/onos/Desktop/ngsdn/mininet/flows.out";
             String content = modalType + " " + srcHost + " " + dstHost;
             try (FileOutputStream fos = new FileOutputStream(path, true)) {
                 fos.write(System.lineSeparator().getBytes());

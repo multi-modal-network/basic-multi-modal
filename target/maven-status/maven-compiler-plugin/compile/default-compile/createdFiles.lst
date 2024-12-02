@@ -9,6 +9,7 @@ org/stratumproject/basic/tna/behaviour/pipeliner/ForwardingObjectiveTranslator$1
 org/stratumproject/basic/tna/Constants.class
 org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreter.class
 org/stratumproject/basic/tna/behaviour/pipeliner/BasicPipelinerException.class
+org/stratumproject/basic/tna/behaviour/ModalHandler.class
 org/stratumproject/basic/tna/behaviour/pipeliner/ObjectiveTranslation.class
 org/stratumproject/basic/tna/behaviour/P4InfoConstants.class
 org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreterMF.class

@@ -5,6 +5,7 @@
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/pipeliner/ForwardingObjectiveTranslator.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/package-info.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicUtils.java
+/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/ModalHandler.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/pipeliner/ObjectiveTranslation.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/Constants.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreterID.java

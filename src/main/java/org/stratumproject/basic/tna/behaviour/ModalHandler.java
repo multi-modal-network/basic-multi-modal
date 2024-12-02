@@ -1,13 +1,38 @@
+package org.stratumproject.basic.tna.behaviour;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import org.onlab.util.ImmutableByteSequence;
+import org.onosproject.core.ApplicationId;
+import org.onosproject.core.CoreService;
 import org.onosproject.net.DeviceId;
+import org.onosproject.net.flow.criteria.PiCriterion;
+import org.onosproject.net.flow.DefaultFlowRule;
+import org.onosproject.net.flow.DefaultTrafficSelector;
+import org.onosproject.net.flow.DefaultTrafficTreatment;
+import org.onosproject.net.flow.FlowRule;
+import org.onosproject.net.flow.FlowRuleService;
+import org.onosproject.net.flow.TrafficSelector;
+import org.onosproject.net.flow.TrafficTreatment;
+import org.onosproject.net.pi.model.PiActionId;
+import org.onosproject.net.pi.model.PiActionParamId;
+import org.onosproject.net.pi.model.PiMatchFieldId;
+import org.onosproject.net.pi.model.PiTableId;
+import org.onosproject.net.pi.runtime.PiAction;
+import org.onosproject.net.pi.runtime.PiActionParam;
+import org.onosproject.net.pi.runtime.PiPacketMetadata;
+import org.onosproject.net.pi.runtime.PiPacketOperation;
+import org.onosproject.net.pi.runtime.PiTableAction;
 import org.slf4j.Logger;
 
+import static org.onlab.util.ImmutableByteSequence.copyFrom;
 import static org.slf4j.LoggerFactory.getLogger;
 
-public class ModalHandler {
-    private static final Logger log = getLogger(BasicInterpreter.class);
+
+public class ModalHandler extends AbstractBasicHandlerBehavior {
+    private static final Logger log = getLogger(ModalHandler.class);
 
     public void handleModalPacket(int pktType, byte[] payload, DeviceId deviceId) {
         String modalType = "";
@@ -142,22 +167,22 @@ public class ModalHandler {
         FlowRule flowRule;
         switch (modalType) {
             case "IPv4":
-                flowRule = applyIPv4Flow(deviceId, appId, port, srcId, dstId);
+                flowRule = applyIPv4Flow(deviceId, appId, port, buffer);
                 break;
             case "ID":
-                flowRule = applyIDFlow(deviceId, appId, port, srcId, dstId);
+                flowRule = applyIDFlow(deviceId, appId, port, buffer);
                 break;
             case "GEO":
-                flowRule = applyGEOFlow(deviceId, appId, port, srcId, dstId, buffer);
+                flowRule = applyGEOFlow(deviceId, appId, port, buffer);
                 break;
             case "MF":
-                flowRule = applyMFFlow(deviceId, appId, port, srcId, dstId);
+                flowRule = applyMFFlow(deviceId, appId, port, buffer);
                 break;
             case "NDN":
-                flowRule = applyNDNFlow(deviceId, appId, port, srcId, dstId);
+                flowRule = applyNDNFlow(deviceId, appId, port, buffer);
                 break;
             case "FlexIP":
-                flowRule = applyFlexIPFlow(deviceId, appId, port, srcId, dstId, buffer);
+                flowRule = applyFlexIPFlow(deviceId, appId, port, buffer);
                 break;
             default:
                 log.error("Invalid modal type: {}", modalType);
@@ -191,6 +216,14 @@ public class ModalHandler {
         return vmx * 100 + i;
     }
 
+    // ---------------------NDN模态---------------------
+    private int transferNDN2Host(int param) {
+        log.warn("transferNDN2Host param:{}", param);
+        int vmx = (param - 202271720) / 100000;
+        int i = param - 202271720 - vmx * 100000 + 64;
+        return vmx * 100 + i;
+    }
+
     // ---------------------GEO模态---------------------
     private int transferGEO2Host(int geoParam) {
         log.warn("transferGEO2Host geoParam:{}", geoParam);
@@ -206,15 +239,15 @@ public class ModalHandler {
 
     private static final int FLEXIP_GAP_F0 = 100;
     private static final int FLEXIP_GAP_F1 = 100000;
-    private static final long FLEXIP_GAP_F2 = 100000000;
-    private static final long FLEXIP_GAP_F4 = 100000000000;
+    private static final long FLEXIP_GAP_F2 = 100000000L;
+    private static final long FLEXIP_GAP_F4 = 100000000000L;
 
     private static final int RESTRAINED = 0;
     private static final int EXTENDABLE = 1;
     private static final int HIERARCHICAL = 2;
     private static final int MULTISEMANTICS = 3;
 
-    private int processExtendableFormat(ByteBuffer buffer, int index) {
+    private int processExtendableFormat(ByteBuffer buffer) {
         int host = 0;
         int index = buffer.get() & 0xff;
         switch (index) {
@@ -236,7 +269,7 @@ public class ModalHandler {
         return host;
     }
 
-    private int processHierarchicalFormat(ByteBuffer buffer, int index) {
+    private int processHierarchicalFormat(ByteBuffer buffer) {
         int host = 0;
         int index = buffer.get() & 0xff;
         int afterByte = buffer.get() & 0xff;
@@ -304,30 +337,30 @@ public class ModalHandler {
 
     private int calculateHost(int flexip, int offset, int gap) {
         int vmx = (flexip - offset) / gap;
-        int i = flexip - offset - x * gap + 64;
+        int i = flexip - offset - vmx * gap + 64;
         return vmx * 100 + i;
     }
 
-    private long calculateHost(long flexip, long offset, long gap) {
+    private int calculateHost(long flexip, long offset, long gap) {
         long vmx = (flexip - offset) / gap;
-        long i = flexip - offset - x * gap + 64L;
-        return vmx * 100 + i;
+        long i = flexip - offset - vmx * gap + 64L;
+        return (int)(vmx * 100 + i);
     }
 
     private int transferSrcFlexIP2Host(ByteBuffer buffer, int format, int length){
         log.warn("transferSrcFlexIP2Host flexIPParam:{}", buffer);
         buffer.position(52 - length/8);
-        int host;
+        int host = 0;
         switch (format) {
             case RESTRAINED:
                 int vmx = 1;
                 host =  vmx * 100 + (buffer.get() & 0xff);
                 break;
             case EXTENDABLE:
-                host = processExtendableFormat(buffer, index);
+                host = processExtendableFormat(buffer);
                 break;
             case HIERARCHICAL:
-                host = processHierarchicalFormat(buffer, index);
+                host = processHierarchicalFormat(buffer);
                 break;
             default:
                 break;
@@ -337,17 +370,17 @@ public class ModalHandler {
 
     private int transferDstFlexIP2Host(ByteBuffer buffer, int format, int length) {
         buffer.position(100 - length/8);
-        int host;
+        int host = 0;
         switch (format) {
             case RESTRAINED:
                 int vmx = 1;
                 host =  vmx * 100 + (buffer.get() & 0xff);
                 break;
             case EXTENDABLE:
-                host = processExtendableFormat(buffer, index);
+                host = processExtendableFormat(buffer);
                 break;
             case HIERARCHICAL:
-                host = processHierarchicalFormat(buffer, index);
+                host = processHierarchicalFormat(buffer);
                 break;
             default:
                 break;
@@ -356,17 +389,25 @@ public class ModalHandler {
     }
 
     // ------------------------------------------ applyFlow ------------------------------------------
-    private FlowRule applyIPv4Flow(DeviceId deviceId, ApplicationId appId, int port, int srcId, int dstId) {
+    private FlowRule applyIPv4Flow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer) {
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        int etherType = 0x0800;
         PiMatchFieldId srcAddrFieldId = PiMatchFieldId.of("hdr.ipv4.srcAddr");
-        String srcIdentifier = getIPv4(vmx, srcId);
-        byte[] srcIPv4Address = ipString2Bytes(srcIdentifier);
         PiMatchFieldId dstAddrFieldId = PiMatchFieldId.of("hdr.ipv4.dstAddr");
-        String dstIdentifier = getIPv4(vmx, dstId);
-        byte[] dstIPv4Address = ipString2Bytes(dstIdentifier);
+
+        byte[] srcIPv4Address = new byte[4];
+        buffer.position(12);
+        for(int i=0;i<4;i++) {
+            srcIPv4Address[i] = buffer.get();
+        }
+
+        byte[] dstIPv4Address = new byte[4];
+        buffer.position(16);
+        for(int i=0;i<4;i++) {
+            dstIPv4Address[i] = buffer.get();
+        }
+
         PiCriterion criteria = PiCriterion.builder()
-            .matchExact(etherTypeFieldId, etherType)
+            .matchExact(etherTypeFieldId, 0x0800)
             .matchExact(srcAddrFieldId, srcIPv4Address)
             .matchExact(dstAddrFieldId, dstIPv4Address)
             .build();
@@ -393,17 +434,25 @@ public class ModalHandler {
         return flowRule;
     }
 
-    private FlowRule applyIDFlow(DeviceId deviceId, ApplicationId appId, int port, int srcId, int dstId){
+    private FlowRule applyIDFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        int etherType = 0x0812;
         PiMatchFieldId srcIdentityFieldId = PiMatchFieldId.of("hdr.id.srcIdentity");
-        int srcIdentifier = getIdentity(vmx, srcId);
-        byte[] srcIdentity = int2Bytes(srcIdentifier);
-        int dstIdentifier = getIdentity(vmx, dstId);
         PiMatchFieldId dstIdentityFieldId = PiMatchFieldId.of("hdr.id.dstIdentity");
-        byte[] dstIdentity = int2Bytes(dstIdentifier);
+
+        byte[] srcIdentity = new byte[4];
+        buffer.position(0);
+        for(int i=0;i<4;i++) {
+            srcIdentity[i] = buffer.get();
+        }
+
+        byte[] dstIdentity = new byte[4];
+        buffer.position(4);
+        for(int i=0;i<4;i++) {
+            srcIdentity[i] = buffer.get();
+        }
+
         PiCriterion criteria = PiCriterion.builder()
-            .matchExact(etherTypeFieldId, etherType)
+            .matchExact(etherTypeFieldId, 0x0812)
             .matchExact(srcIdentityFieldId, srcIdentity)
             .matchExact(dstIdentityFieldId, dstIdentity)
             .build();
@@ -430,25 +479,27 @@ public class ModalHandler {
         return flowRule;
     }
 
-    private FlowRule applyGEOFlow(DeviceId deviceId, ApplicationId appId, int port, int srcId, int dstId, ByteBuffer buffer){
+    private FlowRule applyGEOFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        int etherType = 0x8947;
         PiMatchFieldId geoAreaPosLatFieldId = PiMatchFieldId.of("hdr.gbc.geoAreaPosLat");
+        PiMatchFieldId geoAreaPosLonFieldId = PiMatchFieldId.of("hdr.gbc.geoAreaPosLon");
+        PiMatchFieldId disaFieldId = PiMatchFieldId.of("hdr.gbc.disa");
+        PiMatchFieldId disbFieldId = PiMatchFieldId.of("hdr.gbc.disb");
+        
         byte[] geoAreaPosLat = new byte[4];
         buffer.position(40);
         for(int i=0;i<4;i++) {
             geoAreaPosLat[i] = buffer.get();
         }
-        PiMatchFieldId geoAreaPosLonFieldId = PiMatchFieldId.of("hdr.gbc.geoAreaPosLon");
+        
         byte[] geoAreaPosLon = new byte[4];
         buffer.position(44);
         for(int i=0;i<4;i++) {
             geoAreaPosLon[i] = buffer.get();
         }
-        PiMatchFieldId disaFieldId = PiMatchFieldId.of("hdr.gbc.disa");
-        PiMatchFieldId disbFieldId = PiMatchFieldId.of("hdr.gbc.disb");
+        
         PiCriterion criteria = PiCriterion.builder()
-            .matchExact(etherTypeFieldId, etherType)
+            .matchExact(etherTypeFieldId, 0x8947)
             .matchExact(geoAreaPosLatFieldId, geoAreaPosLat)
             .matchExact(geoAreaPosLonFieldId, geoAreaPosLon)
             .matchExact(disaFieldId, new byte[]{0})
@@ -477,17 +528,25 @@ public class ModalHandler {
         return flowRule;
     }
 
-    private FlowRule applyMFFlow(DeviceId deviceId, ApplicationId appId, int port, int srcId, int dstId){
+    private FlowRule applyMFFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        int etherType = 0x27c0;
         PiMatchFieldId srcGuidFieldId = PiMatchFieldId.of("hdr.mf.src_guid");
-        int srcIdentifier = getMFGuid(vmx, srcId);
-        byte[] srcMFGuid = int2Bytes(srcIdentifier);
         PiMatchFieldId dstGuidFieldId = PiMatchFieldId.of("hdr.mf.dest_guid");
-        int dstIdentifier = getMFGuid(vmx, dstId);
-        byte[] dstMFGuid = int2Bytes(dstIdentifier);
+        
+        byte[] srcMFGuid = new byte[4];
+        buffer.position(4);
+        for(int i=0;i<4;i++) {
+            srcMFGuid[i] = buffer.get();
+        }
+        
+        byte[] dstMFGuid = new byte[4];
+        buffer.position(8);
+        for(int i=0;i<4;i++) {
+            dstMFGuid[i] = buffer.get();
+        }
+        
         PiCriterion criteria = PiCriterion.builder()
-            .matchExact(etherTypeFieldId, etherType)
+            .matchExact(etherTypeFieldId, 0x27c0)
             .matchExact(srcGuidFieldId, srcMFGuid)
             .matchExact(dstGuidFieldId, dstMFGuid)
             .build();
@@ -514,23 +573,34 @@ public class ModalHandler {
         return flowRule;
     }
 
-    private FlowRule applyNDNFlow(DeviceId deviceId, ApplicationId appId, int port, int srcId, int dstId) {
+    private FlowRule applyNDNFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer) {
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        int etherType = 0x8624;
         PiMatchFieldId ndnCodeFieldId = PiMatchFieldId.of("hdr.ndn.ndn_prefix.code");
-        int ndnCode = 6;
         PiMatchFieldId srcNDNNameFieldId = PiMatchFieldId.of("hdr.ndn.name_tlv.components[0].value");
-        int srcIdentifier = getNDNName(vmx, srcId);
-        byte[] srcNDNName = int2Bytes(srcIdentifier);
         PiMatchFieldId dstNDNNameFieldId = PiMatchFieldId.of("hdr.ndn.name_tlv.components[1].value");
-        int dstIdentifier = getNDNName(vmx, dstId);
-        byte[] dstNDNName = int2Bytes(dstIdentifier);
         PiMatchFieldId ndnContentFieldId = PiMatchFieldId.of("hdr.ndn.content_tlv.value");
-        short contentIdentifier = getNDNContent(vmx, srcId);
-        byte[] ndnContent = short2Bytes(contentIdentifier);
+        
+        byte[] srcNDNName = new byte[4];
+        buffer.position(8);
+        for(int i=0;i<4;i++) {
+            srcNDNName[i] = buffer.get();
+        }
+        
+        byte[] dstNDNName = new byte[4];
+        buffer.position(14);
+        for(int i=0;i<4;i++) {
+            dstNDNName[i] = buffer.get();
+        }
+        
+        byte[] ndnContent = new byte[2];
+        buffer.position(34);
+        for(int i=0;i<2;i++) {
+            ndnContent[i] = buffer.get();
+        }
+        
         PiCriterion criteria = PiCriterion.builder()
-            .matchExact(etherTypeFieldId, etherType)
-            .matchExact(ndnCodeFieldId, ndnCode)
+            .matchExact(etherTypeFieldId, 0x8624)
+            .matchExact(ndnCodeFieldId, 6)
             .matchExact(srcNDNNameFieldId, srcNDNName)
             .matchExact(dstNDNNameFieldId, dstNDNName)
             .matchExact(ndnContentFieldId, ndnContent)
@@ -558,7 +628,7 @@ public class ModalHandler {
         return flowRule;
     }
 
-    private FlowRule applyFlexIPFlow(DeviceId deviceId, ApplicationId appId, int port, int srcId, int dstId, ByteBuffer buffer) {
+    private FlowRule applyFlexIPFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer) {
         int flexip_prefix = ((buffer.get(0) & 0xff) << 24 | (buffer.get(1) & 0xff) << 16 | (buffer.get(2) & 0xff) << 8 | (buffer.get(3) & 0xff));
         int srcFormat = flexip_prefix >> 26 & 0x3;
         int dstFormat = flexip_prefix >> 24 & 0x3;
@@ -566,25 +636,27 @@ public class ModalHandler {
         int dstLength = flexip_prefix & 0x7ff;
         log.warn("flexip_prefix:{}, srcLength:{}, dstLength:{}", flexip_prefix, srcLength, dstLength);
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        int etherType = 0x3690;
         PiMatchFieldId srcFormatFieldId = PiMatchFieldId.of("hdr.flexip.srcFormat");
         PiMatchFieldId dstFormatFieldId = PiMatchFieldId.of("hdr.flexip.dstFormat");
         PiMatchFieldId srcAddrFieldId = PiMatchFieldId.of("hdr.flexip.srcAddr");
+        PiMatchFieldId dstAddrFieldId = PiMatchFieldId.of("hdr.flexip.dstAddr");
+        
         byte[] srcAddr = new byte[srcLength/8];
         buffer.position(52-srcLength/8);
         for(int i=0;i<srcLength/8;i++) {
             srcAddr[i] = buffer.get();
         }
         log.warn("srcFlexIP:{}",srcAddr);
-        PiMatchFieldId dstAddrFieldId = PiMatchFieldId.of("hdr.flexip.dstAddr");
+        
         byte[] dstAddr = new byte[dstLength/8];
         buffer.position(100-dstLength/8);
         for(int i=0;i<dstLength/8;i++) {
             dstAddr[i] = buffer.get();
         }
         log.warn("dstFlexIP:{}",dstAddr);
+        
         PiCriterion criteria = PiCriterion.builder()
-            .matchExact(etherTypeFieldId, etherType)
+            .matchExact(etherTypeFieldId, 0x3690)
             .matchExact(srcFormatFieldId, srcFormat)
             .matchExact(dstFormatFieldId, dstFormat)
             .matchExact(srcAddrFieldId, srcAddr)
