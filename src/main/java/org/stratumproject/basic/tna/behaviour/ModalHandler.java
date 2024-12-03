@@ -31,8 +31,16 @@ import static org.onlab.util.ImmutableByteSequence.copyFrom;
 import static org.slf4j.LoggerFactory.getLogger;
 
 
-public class ModalHandler extends AbstractBasicHandlerBehavior {
+public class ModalHandler {
     private static final Logger log = getLogger(ModalHandler.class);
+
+    private ApplicationId appId;
+    private FlowRuleService flowRuleService;
+
+    public ModalHandler(ApplicationId appId, FlowRuleService flowRuleService) {
+        this.appId = appId;
+        this.flowRuleService = flowRuleService;
+    }
 
     public void handleModalPacket(int pktType, byte[] payload, DeviceId deviceId) {
         String modalType = "";
@@ -41,33 +49,33 @@ public class ModalHandler extends AbstractBasicHandlerBehavior {
         log.warn("payload: {}, buffer: {}, deviceId: {}", payload, buffer, deviceId);
         switch(pktType){
             case 0x0800:    // IP
-                modalType = "IPv4";
+                modalType = "ipv4";
                 srcHost = transferIP2Host(((buffer.get(14) & 0xff) << 8) + (buffer.get(15) & 0xff));
                 dstHost = transferIP2Host(((buffer.get(18) & 0xff) << 8) + (buffer.get(19) & 0xff));
                 break;
             case 0x0812:    // ID
-                modalType = "ID";
+                modalType = "id";
                 srcHost = transferID2Host(buffer.getInt(0) & 0xffffffff);
                 dstHost = transferID2Host(buffer.getInt(4) & 0xffffffff);
                 break;
             case 0x8947:    // GEO
-                modalType = "GEO";
+                modalType = "geo";
                 String deviceIdStr = deviceId.toString();
                 srcHost = Integer.parseInt(deviceIdStr.substring(deviceIdStr.length() - 3));
                 dstHost = transferGEO2Host(buffer.getInt(40) & 0xffffffff);
                 break;
             case 0x27c0:    // MF
-                modalType = "MF";
+                modalType = "mf";
                 srcHost = transferMF2Host(buffer.getInt(4) & 0xffffffff);
                 dstHost = transferMF2Host(buffer.getInt(8) & 0xffffffff);
                 break;
             case 0x8624:    // NDN
-                modalType = "NDN";
+                modalType = "ndn";
                 srcHost = transferNDN2Host(buffer.getInt(8) & 0xffffffff);
                 dstHost = transferNDN2Host(buffer.getInt(14) & 0xffffffff);
                 break;
             case 0x3690:    // FLEXIP
-                modalType = "FlexIP";
+                modalType = "flexip";
                 int flexip_prefix = ((buffer.get(0) & 0xff) << 24 | (buffer.get(1) & 0xff) << 16 | (buffer.get(2) & 0xff) << 8 | (buffer.get(3) & 0xff));
                 int srcFormat = flexip_prefix >> 26 & 0x3;
                 int dstFormat = flexip_prefix >> 24 & 0x3;
@@ -77,9 +85,9 @@ public class ModalHandler extends AbstractBasicHandlerBehavior {
                 dstHost = transferDstFlexIP2Host(buffer, dstFormat, dstLength);
                 break;
         }
-        if (modalType == "IPv4" || modalType == "ID" || modalType == "GEO" || modalType == "MF" || modalType == "NDN" || modalType == "FlexIP") {
+        if (modalType == "ipv4" || modalType == "id" || modalType == "geo" || modalType == "mf" || modalType == "ndn" || modalType == "flexip") {
             log.warn("modalType: {}, srcHost: {}, dstHost: {}", modalType, srcHost, dstHost);
-            String path = "/home/onos/Desktop/ngsdn-tutorial/mininet/flows.out";
+            String path = "/home/onos/Desktop/ngsdn/mininet/flows.out";
             String content = modalType + " " + srcHost + " " + dstHost;
             try (FileOutputStream fos = new FileOutputStream(path, true)) {
                 fos.write(System.lineSeparator().getBytes());
@@ -156,9 +164,6 @@ public class ModalHandler extends AbstractBasicHandlerBehavior {
     }
 
     public void postFlow(String modalType, int switchID, int port, int srcHost, int dstHost, ByteBuffer buffer) {
-        CoreService coreService = handler().get(CoreService.class);
-        ApplicationId appId = coreService.getAppId("org.stratumproject.basic-tna");
-        FlowRuleService flowRuleService = handler().get(FlowRuleService.class);
         int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
         int vmx = 1;    // todo: vmx标记
         int srcId = srcHost - vmx * 100;
@@ -166,22 +171,22 @@ public class ModalHandler extends AbstractBasicHandlerBehavior {
         DeviceId deviceId = DeviceId.deviceId(String.format("device:domain1:group4:level%d:s%d",level, switchID + vmx * 100));
         FlowRule flowRule;
         switch (modalType) {
-            case "IPv4":
+            case "ipv4":
                 flowRule = applyIPv4Flow(deviceId, appId, port, buffer);
                 break;
-            case "ID":
+            case "id":
                 flowRule = applyIDFlow(deviceId, appId, port, buffer);
                 break;
-            case "GEO":
+            case "geo":
                 flowRule = applyGEOFlow(deviceId, appId, port, buffer);
                 break;
-            case "MF":
+            case "mf":
                 flowRule = applyMFFlow(deviceId, appId, port, buffer);
                 break;
-            case "NDN":
+            case "ndn":
                 flowRule = applyNDNFlow(deviceId, appId, port, buffer);
                 break;
-            case "FlexIP":
+            case "flexip":
                 flowRule = applyFlexIPFlow(deviceId, appId, port, buffer);
                 break;
             default:
