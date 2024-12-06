@@ -113,15 +113,17 @@ public class ModalHandler {
     }
 
     public void executeAddFlow(String modalType, int srcHost, int dstHost, ByteBuffer buffer) {
-        int srcSwitch = srcHost-100;   // h180-eth0 <-> s80-eth2
-        int dstSwitch = dstHost-100;   // h166-eth0 <-> s66-eth2
+        int srcVmx = srcHost / 256;
+        int dstVmx = dstHost / 256;
+        int srcSwitch = srcHost % 256;
+        int dstSwitch = dstHost % 256;
         ArrayList<Integer> involvedSwitches = new ArrayList<>();
 
         // 交换机的eth0\eth1\eth2对应转发端口0\1\2
         // srcSwitch至lca(srcSwitch,dstSwitch)路径中交换机需要下发流表（当前节点向父节点转发）
         // lca(srcSwitch,dstSwitch)至dstSwitch路径中交换机需要下发流表（当前节点的父节点向当前节点转发）
 
-        postFlow(modalType, dstSwitch, 2, srcHost, dstHost, buffer);   // dstSwitch需要向网卡eth2的端口转发
+        postFlow(modalType, dstSwitch, dstVmx, 2, buffer);   // dstSwitch需要向网卡eth2的端口转发
         involvedSwitches.add(dstSwitch);
 
         int srcDepth = (int) Math.floor(Math.log(srcSwitch)/Math.log(2)) + 1;
@@ -133,7 +135,7 @@ public class ModalHandler {
         // srcSwitch深度更大
         if (srcDepth > dstDepth) {
             while (srcDepth != dstDepth) {
-                postFlow(modalType, srcSwitch, 1, srcHost, dstHost, buffer);  // 只能通过eth1向父节点转发
+                postFlow(modalType, srcSwitch, srcVmx, 1, buffer);  // 只能通过eth1向父节点转发
                 involvedSwitches.add(srcSwitch);
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
                 srcDepth = srcDepth - 1;
@@ -145,9 +147,9 @@ public class ModalHandler {
             while (srcDepth != dstDepth) {
                 int father = (int) Math.floor(dstSwitch / 2);
                 if (father*2 == dstSwitch) {
-                    postFlow(modalType, father, 2, srcHost, dstHost, buffer);    // 通过eth2向左儿子转发
+                    postFlow(modalType, father, dstVmx, 2, buffer);    // 通过eth2向左儿子转发
                 } else {
-                    postFlow(modalType, father, 3, srcHost, dstHost, buffer);   // 通过eth3向右儿子转发
+                    postFlow(modalType, father, dstVmx, 3, buffer);   // 通过eth3向右儿子转发
                 }
                 involvedSwitches.add(father);
                 dstSwitch = (int) Math.floor(dstSwitch / 2);
@@ -157,12 +159,12 @@ public class ModalHandler {
 
         // srcSwitch和dstSwitch在同一层，srcSwitch向父节点转发，dstSwitch的父节点向dstSwitch转发
         while(true){
-            postFlow(modalType, srcSwitch, 1, srcHost, dstHost, buffer);
+            postFlow(modalType, srcSwitch, srcVmx, 1, buffer);
             int father = (int) Math.floor(dstSwitch / 2);
             if (father*2 == dstSwitch) {
-                postFlow(modalType, father, 2, srcHost, dstHost, buffer);
+                postFlow(modalType, father, srcVmx, 2, buffer);
             } else {
-                postFlow(modalType, father, 3, srcHost, dstHost, buffer);
+                postFlow(modalType, father, srcVmx, 3, buffer);
             }
             involvedSwitches.add(srcSwitch);
             involvedSwitches.add(father);
@@ -175,12 +177,9 @@ public class ModalHandler {
         log.warn("involvedSwitches:{}", involvedSwitches);
     }
 
-    public void postFlow(String modalType, int switchID, int port, int srcHost, int dstHost, ByteBuffer buffer) {
+    public void postFlow(String modalType, int switchID, int vmx, int port, ByteBuffer buffer) {
         int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
-        int vmx = 1;    // todo: vmx标记
-        int srcId = srcHost - vmx * 100;
-        int dstId = dstHost - vmx * 100; 
-        DeviceId deviceId = DeviceId.deviceId(String.format("device:domain1:group4:level%d:s%d",level, switchID + vmx * 100));
+        DeviceId deviceId = DeviceId.deviceId(String.format("device:domain1:group%d:level%d:s%d", vmx + 1, level, switchID));
         FlowRule flowRule;
         switch (modalType) {
             case "ipv4":
