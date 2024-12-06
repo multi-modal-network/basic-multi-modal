@@ -112,66 +112,93 @@ public class ModalHandler {
         }
     }
 
+    // 拓扑上link的方向
+    private static final int left = 2;
+    private static final int right = 3;
+    private static final int up = 1;
+
     public void executeAddFlow(String modalType, int srcHost, int dstHost, ByteBuffer buffer) {
+        // 获取源目主机的vmx
         int srcVmx = srcHost / 256;
         int dstVmx = dstHost / 256;
+        // 数据平面group内实际交换机都是s1-s255
         int srcSwitch = srcHost % 256;
         int dstSwitch = dstHost % 256;
-        ArrayList<Integer> involvedSwitches = new ArrayList<>();
-
-        // 交换机的eth0\eth1\eth2对应转发端口0\1\2
-        // srcSwitch至lca(srcSwitch,dstSwitch)路径中交换机需要下发流表（当前节点向父节点转发）
-        // lca(srcSwitch,dstSwitch)至dstSwitch路径中交换机需要下发流表（当前节点的父节点向当前节点转发）
-
-        postFlow(modalType, dstSwitch, dstVmx, 2, buffer);   // dstSwitch需要向网卡eth2的端口转发
-        involvedSwitches.add(dstSwitch);
-
-        int srcDepth = (int) Math.floor(Math.log(srcSwitch)/Math.log(2)) + 1;
-        int dstDepth = (int) Math.floor(Math.log(dstSwitch)/Math.log(2)) + 1;
-
-        log.warn("srcHost:{}, dstHost:{}, srcSwitch:{}, dstSwitch:{}, srcDepth:{}, dstDepth:{}",
-                srcHost, dstHost, srcSwitch, dstSwitch, srcDepth, dstDepth);
-
-        // srcSwitch深度更大
-        if (srcDepth > dstDepth) {
-            while (srcDepth != dstDepth) {
-                postFlow(modalType, srcSwitch, srcVmx, 1, buffer);  // 只能通过eth1向父节点转发
-                involvedSwitches.add(srcSwitch);
-                srcSwitch = (int) Math.floor(srcSwitch / 2);
-                srcDepth = srcDepth - 1;
-            } 
-        }
-
-        // dstSwitch深度更大
-        if (srcDepth < dstDepth) {
-            while (srcDepth != dstDepth) {
+        ArrayList<String> involvedSwitches = new ArrayList<>();
+        // 如果源目主机在一个group内
+        if(srcVmx == dstVmx) {
+            int commonVmx = srcVmx;
+            // 交换机的eth0\eth1\eth2对应转发端口0\1\2
+            // srcSwitch至lca(srcSwitch,dstSwitch)路径中交换机需要下发流表（当前节点向父节点转发）
+            // lca(srcSwitch,dstSwitch)至dstSwitch路径中交换机需要下发流表（当前节点的父节点向当前节点转发）
+            postFlow(modalType, dstSwitch, commonVmx, left, buffer);   // dstSwitch需要向网卡eth2的端口转发
+            involvedSwitches.add(String.format("%d-%d", commonVmx, dstSwitch));
+            int srcDepth = (int) Math.floor(Math.log(srcSwitch)/Math.log(2)) + 1;
+            int dstDepth = (int) Math.floor(Math.log(dstSwitch)/Math.log(2)) + 1;
+            log.warn("srcHost:{}, dstHost:{}, srcSwitch:{}, dstSwitch:{}, srcDepth:{}, dstDepth:{}",
+                    srcHost, dstHost, srcSwitch, dstSwitch, srcDepth, dstDepth);
+            // srcSwitch深度更大
+            if (srcDepth > dstDepth) {
+                while (srcDepth != dstDepth) {
+                    postFlow(modalType, srcSwitch, commonVmx, up, buffer);  // 只能通过eth1向父节点转发
+                    involvedSwitches.add(String.format("%d-%d", commonVmx, srcSwitch));
+                    srcSwitch = (int) Math.floor(srcSwitch / 2);
+                    srcDepth = srcDepth - 1;
+                } 
+            }
+            // dstSwitch深度更大
+            if (srcDepth < dstDepth) {
+                while (srcDepth != dstDepth) {
+                    int father = (int) Math.floor(dstSwitch / 2);
+                    if (father*2 == dstSwitch) {
+                        postFlow(modalType, father, commonVmx, left, buffer);    // 通过eth2向左儿子转发
+                    } else {
+                        postFlow(modalType, father, commonVmx, right, buffer);   // 通过eth3向右儿子转发
+                    }
+                    involvedSwitches.add(String.format("%d-%d", commonVmx, father));
+                    dstSwitch = (int) Math.floor(dstSwitch / 2);
+                    dstDepth = dstDepth - 1;
+                }
+            }
+            // srcSwitch和dstSwitch在同一层，srcSwitch向父节点转发，dstSwitch的父节点向dstSwitch转发
+            while(true){
+                postFlow(modalType, srcSwitch, commonVmx, 1, buffer);
                 int father = (int) Math.floor(dstSwitch / 2);
                 if (father*2 == dstSwitch) {
-                    postFlow(modalType, father, dstVmx, 2, buffer);    // 通过eth2向左儿子转发
+                    postFlow(modalType, father, commonVmx, left, buffer);
                 } else {
-                    postFlow(modalType, father, dstVmx, 3, buffer);   // 通过eth3向右儿子转发
+                    postFlow(modalType, father, commonVmx, right, buffer);
                 }
-                involvedSwitches.add(father);
+                involvedSwitches.add(String.format("%d-%d", commonVmx, srcSwitch));
+                involvedSwitches.add(String.format("%d-%d", commonVmx, father));
+                srcSwitch = (int) Math.floor(srcSwitch / 2);
                 dstSwitch = (int) Math.floor(dstSwitch / 2);
-                dstDepth = dstDepth - 1;
+                if (srcSwitch == dstSwitch) {
+                    break;
+                }
             }
-        }
-
-        // srcSwitch和dstSwitch在同一层，srcSwitch向父节点转发，dstSwitch的父节点向dstSwitch转发
-        while(true){
-            postFlow(modalType, srcSwitch, srcVmx, 1, buffer);
-            int father = (int) Math.floor(dstSwitch / 2);
-            if (father*2 == dstSwitch) {
-                postFlow(modalType, father, srcVmx, 2, buffer);
-            } else {
-                postFlow(modalType, father, srcVmx, 3, buffer);
+        } else {       // 跨域
+            // 源域源主机直接发至S1
+            while(srcSwitch != 0) {
+                postFlow(modalType, srcSwitch, srcVmx, up, buffer);
+                involvedSwitches.add(String.format("%d-%d", srcVmx, srcSwitch));
+                srcSwitch = (int) Math.floor(srcSwitch / 2);
             }
-            involvedSwitches.add(srcSwitch);
-            involvedSwitches.add(father);
-            srcSwitch = (int) Math.floor(srcSwitch / 2);
-            dstSwitch = (int) Math.floor(dstSwitch / 2);
-            if (srcSwitch == dstSwitch) {
-                break;
+            // 目的域S1直接发至目的主机
+            postFlow(modalType, dstSwitch, dstVmx, left, buffer);
+            involvedSwitches.add(String.format("%d-%d", dstVmx, dstSwitch));
+            while(true) {
+                int father = (int) Math.floor(dstSwitch / 2);
+                if (father * 2 == dstSwitch) {
+                    postFlow(modalType, father, dstVmx, left, buffer);
+                } else {
+                    postFlow(modalType, father, dstVmx, right, buffer);
+                }
+                involvedSwitches.add(String.format("%d-%d", dstVmx, father));
+                dstSwitch = (int) Math.floor(dstSwitch / 2);
+                if (dstSwitch == 0) {
+                    break;
+                } 
             }
         }
         log.warn("involvedSwitches:{}", involvedSwitches);
