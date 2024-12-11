@@ -122,8 +122,8 @@ public class ModalHandler {
         int srcVmx = srcHost / 256;
         int dstVmx = dstHost / 256;
         // 数据平面group内实际交换机都是s1-s255
-        int srcSwitch = srcHost % 256;
-        int dstSwitch = dstHost % 256;
+        int srcSwitch = (srcHost-1) % 255 + 1;
+        int dstSwitch = (dstHost-1) % 255 + 1;
         ArrayList<String> involvedSwitches = new ArrayList<>();
         // 如果源目主机在一个group内
         if(srcVmx == dstVmx) {

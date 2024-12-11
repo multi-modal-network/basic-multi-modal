@@ -29,7 +29,7 @@ public class MFModalHandler {
         log.warn("transferMF2Host mfParam:{}", mfParam);
         int vmx = (mfParam - 1) / 100;
         int i = mfParam - 1 - vmx * 100 + 64;
-        return vmx * 100 + i;
+        return vmx * 255 + i;
     }
 
     public FlowRule applyMFFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){

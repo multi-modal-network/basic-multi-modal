@@ -29,7 +29,7 @@ public class NDNModalHandler {
         log.warn("transferNDN2Host param:{}", param);
         int vmx = (param - 202271720) / 100000;
         int i = param - 202271720 - vmx * 100000 + 64;
-        return vmx * 100 + i;
+        return vmx * 255 + i;
     }
 
     public FlowRule applyNDNFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer) {

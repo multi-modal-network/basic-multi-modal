@@ -132,13 +132,13 @@ public class FlexIPModalHandler {
     private int calculateHost(int flexip, int offset, int gap) {
         int vmx = (flexip - offset) / gap;
         int i = flexip - offset - vmx * gap + 64;
-        return vmx * 100 + i;
+        return vmx * 255 + i;
     }
 
     private int calculateHost(long flexip, long offset, long gap) {
         long vmx = (flexip - offset) / gap;
         long i = flexip - offset - vmx * gap + 64L;
-        return (int)(vmx * 100 + i);
+        return (int)(vmx * 255 + i);
     }
 
     public int transferSrcFlexIP2Host(ByteBuffer buffer, int format, int length){
@@ -148,7 +148,7 @@ public class FlexIPModalHandler {
         switch (format) {
             case RESTRAINED:
                 int vmx = 1;
-                host =  vmx * 100 + (buffer.get() & 0xff);
+                host =  vmx * 255 + (buffer.get() & 0xff);
                 break;
             case EXTENDABLE:
                 host = processExtendableFormat(buffer);

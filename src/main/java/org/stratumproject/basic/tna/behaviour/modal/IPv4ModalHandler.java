@@ -30,7 +30,7 @@ public class IPv4ModalHandler {
         log.warn("transferIP2Host ipParam:{}", ipParam);
         int vmx = ((ipParam & 0xffff) >> 8) - 1;
         int i = (ipParam & 0xff) + 64 - 12;
-        return vmx * 100 + i;
+        return vmx * 255 + i;
     }
 
     public FlowRule applyIPv4Flow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer) {

@@ -29,7 +29,7 @@ public class GEOModalHandler {
         log.warn("transferGEO2Host geoParam:{}", geoParam);
         // todo： 获取vmx
         int vmx = 1;
-        return vmx * 100 + geoParam + 63;
+        return vmx * 255 + geoParam + 63;
     }
 
     public FlowRule applyGEOFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){

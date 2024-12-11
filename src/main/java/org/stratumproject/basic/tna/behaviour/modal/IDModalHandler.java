@@ -29,7 +29,7 @@ public class IDModalHandler {
         log.warn("transferID2Host idParam:{}",idParam);
         int vmx = (idParam - 202271720) / 100000;
         int i = idParam - 202271720 - vmx * 100000 + 64;
-        return vmx * 100 + i;
+        return vmx * 255 + i;
     }
 
     public FlowRule applyIDFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){

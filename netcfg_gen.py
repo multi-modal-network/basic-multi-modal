@@ -4,7 +4,7 @@ import os
 # 初始化devices字典
 devices = {}
 
-vmx = int(os.getenv("VMX","0"))
+vmx = 1
 
 def get_level(i):
     if i == 1:
