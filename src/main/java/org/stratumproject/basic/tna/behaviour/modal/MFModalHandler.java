@@ -27,8 +27,8 @@ public class MFModalHandler {
 
     public int transferMF2Host(int mfParam) {
         log.warn("transferMF2Host mfParam:{}", mfParam);
-        int vmx = (mfParam - 1) / 100;
-        int i = mfParam - 1 - vmx * 100 + 64;
+        int vmx = mfParam / 1000;
+        int i = mfParam - 1 - vmx * 1000 + 64;
         return vmx * 255 + i;
     }
 

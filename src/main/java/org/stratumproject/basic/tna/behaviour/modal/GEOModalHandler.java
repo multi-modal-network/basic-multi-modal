@@ -25,11 +25,14 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class GEOModalHandler {
     private static final Logger log = getLogger(GEOModalHandler.class);
 
-    public int transferGEO2Host(int geoParam) {
-        log.warn("transferGEO2Host geoParam:{}", geoParam);
-        // todo： 获取vmx
-        int vmx = 1;
-        return vmx * 255 + geoParam + 63;
+    public int transferGEO2Host(int lat, int lon) {
+        log.warn("transferGEO2Host lat:{}, lon:{}", lat, lon);
+        int i = lat + 63;
+        int sign = ((lon >> 30) & 3) == 1 ? -1 : 1;
+        int integerPart = ((lon >> 15) & 0x7fff) * sign;
+        log.warn("geolatlon", sign, integerPart);
+        int vmx = (int) Math.floor(((integerPart + 180) - (i - 64) * 0.4) / 20);
+        return vmx * 255 + i;
     }
 
     public FlowRule applyGEOFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){
