@@ -23,7 +23,7 @@ def get_level(i):
         return "level8"
 
 # 循环创建100个设备
-for vmx in range(0,8):
+for vmx in range(0,4):
     for i in range(1, 256):
         device_id = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}"  # 格式化设备ID，确保它是5位数
         devices[device_id] = {

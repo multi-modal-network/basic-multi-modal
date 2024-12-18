@@ -1,0 +1,75 @@
+version: "3"
+
+services:
+  atomix-1:
+    image: registry.cn-hangzhou.aliyuncs.com/wolverine2713/atomix:3.1.12
+    container_name: atomix-1
+    restart: always
+    networks:
+      onos-bridge:
+        ipv4_address: 172.18.0.10
+    ports:
+      - "5682:5682"
+    logging:
+      options:
+        max-size: 100m
+    volumes:
+      - ./atomix-1.conf:/atomix/atomix-1.conf
+    command: ["--config", "/atomix/atomix-1.conf", "--console-log-level", "DEBUG"]
+
+  atomix-2:
+    image: registry.cn-hangzhou.aliyuncs.com/wolverine2713/atomix:3.1.12
+    container_name: atomix-2
+    restart: always
+    networks:
+      onos-bridge:
+        ipv4_address: 172.18.0.11
+    ports:
+      - "5683:5683"    
+    logging:
+      options:
+        max-size: 100m
+    volumes:
+      - ./atomix-2.conf:/atomix/atomix-2.conf
+    command: ["--config", "/atomix/atomix-2.conf", "--console-log-level", "DEBUG"]
+
+  onos-1:
+    image: onos3.0
+    container_name: onos-1
+    privileged: true
+    restart: always
+    networks:
+      onos-bridge:
+        ipv4_address: 172.18.0.13
+    ports:
+      - "6640:6640"
+      - "6653:6653"
+      - "8101:8101"
+      - "8181:8181"
+      - "9876:9876"
+      - "6666:6666"
+    logging:
+      options:
+        max-size: 100m
+    volumes:
+      - ./cluster-1.json:/root/onos/config/cluster.json
+      - /home/onos/Desktop:/home/onos/Desktop
+
+  onos-2:
+    image: onos3.0
+    container_name: onos-2
+    privileged: true
+    restart: always
+    networks:
+      onos-bridge:
+        ipv4_address: 172.18.0.14
+    logging:
+      options:
+        max-size: 100m
+    volumes:
+      - ./cluster-2.json:/root/onos/config/cluster.json
+      - /home/onos/Desktop:/home/onos/Desktop
+
+networks:
+  onos-bridge:
+    external: true
