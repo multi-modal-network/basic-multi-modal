@@ -189,7 +189,7 @@ public class ModalHandler {
             // 目的域S1直接发至目的主机
             postFlow(modalType, dstSwitch, dstVmx, left, buffer);
             involvedSwitches.add(String.format("%d-%d", dstVmx, dstSwitch));
-            while(true) {
+            while(dstSwitch != 1) {
                 int father = (int) Math.floor(dstSwitch / 2);
                 if (father * 2 == dstSwitch) {
                     postFlow(modalType, father, dstVmx, left, buffer);
@@ -198,9 +198,6 @@ public class ModalHandler {
                 }
                 involvedSwitches.add(String.format("%d-%d", dstVmx, father));
                 dstSwitch = (int) Math.floor(dstSwitch / 2);
-                if (dstSwitch == 0) {
-                    break;
-                } 
             }
         }
         log.warn("involvedSwitches:{}", involvedSwitches);
