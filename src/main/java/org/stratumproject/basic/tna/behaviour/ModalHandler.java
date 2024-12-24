@@ -101,7 +101,7 @@ public class ModalHandler {
         }
         if (modalType == "ipv4" || modalType == "id" || modalType == "geo" || modalType == "mf" || modalType == "ndn" || modalType == "flexip") {
             log.warn("modalType: {}, srcHost: {}, dstHost: {}", modalType, srcHost, dstHost);
-            String path = "/home/onos/Desktop/ngsdn/mininet/flows.out";
+            String path = "/home/kin/Desktop/flows.out";
             String content = modalType + " " + srcHost + " " + dstHost;
             try (FileOutputStream fos = new FileOutputStream(path, true)) {
                 fos.write(System.lineSeparator().getBytes());
@@ -119,16 +119,37 @@ public class ModalHandler {
     private static final int right = 3;
     private static final int up = 1;
 
+    // tofino交换机端口设置
+    private static final int[] domain2TofinoPorts = {128,144,160,176};
+    private static final int[] domain4TofinoPorts = {128,144,160,176};
+    private static final int[] domain6TofinoPorts = {128,144,176};
+
+    // tofino交换机deviceId
+    private static final int domain2TofinoSwitch = 2000;
+    private static final int domain5TofinoSwitch = 5000;
+    private static final int domain7TofinoSwitch = 7000;    
+
+    private void getDomain(int vmx) {
+        if (vmx >= 0 && vmx <= 2) {
+            return 1
+        } else if (vmx >= 3 && vmx <= 5) {
+            return 5
+        } else {
+            return 7
+        }
+    }
+
     public void executeAddFlow(String modalType, int srcHost, int dstHost, ByteBuffer buffer) {
         // 获取源目主机的vmx
         int srcVmx = srcHost / 256;
         int dstVmx = dstHost / 256;
+        int srcDomain = getDomain(srcVmx);
+        int dstDomain = getDomain(dstVmx);
         // 数据平面group内实际交换机都是s1-s255
         int srcSwitch = (srcHost-1) % 255 + 1;
         int dstSwitch = (dstHost-1) % 255 + 1;
         ArrayList<String> involvedSwitches = new ArrayList<>();
-        // 如果源目主机在一个group内
-        if(srcVmx == dstVmx) {
+        if(srcVmx == dstVmx) {          // 同group
             int commonVmx = srcVmx;
             // 交换机的eth0\eth1\eth2对应转发端口0\1\2
             // srcSwitch至lca(srcSwitch,dstSwitch)路径中交换机需要下发流表（当前节点向父节点转发）
@@ -179,14 +200,91 @@ public class ModalHandler {
                     break;
                 }
             }
-        } else {       // 跨域
-            // 源域源主机直接发至S1
+        } else if (srcDomain == dstDomain) {       // 同域异group
+            // 源group源主机直接发至S1
             while(srcSwitch != 0) {
                 postFlow(modalType, srcSwitch, srcVmx, up, buffer);
                 involvedSwitches.add(String.format("%d-%d", srcVmx, srcSwitch));
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
             }
-            // 目的域S1直接发至目的主机
+            // tofino交换机下发流表
+            switch(srcDomain) {
+                case 1:
+                    postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[dstVmx % 3], buffer);
+                    involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[dstVmx % 3]));
+                    break;
+                case 5:
+                    postFlow(modalType, domain5TofinoSwitch, 0, domain5TofinoPorts[dstVmx % 3], buffer);
+                    involvedSwitches.add(String.format("domain5-%d", domain5TofinoPorts[dstVmx % 3]));
+                    break;
+                case 7:
+                    postFlow(modalType, domain7TofinoSwitch, 0, domain7TofinoPorts[dstVmx % 3], buffer);
+                    involvedSwitches.add(String.format("domain7-%d", domain7TofinoPorts[dstVmx % 3]));
+                    break;
+            }
+            // 目的groupS1直接发至目的主机
+            postFlow(modalType, dstSwitch, dstVmx, left, buffer);
+            involvedSwitches.add(String.format("%d-%d", dstVmx, dstSwitch));
+            while(dstSwitch != 1) {
+                int father = (int) Math.floor(dstSwitch / 2);
+                if (father * 2 == dstSwitch) {
+                    postFlow(modalType, father, dstVmx, left, buffer);
+                } else {
+                    postFlow(modalType, father, dstVmx, right, buffer);
+                }
+                involvedSwitches.add(String.format("%d-%d", dstVmx, father));
+                dstSwitch = (int) Math.floor(dstSwitch / 2);
+            }
+        } else {                // 异域
+            // 源group源主机直接发至S1
+            while(srcSwitch != 0) {
+                postFlow(modalType, srcSwitch, srcVmx, up, buffer);
+                involvedSwitches.add(String.format("%d-%d", srcVmx, srcSwitch));
+                srcSwitch = (int) Math.floor(srcSwitch / 2);
+            }
+            // tofino交换机下发流表
+            switch(srcDomain + dstDomain) {
+                case 6:
+                    if (srcDomain < dstDomain) {        // 1,5
+                        postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[3], buffer);
+                        involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[3]));
+                        postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[dstVmx % 3], buffer);
+                        involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[dstVmx % 3]));
+                    } else {                            // 5,1
+                        postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[3], buffer);
+                        involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[3]));
+                        postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[dstVmx % 3], buffer);
+                        involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[dstVmx % 3]));
+                    }
+                    break;
+                case 8:
+                    if (srcDomain < dstDomain) {        // 1,7
+                        postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[3], buffer);
+                        involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[3]));
+                        postFlow(modalType, domain4TofinoSwitch, 0, domain6TofinoPorts[dstVmx % 3], buffer);
+                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[dstVmx % 3]));
+                    } else {                            // 7,1
+                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[2], buffer);
+                        involvedSwitches.add(String.format("domain6-%d", domain4TofinoPorts[2]));
+                        postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[dstVmx % 3], buffer);
+                        involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[dstVmx % 3]));
+                    }
+                    break;
+                case 12:
+                    if (srcDomain < dstDomain) {        // 5,7
+                        postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[3], buffer);
+                        involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[3]));
+                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[dstVmx % 3], buffer);
+                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[dstVmx % 3]));
+                    } else {                            // 7,5
+                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[2], buffer);
+                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[2]));
+                        postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[dstVmx % 3], buffer);
+                        involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[dstVmx % 3]));
+                    }
+                    break;
+            }
+            // 目的groupS1直接发至目的主机
             postFlow(modalType, dstSwitch, dstVmx, left, buffer);
             involvedSwitches.add(String.format("%d-%d", dstVmx, dstSwitch));
             while(dstSwitch != 1) {
@@ -204,8 +302,17 @@ public class ModalHandler {
     }
 
     public void postFlow(String modalType, int switchID, int vmx, int port, ByteBuffer buffer) {
-        int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
-        DeviceId deviceId = DeviceId.deviceId(String.format("device:domain1:group%d:level%d:s%d", vmx + 1, level, switchID));
+        DeviceId deviceId;
+        if (switchID == domain2TofinoSwitch) {
+            deviceId = DeviceId.deviceId(String.format("device:domain2:p1"));
+        } else if (switchID == domain4TofinoSwitch) {
+            deviceId = DeviceId.deviceId(String.format("device:domain4:p4"));
+        } else if (switchID == domain6TofinoSwitch) {
+            deviceId = DeviceId.deviceId(String.format("device:domain6:p6"));
+        } else {
+            int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
+            deviceId = DeviceId.deviceId(String.format("device:domain%d:group%d:level%d:s%d", getDomain(vmx), vmx + 1, level, switchID));
+        }
         FlowRule flowRule;
         switch (modalType) {
             case "ipv4":
