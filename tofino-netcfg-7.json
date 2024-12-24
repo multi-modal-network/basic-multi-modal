@@ -1,0 +1,3574 @@
+{
+  "devices": {
+    "device:domain8:group7:level1:s1": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56001?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level2:s2": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56002?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level2:s3": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56003?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level3:s4": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56004?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level3:s5": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56005?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level3:s6": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56006?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level3:s7": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56007?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level4:s8": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56008?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level4:s9": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56009?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level4:s10": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56010?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level4:s11": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56011?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level4:s12": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56012?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level4:s13": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56013?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level4:s14": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56014?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level4:s15": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56015?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s16": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56016?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s17": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56017?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s18": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56018?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s19": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56019?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s20": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56020?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s21": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56021?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s22": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56022?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s23": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56023?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s24": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56024?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s25": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56025?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s26": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56026?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s27": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56027?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s28": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56028?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s29": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56029?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s30": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56030?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level5:s31": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56031?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s32": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56032?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s33": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56033?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s34": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56034?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s35": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56035?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s36": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56036?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s37": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56037?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s38": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56038?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s39": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56039?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s40": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56040?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s41": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56041?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s42": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56042?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s43": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56043?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s44": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56044?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s45": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56045?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s46": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56046?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s47": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56047?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s48": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56048?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s49": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56049?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s50": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56050?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s51": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56051?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s52": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56052?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s53": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56053?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s54": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56054?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s55": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56055?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s56": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56056?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s57": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56057?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s58": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56058?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s59": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56059?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s60": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56060?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s61": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56061?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s62": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56062?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level6:s63": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56063?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s64": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56064?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s65": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56065?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s66": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56066?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s67": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56067?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s68": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56068?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s69": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56069?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s70": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56070?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s71": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56071?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s72": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56072?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s73": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56073?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s74": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56074?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s75": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56075?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s76": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56076?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s77": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56077?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s78": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56078?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s79": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56079?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s80": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56080?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s81": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56081?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s82": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56082?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s83": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56083?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s84": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56084?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s85": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56085?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s86": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56086?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s87": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56087?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s88": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56088?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s89": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56089?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s90": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56090?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s91": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56091?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s92": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56092?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s93": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56093?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s94": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56094?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s95": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56095?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s96": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56096?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s97": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56097?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s98": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56098?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s99": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56099?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s100": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56100?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s101": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56101?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s102": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56102?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s103": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56103?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s104": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56104?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s105": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56105?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s106": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56106?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s107": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56107?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s108": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56108?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s109": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56109?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s110": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56110?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s111": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56111?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s112": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56112?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s113": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56113?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s114": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56114?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s115": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56115?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s116": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56116?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s117": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56117?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s118": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56118?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s119": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56119?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s120": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56120?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s121": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56121?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s122": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56122?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s123": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56123?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s124": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56124?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s125": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56125?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s126": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56126?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level7:s127": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56127?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s128": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56128?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s129": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56129?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s130": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56130?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s131": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56131?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s132": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56132?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s133": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56133?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s134": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56134?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s135": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56135?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s136": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56136?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s137": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56137?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s138": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56138?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s139": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56139?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s140": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56140?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s141": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56141?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s142": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56142?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s143": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56143?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s144": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56144?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s145": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56145?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s146": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56146?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s147": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56147?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s148": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56148?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s149": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56149?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s150": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56150?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s151": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56151?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s152": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56152?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s153": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56153?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s154": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56154?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s155": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56155?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s156": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56156?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s157": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56157?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s158": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56158?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s159": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56159?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s160": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56160?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s161": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56161?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s162": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56162?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s163": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56163?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s164": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56164?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s165": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56165?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s166": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56166?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s167": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56167?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s168": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56168?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s169": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56169?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s170": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56170?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s171": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56171?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s172": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56172?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s173": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56173?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s174": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56174?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s175": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56175?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s176": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56176?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s177": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56177?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s178": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56178?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s179": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56179?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s180": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56180?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s181": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56181?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s182": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56182?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s183": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56183?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s184": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56184?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s185": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56185?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s186": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56186?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s187": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56187?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s188": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56188?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s189": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56189?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s190": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56190?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s191": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56191?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s192": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56192?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s193": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56193?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s194": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56194?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s195": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56195?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s196": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56196?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s197": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56197?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s198": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56198?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s199": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56199?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s200": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56200?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s201": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56201?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s202": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56202?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s203": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56203?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s204": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56204?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s205": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56205?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s206": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56206?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s207": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56207?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s208": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56208?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s209": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56209?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s210": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56210?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s211": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56211?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s212": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56212?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s213": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56213?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s214": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56214?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s215": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56215?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s216": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56216?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s217": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56217?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s218": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56218?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s219": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56219?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s220": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56220?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s221": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56221?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s222": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56222?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s223": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56223?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s224": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56224?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s225": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56225?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s226": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56226?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s227": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56227?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s228": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56228?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s229": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56229?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s230": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56230?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s231": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56231?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s232": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56232?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s233": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56233?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s234": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56234?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s235": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56235?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s236": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56236?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s237": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56237?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s238": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56238?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s239": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56239?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s240": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56240?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s241": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56241?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s242": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56242?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s243": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56243?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s244": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56244?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s245": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56245?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s246": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56246?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s247": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56247?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s248": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56248?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s249": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56249?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s250": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56250?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s251": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56251?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s252": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56252?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s253": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56253?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s254": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56254?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group7:level8:s255": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:56255?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level1:s1": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57001?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level2:s2": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57002?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level2:s3": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57003?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level3:s4": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57004?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level3:s5": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57005?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level3:s6": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57006?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level3:s7": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57007?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level4:s8": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57008?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level4:s9": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57009?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level4:s10": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57010?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level4:s11": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57011?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level4:s12": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57012?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level4:s13": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57013?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level4:s14": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57014?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level4:s15": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57015?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s16": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57016?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s17": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57017?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s18": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57018?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s19": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57019?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s20": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57020?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s21": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57021?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s22": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57022?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s23": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57023?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s24": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57024?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s25": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57025?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s26": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57026?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s27": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57027?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s28": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57028?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s29": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57029?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s30": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57030?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level5:s31": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57031?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s32": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57032?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s33": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57033?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s34": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57034?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s35": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57035?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s36": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57036?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s37": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57037?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s38": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57038?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s39": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57039?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s40": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57040?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s41": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57041?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s42": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57042?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s43": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57043?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s44": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57044?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s45": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57045?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s46": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57046?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s47": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57047?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s48": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57048?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s49": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57049?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s50": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57050?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s51": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57051?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s52": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57052?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s53": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57053?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s54": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57054?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s55": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57055?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s56": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57056?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s57": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57057?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s58": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57058?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s59": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57059?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s60": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57060?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s61": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57061?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s62": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57062?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level6:s63": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57063?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s64": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57064?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s65": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57065?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s66": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57066?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s67": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57067?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s68": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57068?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s69": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57069?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s70": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57070?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s71": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57071?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s72": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57072?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s73": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57073?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s74": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57074?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s75": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57075?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s76": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57076?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s77": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57077?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s78": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57078?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s79": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57079?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s80": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57080?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s81": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57081?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s82": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57082?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s83": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57083?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s84": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57084?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s85": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57085?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s86": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57086?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s87": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57087?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s88": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57088?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s89": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57089?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s90": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57090?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s91": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57091?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s92": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57092?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s93": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57093?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s94": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57094?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s95": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57095?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s96": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57096?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s97": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57097?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s98": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57098?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s99": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57099?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s100": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57100?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s101": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57101?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s102": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57102?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s103": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57103?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s104": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57104?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s105": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57105?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s106": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57106?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s107": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57107?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s108": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57108?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s109": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57109?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s110": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57110?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s111": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57111?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s112": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57112?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s113": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57113?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s114": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57114?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s115": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57115?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s116": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57116?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s117": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57117?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s118": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57118?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s119": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57119?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s120": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57120?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s121": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57121?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s122": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57122?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s123": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57123?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s124": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57124?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s125": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57125?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s126": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57126?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level7:s127": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57127?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s128": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57128?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s129": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57129?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s130": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57130?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s131": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57131?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s132": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57132?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s133": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57133?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s134": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57134?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s135": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57135?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s136": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57136?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s137": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57137?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s138": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57138?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s139": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57139?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s140": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57140?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s141": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57141?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s142": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57142?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s143": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57143?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s144": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57144?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s145": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57145?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s146": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57146?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s147": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57147?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s148": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57148?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s149": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57149?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s150": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57150?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s151": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57151?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s152": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57152?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s153": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57153?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s154": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57154?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s155": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57155?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s156": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57156?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s157": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57157?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s158": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57158?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s159": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57159?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s160": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57160?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s161": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57161?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s162": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57162?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s163": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57163?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s164": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57164?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s165": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57165?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s166": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57166?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s167": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57167?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s168": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57168?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s169": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57169?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s170": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57170?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s171": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57171?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s172": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57172?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s173": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57173?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s174": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57174?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s175": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57175?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s176": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57176?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s177": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57177?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s178": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57178?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s179": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57179?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s180": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57180?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s181": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57181?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s182": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57182?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s183": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57183?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s184": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57184?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s185": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57185?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s186": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57186?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s187": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57187?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s188": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57188?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s189": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57189?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s190": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57190?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s191": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57191?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s192": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57192?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s193": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57193?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s194": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57194?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s195": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57195?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s196": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57196?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s197": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57197?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s198": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57198?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s199": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57199?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s200": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57200?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s201": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57201?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s202": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57202?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s203": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57203?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s204": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57204?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s205": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57205?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s206": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57206?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s207": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57207?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s208": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57208?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s209": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57209?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s210": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57210?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s211": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57211?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s212": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57212?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s213": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57213?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s214": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57214?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s215": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57215?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s216": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57216?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s217": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57217?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s218": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57218?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s219": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57219?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s220": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57220?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s221": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57221?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s222": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57222?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s223": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57223?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s224": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57224?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s225": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57225?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s226": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57226?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s227": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57227?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s228": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57228?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s229": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57229?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s230": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57230?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s231": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57231?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s232": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57232?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s233": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57233?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s234": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57234?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s235": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57235?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s236": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57236?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s237": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57237?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s238": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57238?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s239": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57239?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s240": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57240?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s241": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57241?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s242": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57242?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s243": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57243?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s244": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57244?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s245": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57245?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s246": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57246?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s247": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57247?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s248": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57248?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s249": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57249?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s250": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57250?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s251": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57251?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s252": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57252?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s253": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57253?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s254": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57254?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    },
+    "device:domain8:group8:level8:s255": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.177:57255?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.basic.bmv2"
+      }
+    }
+  }
+}
