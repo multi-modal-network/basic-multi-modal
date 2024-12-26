@@ -131,11 +131,11 @@ public class ModalHandler {
 
     private void getDomain(int vmx) {
         if (vmx >= 0 && vmx <= 2) {
-            return 1
+            return 1;
         } else if (vmx >= 3 && vmx <= 5) {
-            return 5
+            return 5;
         } else {
-            return 7
+            return 7;
         }
     }
 
