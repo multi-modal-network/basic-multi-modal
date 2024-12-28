@@ -1,10 +1,9 @@
 import json
 import os
 
-# 初始化devices字典
-devices_domain1 = {}
-devices_domain5 = {}
-devices_domain7 = {}
+# 拓扑所需的devices和links信息
+devices = {}
+links = []
 
 def get_level(i):
     if i == 1:
@@ -24,63 +23,79 @@ def get_level(i):
     else:
         return "level8"
 
-# 循环创建domain1设备
+# 循环创建domain1
 for vmx in range(0,3):
     for i in range(1, 256):
         device_id = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}"  # 格式化设备ID，确保它是5位数
-        devices_domain1[device_id] = {
+        devices[device_id] = {
             "basic": {
                 "managementAddress": f"grpc://218.199.84.177:{50000 + i + vmx * 1000}?device_id=1",
                 "driver": "stratum-bmv2",
                 "pipeconf": "org.stratumproject.basic.bmv2"
             }
         }
+    for i in range(1, 128):
+        links.append({
+            "endpoint1": f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}",
+            "endpoint2": f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2}"
+        })
+        links.append({
+            "endpoint1": f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}",
+            "endpoint2": f"device:domain1:group{vmx + 1}:{get_level(i*2+1)}:s{i*2+1}"
+        })
 
-# 循环创建domain5设备
+# 循环创建domain5
 for vmx in range(3,6):
     for i in range(1, 256):
         device_id = f"device:domain5:group{vmx + 1}:{get_level(i)}:s{i}"  # 格式化设备ID，确保它是5位数
-        devices_domain5[device_id] = {
+        devices[device_id] = {
             "basic": {
                 "managementAddress": f"grpc://218.199.84.177:{50000 + i + vmx * 1000}?device_id=1",
                 "driver": "stratum-bmv2",
                 "pipeconf": "org.stratumproject.basic.bmv2"
             }
         }
+    for i in range(1, 128):
+        links.append({
+            "endpoint1": f"device:domain5:group{vmx + 1}:{get_level(i)}:s{i}",
+            "endpoint2": f"device:domain5:group{vmx + 1}:{get_level(i*2)}:s{i*2}"
+        })
+        links.append({
+            "endpoint1": f"device:domain5:group{vmx + 1}:{get_level(i)}:s{i}",
+            "endpoint2": f"device:domain5:group{vmx + 1}:{get_level(i*2+1)}:s{i*2+1}"
+        })
 
-# 循环创建domain7设备
+# 循环创建domain7
 for vmx in range(6,8):
     for i in range(1, 256):
         device_id = f"device:domain8:group{vmx + 1}:{get_level(i)}:s{i}"  # 格式化设备ID，确保它是5位数
-        devices_domain7[device_id] = {
+        devices[device_id] = {
             "basic": {
                 "managementAddress": f"grpc://218.199.84.177:{50000 + i + vmx * 1000}?device_id=1",
                 "driver": "stratum-bmv2",
                 "pipeconf": "org.stratumproject.basic.bmv2"
             }
         }
+    for i in range(1, 128):
+        links.append({
+            "endpoint1": f"device:domain7:group{vmx + 1}:{get_level(i)}:s{i}",
+            "endpoint2": f"device:domain7:group{vmx + 1}:{get_level(i*2)}:s{i*2}"
+        })
+        links.append({
+            "endpoint1": f"device:domain7:group{vmx + 1}:{get_level(i)}:s{i}",
+            "endpoint2": f"device:domain7:group{vmx + 1}:{get_level(i*2+1)}:s{i*2+1}"
+        })
+
 
 # 创建最终的JSON对象
-json_data_domain1 = {"devices": devices_domain1}
-json_data_domain5 = {"devices": devices_domain5}
-json_data_domain7 = {"devices": devices_domain7}
+json_data = {"devices": devices, "links": links}
 
 # 将JSON对象转换为字符串，格式化输出
-json_str_domain1 = json.dumps(json_data_domain1, indent=2)
-json_str_domain5 = json.dumps(json_data_domain5, indent=2)
-json_str_domain7 = json.dumps(json_data_domain7, indent=2)
+json_str = json.dumps(json_data, indent=2)
 
 # 打印JSON字符串
-print(json_str_domain1)
-print(json_str_domain5)
-print(json_str_domain7)
+print(json_str)
 
 # 可以选择将JSON字符串写入文件
-with open('tofino-netcfg-1.json', 'w') as f:
-    f.write(json_str_domain1)
-
-with open('tofino-netcfg-5.json', 'w') as f:
-    f.write(json_str_domain5)
-
-with open('tofino-netcfg-7.json', 'w') as f:
-    f.write(json_str_domain7)
+with open('tofino-netcfg.json', 'w') as f:
+    f.write(json_str)
