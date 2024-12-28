@@ -1,5 +1,5 @@
-org/stratumproject/basic/tna/behaviour/pipeliner/BasicPipeliner.class
 org/stratumproject/basic/tna/behaviour/IPv4ModalHandler.class
+org/stratumproject/basic/tna/behaviour/pipeliner/BasicPipeliner.class
 org/stratumproject/basic/tna/PipeconfLoader.class
 org/stratumproject/basic/tna/behaviour/IDModalHandler.class
 org/stratumproject/basic/tna/behaviour/BasicUtils.class

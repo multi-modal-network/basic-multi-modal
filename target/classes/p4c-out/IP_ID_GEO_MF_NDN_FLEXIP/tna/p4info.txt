@@ -1,0 +1,696 @@
+pkg_info {
+  arch: "tna"
+}
+tables {
+  preamble {
+    id: 47937433
+    name: "BasicIngress.table0.table0"
+    alias: "table0"
+  }
+  match_fields {
+    id: 1
+    name: "ig_port"
+    bitwidth: 32
+    match_type: TERNARY
+    type_name {
+      name: "BasicPortId_t"
+    }
+  }
+  match_fields {
+    id: 2
+    name: "eth_src"
+    bitwidth: 48
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 3
+    name: "eth_dst"
+    bitwidth: 48
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 4
+    name: "eth_type"
+    bitwidth: 16
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 5
+    name: "ipv4_src"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 6
+    name: "ipv4_dst"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 7
+    name: "ip_proto"
+    bitwidth: 8
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 8
+    name: "l4_sport"
+    bitwidth: 16
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 9
+    name: "l4_dport"
+    bitwidth: 16
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 32004785
+  }
+  action_refs {
+    id: 17712490
+  }
+  action_refs {
+    id: 19735092
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  direct_resource_ids: 325021908
+  size: 1024
+}
+tables {
+  preamble {
+    id: 45581274
+    name: "BasicIngress.multi.ing_dmac"
+    alias: "ing_dmac"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.src_addr"
+    bitwidth: 48
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ethernet.dst_addr"
+    bitwidth: 48
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ethernet.ether_type"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  action_refs {
+    id: 17907496
+  }
+  action_refs {
+    id: 27364762
+  }
+  action_refs {
+    id: 29489617
+  }
+  const_default_action_id: 29489617
+  direct_resource_ids: 325085290
+  size: 24
+}
+tables {
+  preamble {
+    id: 37345077
+    name: "BasicIngress.multi.routing_v4_table"
+    alias: "routing_v4_table"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.ether_type"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.srcAddr"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  action_refs {
+    id: 21722748
+  }
+  action_refs {
+    id: 18430962
+  }
+  direct_resource_ids: 329632939
+  size: 1024
+}
+tables {
+  preamble {
+    id: 40494914
+    name: "BasicIngress.multi.routing_v6_table"
+    alias: "routing_v6_table"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.ether_type"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv6.src_addr"
+    bitwidth: 128
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ipv6.dst_addr"
+    bitwidth: 128
+    match_type: EXACT
+  }
+  action_refs {
+    id: 26795679
+  }
+  action_refs {
+    id: 29392439
+  }
+  direct_resource_ids: 320763624
+  size: 1024
+}
+tables {
+  preamble {
+    id: 39699927
+    name: "BasicIngress.multi.routing_id_table"
+    alias: "routing_id_table"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.ether_type"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.id.srcIdentity"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "hdr.id.dstIdentity"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  action_refs {
+    id: 27648531
+  }
+  action_refs {
+    id: 32216012
+  }
+  direct_resource_ids: 330746914
+  size: 1024
+}
+tables {
+  preamble {
+    id: 39463641
+    name: "BasicIngress.multi.routing_geo_table"
+    alias: "routing_geo_table"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.ether_type"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.gbc.geoAreaPosLat"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "hdr.gbc.geoAreaPosLon"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  match_fields {
+    id: 4
+    name: "hdr.gbc.disa"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 5
+    name: "hdr.gbc.disb"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  action_refs {
+    id: 28309856
+  }
+  action_refs {
+    id: 28771872
+  }
+  action_refs {
+    id: 31813579
+  }
+  direct_resource_ids: 323074598
+  size: 1024
+}
+tables {
+  preamble {
+    id: 48523795
+    name: "BasicIngress.multi.routing_mf_table"
+    alias: "routing_mf_table"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.ether_type"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.mf.src_guid"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "hdr.mf.dest_guid"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  action_refs {
+    id: 17244845
+  }
+  action_refs {
+    id: 18685266
+  }
+  direct_resource_ids: 327750739
+  size: 1024
+}
+tables {
+  preamble {
+    id: 38106563
+    name: "BasicIngress.multi.routing_ndn_table"
+    alias: "routing_ndn_table"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.ether_type"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ndn.ndn_prefix.code"
+    bitwidth: 8
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ndn.name_tlv.components[0].value"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  match_fields {
+    id: 4
+    name: "hdr.ndn.name_tlv.components[1].value"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  match_fields {
+    id: 5
+    name: "hdr.ndn.content_tlv.value"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  action_refs {
+    id: 32270530
+  }
+  action_refs {
+    id: 18350035
+  }
+  direct_resource_ids: 334610145
+  size: 1024
+}
+actions {
+  preamble {
+    id: 21257015
+    name: "NoAction"
+    alias: "NoAction"
+    annotations: "@noWarn(\"unused\")"
+  }
+}
+actions {
+  preamble {
+    id: 17712490
+    name: "BasicIngress.table0.copy_to_cpu"
+    alias: "copy_to_cpu"
+  }
+}
+actions {
+  preamble {
+    id: 32004785
+    name: "BasicIngress.table0.set_egress_port"
+    alias: "set_egress_port"
+  }
+  params {
+    id: 1
+    name: "port_num"
+    bitwidth: 32
+    type_name {
+      name: "BasicPortId_t"
+    }
+  }
+}
+actions {
+  preamble {
+    id: 19735092
+    name: "BasicIngress.table0.drop"
+    alias: "drop"
+  }
+}
+actions {
+  preamble {
+    id: 17907496
+    name: "BasicIngress.multi.icmp_switch"
+    alias: "icmp_switch"
+  }
+  params {
+    id: 1
+    name: "port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 27364762
+    name: "BasicIngress.multi.icmp6_switch"
+    alias: "icmp6_switch"
+  }
+  params {
+    id: 1
+    name: "port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 29489617
+    name: "BasicIngress.multi.route_l3"
+    alias: "route_l3"
+  }
+}
+actions {
+  preamble {
+    id: 21722748
+    name: "BasicIngress.multi.set_next_v4_hop"
+    alias: "set_next_v4_hop"
+  }
+  params {
+    id: 1
+    name: "dst_port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 18430962
+    name: "BasicIngress.multi.v4_to_cpu"
+    alias: "v4_to_cpu"
+  }
+}
+actions {
+  preamble {
+    id: 26795679
+    name: "BasicIngress.multi.set_next_v6_hop"
+    alias: "set_next_v6_hop"
+  }
+  params {
+    id: 1
+    name: "dst_port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 29392439
+    name: "BasicIngress.multi.v6_to_cpu"
+    alias: "v6_to_cpu"
+  }
+}
+actions {
+  preamble {
+    id: 27648531
+    name: "BasicIngress.multi.set_next_id_hop"
+    alias: "set_next_id_hop"
+  }
+  params {
+    id: 1
+    name: "dst_port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 32216012
+    name: "BasicIngress.multi.id_to_cpu"
+    alias: "id_to_cpu"
+  }
+}
+actions {
+  preamble {
+    id: 28309856
+    name: "BasicIngress.multi.geo_ucast_route"
+    alias: "geo_ucast_route"
+  }
+  params {
+    id: 1
+    name: "dst_port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 28771872
+    name: "BasicIngress.multi.geo_mcast_route"
+    alias: "geo_mcast_route"
+  }
+  params {
+    id: 1
+    name: "mgid1"
+    bitwidth: 16
+  }
+}
+actions {
+  preamble {
+    id: 31813579
+    name: "BasicIngress.multi.geo_to_cpu"
+    alias: "geo_to_cpu"
+  }
+}
+actions {
+  preamble {
+    id: 17244845
+    name: "BasicIngress.multi.set_next_mf_hop"
+    alias: "set_next_mf_hop"
+  }
+  params {
+    id: 1
+    name: "dst_port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 18685266
+    name: "BasicIngress.multi.mf_to_cpu"
+    alias: "mf_to_cpu"
+  }
+}
+actions {
+  preamble {
+    id: 32270530
+    name: "BasicIngress.multi.set_next_ndn_hop"
+    alias: "set_next_ndn_hop"
+  }
+  params {
+    id: 1
+    name: "dst_port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 18350035
+    name: "BasicIngress.multi.ndn_to_cpu"
+    alias: "ndn_to_cpu"
+  }
+}
+direct_counters {
+  preamble {
+    id: 325021908
+    name: "BasicIngress.table0.table0_counter"
+    alias: "table0_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 47937433
+}
+direct_counters {
+  preamble {
+    id: 325085290
+    name: "BasicIngress.multi.l2_counter"
+    alias: "l2_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 45581274
+}
+direct_counters {
+  preamble {
+    id: 329632939
+    name: "BasicIngress.multi.ipv4_counter"
+    alias: "ipv4_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 37345077
+}
+direct_counters {
+  preamble {
+    id: 320763624
+    name: "BasicIngress.multi.ipv6_counter"
+    alias: "ipv6_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 40494914
+}
+direct_counters {
+  preamble {
+    id: 330746914
+    name: "BasicIngress.multi.id_counter"
+    alias: "id_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 39699927
+}
+direct_counters {
+  preamble {
+    id: 323074598
+    name: "BasicIngress.multi.geo_counter"
+    alias: "geo_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 39463641
+}
+direct_counters {
+  preamble {
+    id: 327750739
+    name: "BasicIngress.multi.mf_counter"
+    alias: "mf_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 48523795
+}
+direct_counters {
+  preamble {
+    id: 334610145
+    name: "BasicIngress.multi.ndn_counter"
+    alias: "ndn_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 38106563
+}
+controller_packet_metadata {
+  preamble {
+    id: 81826293
+    name: "packet_in"
+    alias: "packet_in"
+    annotations: "@controller_header(\"packet_in\")"
+  }
+  metadata {
+    id: 1
+    name: "ingress_port"
+    bitwidth: 32
+    type_name {
+      name: "BasicPortId_t"
+    }
+  }
+  metadata {
+    id: 2
+    name: "_pad0"
+    bitwidth: 7
+  }
+}
+controller_packet_metadata {
+  preamble {
+    id: 76689799
+    name: "packet_out"
+    alias: "packet_out"
+    annotations: "@controller_header(\"packet_out\")"
+  }
+  metadata {
+    id: 1
+    name: "pad0"
+    annotations: "@padding"
+    bitwidth: 7
+  }
+  metadata {
+    id: 2
+    name: "egress_port"
+    bitwidth: 32
+    type_name {
+      name: "BasicPortId_t"
+    }
+  }
+}
+externs {
+  extern_type_id: 144
+  extern_type_name: "PortMetadata"
+  instances {
+    preamble {
+      id: 2417725442
+      name: "BasicIngressParser.$PORT_METADATA"
+      alias: "$PORT_METADATA"
+    }
+    info {
+      type_url: "type.googleapis.com/barefoot.PortMetadata"
+      value: "ig_intr_md.ingress_port"
+    }
+  }
+}
+type_info {
+  new_types {
+    key: "BasicPortId_t"
+    value {
+      translated_type {
+        uri: "tna/PortId_t"
+        sdn_bitwidth: 32
+      }
+    }
+  }
+}
