@@ -101,7 +101,7 @@ public class ModalHandler {
         }
         if (modalType == "ipv4" || modalType == "id" || modalType == "geo" || modalType == "mf" || modalType == "ndn" || modalType == "flexip") {
             log.warn("modalType: {}, srcHost: {}, dstHost: {}", modalType, srcHost, dstHost);
-            String path = "/home/kin/Desktop/flows.out";
+            String path = "/home/onos/Desktop/ngsdn/mininet/flows.out";
             String content = modalType + " " + srcHost + " " + dstHost;
             try (FileOutputStream fos = new FileOutputStream(path, true)) {
                 fos.write(System.lineSeparator().getBytes());
