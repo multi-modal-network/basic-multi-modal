@@ -35,8 +35,8 @@ public class IPv4ModalHandler {
 
     public FlowRule applyIPv4Flow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer) {
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        PiMatchFieldId srcAddrFieldId = PiMatchFieldId.of("hdr.ipv4.srcAddr");
-        PiMatchFieldId dstAddrFieldId = PiMatchFieldId.of("hdr.ipv4.dstAddr");
+        PiMatchFieldId srcAddrFieldId = PiMatchFieldId.of("hdr.ipv4.src_addr");
+        PiMatchFieldId dstAddrFieldId = PiMatchFieldId.of("hdr.ipv4.dst_addr");
 
         byte[] srcIPv4Address = new byte[4];
         buffer.position(12);

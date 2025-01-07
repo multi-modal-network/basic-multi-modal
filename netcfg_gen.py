@@ -24,12 +24,12 @@ def get_level(i):
         return "level8"
 
 # 循环创建domain1
-for vmx in range(0,3):
+for vmx in range(0,2):
     for i in range(1, 256):
         device_id = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}"  # 格式化设备ID，确保它是5位数
         devices[device_id] = {
             "basic": {
-                "managementAddress": f"grpc://218.199.84.177:{50000 + i + vmx * 1000}?device_id=1",
+                "managementAddress": f"grpc://218.199.84.170:{50000 + i + vmx * 1000}?device_id=1",
                 "driver": "stratum-bmv2",
                 "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
             }

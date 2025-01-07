@@ -37,8 +37,8 @@ public class GEOModalHandler {
 
     public FlowRule applyGEOFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        PiMatchFieldId geoAreaPosLatFieldId = PiMatchFieldId.of("hdr.gbc.geoAreaPosLat");
-        PiMatchFieldId geoAreaPosLonFieldId = PiMatchFieldId.of("hdr.gbc.geoAreaPosLon");
+        PiMatchFieldId geoAreaPosLatFieldId = PiMatchFieldId.of("hdr.gbc.geo_area_pos_lat");
+        PiMatchFieldId geoAreaPosLonFieldId = PiMatchFieldId.of("hdr.gbc.geo_area_pos_lon");
         PiMatchFieldId disaFieldId = PiMatchFieldId.of("hdr.gbc.disa");
         PiMatchFieldId disbFieldId = PiMatchFieldId.of("hdr.gbc.disb");
         

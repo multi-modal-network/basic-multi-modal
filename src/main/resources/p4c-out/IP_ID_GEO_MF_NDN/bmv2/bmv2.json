@@ -13,14 +13,24 @@
         ["tmp_1", 32, false],
         ["tmp_2", 32, false],
         ["port_meters_egress_egress_color", 8, false],
-        ["local_metadata_t.l4_src_port", 16, false],
-        ["local_metadata_t.l4_dst_port", 16, false],
-        ["local_metadata_t.name_tlv_length", 8, false],
-        ["local_metadata_t.is_multicast", 1, false],
-        ["local_metadata_t.next_hop_id", 16, false],
-        ["local_metadata_t.selector", 16, false],
-        ["local_metadata_t.compute_checksum", 1, false],
-        ["_padding_0", 6, false]
+        ["local_metadata_t._int_metadata_source0", 1, false],
+        ["local_metadata_t._int_metadata_sink1", 1, false],
+        ["local_metadata_t._int_metadata_switch_id2", 32, false],
+        ["local_metadata_t._int_metadata_insert_byte_cnt3", 16, false],
+        ["local_metadata_t._int_metadata_int_hdr_word_len4", 8, false],
+        ["local_metadata_t._int_metadata_remove_int5", 1, false],
+        ["local_metadata_t._int_metadata_sink_reporting_port6", 16, false],
+        ["local_metadata_t._int_metadata_ingress_tstamp7", 64, false],
+        ["local_metadata_t._int_metadata_ingress_port8", 16, false],
+        ["local_metadata_t._l4_src_port9", 16, false],
+        ["local_metadata_t._l4_dst_port10", 16, false],
+        ["local_metadata_t._l4_dscp11", 6, false],
+        ["local_metadata_t._name_tlv_length12", 8, false],
+        ["local_metadata_t._is_multicast13", 1, false],
+        ["local_metadata_t._next_hop_id14", 16, false],
+        ["local_metadata_t._selector15", 16, false],
+        ["local_metadata_t._compute_checksum16", 1, false],
+        ["_padding_0", 5, false]
       ]
     },
     {
@@ -78,8 +88,56 @@
       ]
     },
     {
-      "name" : "ipv6_t",
+      "name" : "ipv4_t",
       "id" : 5,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["dscp", 6, false],
+        ["ecn", 2, false],
+        ["total_len", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["frag_offset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdr_checksum", 16, false],
+        ["src_addr", 32, false],
+        ["dst_addr", 32, false]
+      ]
+    },
+    {
+      "name" : "udp_t",
+      "id" : 6,
+      "fields" : [
+        ["src_port", 16, false],
+        ["dst_port", 16, false],
+        ["len", 16, false],
+        ["checksum", 16, false]
+      ]
+    },
+    {
+      "name" : "int_report_fixed_header_t",
+      "id" : 7,
+      "fields" : [
+        ["ver", 4, false],
+        ["len", 4, false],
+        ["nprot", 3, false],
+        ["rep_md_bits_high", 5, false],
+        ["rep_md_bits_low", 1, false],
+        ["reserved", 6, false],
+        ["d", 1, false],
+        ["q", 1, false],
+        ["f", 1, false],
+        ["hw_id", 6, false],
+        ["switch_id", 32, false],
+        ["seq_num", 32, false],
+        ["ingress_tstamp", 32, false]
+      ]
+    },
+    {
+      "name" : "ipv6_t",
+      "id" : 8,
       "fields" : [
         ["version", 4, false],
         ["traffic_class", 8, false],
@@ -92,43 +150,38 @@
       ]
     },
     {
-      "name" : "ipv4_t",
-      "id" : 6,
+      "name" : "flexip_t",
+      "id" : 9,
       "fields" : [
         ["version", 4, false],
-        ["ihl", 4, false],
-        ["diffserv", 8, false],
-        ["totalLen", 16, false],
-        ["identification", 16, false],
-        ["flags", 3, false],
-        ["fragOffset", 13, false],
-        ["ttl", 8, false],
-        ["protocol", 8, false],
-        ["hdrChecksum", 16, false],
-        ["srcAddr", 32, false],
-        ["dstAddr", 32, false]
+        ["src_format", 2, false],
+        ["dst_format", 2, false],
+        ["src_length", 12, false],
+        ["dst_length", 12, false],
+        ["src_addr", 384, false],
+        ["dst_addr", 384, false]
       ]
     },
     {
       "name" : "id_t",
-      "id" : 7,
+      "id" : 10,
       "fields" : [
-        ["srcIdentity", 32, false],
-        ["dstIdentity", 32, false]
+        ["src_identity", 32, false],
+        ["dst_identity", 32, false]
       ]
     },
     {
       "name" : "mf_t",
-      "id" : 8,
+      "id" : 11,
       "fields" : [
         ["mf_type", 32, false],
         ["src_guid", 32, false],
-        ["dest_guid", 32, false]
+        ["dst_guid", 32, false]
       ]
     },
     {
       "name" : "geo_t",
-      "id" : 9,
+      "id" : 12,
       "fields" : [
         ["version", 4, false],
         ["nh_basic", 4, false],
@@ -148,7 +201,7 @@
     },
     {
       "name" : "gbc_t",
-      "id" : 10,
+      "id" : 13,
       "fields" : [
         ["sn", 16, false],
         ["reserved_gbc_a", 16, false],
@@ -159,8 +212,8 @@
         ["pai", 1, false],
         ["s", 15, false],
         ["h", 16, false],
-        ["geoAreaPosLat", 32, false],
-        ["geoAreaPosLon", 32, false],
+        ["geo_area_pos_lat", 32, false],
+        ["geo_area_pos_lon", 32, false],
         ["disa", 16, false],
         ["disb", 16, false],
         ["angle", 16, false],
@@ -169,7 +222,7 @@
     },
     {
       "name" : "beacon_t",
-      "id" : 11,
+      "id" : 14,
       "fields" : [
         ["gnaddr", 64, false],
         ["tst", 32, false],
@@ -182,7 +235,7 @@
     },
     {
       "name" : "ndn_prefix_t",
-      "id" : 12,
+      "id" : 15,
       "fields" : [
         ["code", 8, false],
         ["len_code", 8, false],
@@ -191,7 +244,7 @@
     },
     {
       "name" : "ndn_tlv_prefix_t",
-      "id" : 13,
+      "id" : 16,
       "fields" : [
         ["code", 8, false],
         ["length", 8, false]
@@ -199,33 +252,6 @@
     },
     {
       "name" : "content_type_tlv_t",
-      "id" : 14,
-      "fields" : [
-        ["code", 8, false],
-        ["length", 8, false],
-        ["value", 16, false]
-      ]
-    },
-    {
-      "name" : "freshness_period_tlv_t",
-      "id" : 15,
-      "fields" : [
-        ["code", 8, false],
-        ["length", 8, false],
-        ["value", 16, false]
-      ]
-    },
-    {
-      "name" : "final_block_id_tlv_t",
-      "id" : 16,
-      "fields" : [
-        ["code", 8, false],
-        ["length", 8, false],
-        ["value", 16, false]
-      ]
-    },
-    {
-      "name" : "content_tlv_t",
       "id" : 17,
       "fields" : [
         ["code", 8, false],
@@ -234,8 +260,35 @@
       ]
     },
     {
-      "name" : "tcp_t",
+      "name" : "freshness_period_tlv_t",
       "id" : 18,
+      "fields" : [
+        ["code", 8, false],
+        ["length", 8, false],
+        ["value", 16, false]
+      ]
+    },
+    {
+      "name" : "final_block_id_tlv_t",
+      "id" : 19,
+      "fields" : [
+        ["code", 8, false],
+        ["length", 8, false],
+        ["value", 16, false]
+      ]
+    },
+    {
+      "name" : "content_tlv_t",
+      "id" : 20,
+      "fields" : [
+        ["code", 8, false],
+        ["length", 8, false],
+        ["value", 16, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 21,
       "fields" : [
         ["src_port", 16, false],
         ["dst_port", 16, false],
@@ -251,18 +304,8 @@
       ]
     },
     {
-      "name" : "udp_t",
-      "id" : 19,
-      "fields" : [
-        ["src_port", 16, false],
-        ["dst_port", 16, false],
-        ["len", 16, false],
-        ["checksum", 16, false]
-      ]
-    },
-    {
       "name" : "icmpv6_t",
-      "id" : 20,
+      "id" : 22,
       "fields" : [
         ["type", 8, false],
         ["code", 8, false],
@@ -271,7 +314,7 @@
     },
     {
       "name" : "ndp_t",
-      "id" : 21,
+      "id" : 23,
       "fields" : [
         ["flags", 32, false],
         ["target_ipv6_addr", 128, false],
@@ -281,8 +324,103 @@
       ]
     },
     {
+      "name" : "int_shim_t",
+      "id" : 24,
+      "fields" : [
+        ["int_type", 8, false],
+        ["rsvd1", 8, false],
+        ["len", 8, false],
+        ["dscp", 6, false],
+        ["rsvd3", 2, false]
+      ]
+    },
+    {
+      "name" : "int_header_t",
+      "id" : 25,
+      "fields" : [
+        ["ver", 4, false],
+        ["rep", 2, false],
+        ["c", 1, false],
+        ["e", 1, false],
+        ["m", 1, false],
+        ["rsvd1", 7, false],
+        ["rsvd2", 3, false],
+        ["hop_metadata_len", 5, false],
+        ["remaining_hop_cnt", 8, false],
+        ["instruction_mask", 16, false],
+        ["seq", 16, false]
+      ]
+    },
+    {
+      "name" : "int_egress_port_tx_util_t",
+      "id" : 26,
+      "fields" : [
+        ["egress_port_tx_util", 32, false]
+      ]
+    },
+    {
+      "name" : "int_egress_tstamp_t",
+      "id" : 27,
+      "fields" : [
+        ["egress_tstamp", 32, false]
+      ]
+    },
+    {
+      "name" : "int_hop_latency_t",
+      "id" : 28,
+      "fields" : [
+        ["hop_latency", 32, false]
+      ]
+    },
+    {
+      "name" : "int_ingress_tstamp_t",
+      "id" : 29,
+      "fields" : [
+        ["ingress_tstamp", 32, false]
+      ]
+    },
+    {
+      "name" : "int_level1_port_ids_t",
+      "id" : 30,
+      "fields" : [
+        ["ingress_port_id", 16, false],
+        ["egress_port_id", 16, false]
+      ]
+    },
+    {
+      "name" : "int_level2_port_ids_t",
+      "id" : 31,
+      "fields" : [
+        ["ingress_port_id", 32, false],
+        ["egress_port_id", 32, false]
+      ]
+    },
+    {
+      "name" : "int_q_occupancy_t",
+      "id" : 32,
+      "fields" : [
+        ["q_id", 8, false],
+        ["q_occupancy", 24, false]
+      ]
+    },
+    {
+      "name" : "int_switch_id_t",
+      "id" : 33,
+      "fields" : [
+        ["switch_id", 32, false]
+      ]
+    },
+    {
+      "name" : "int_data_t",
+      "id" : 34,
+      "fields" : [
+        ["data", "*"]
+      ],
+      "max_length" : 200
+    },
+    {
       "name" : "name_component_t",
-      "id" : 22,
+      "id" : 35,
       "fields" : [
         ["code", 8, false],
         ["end", 1, false],
@@ -321,190 +459,302 @@
       "pi_omit" : true
     },
     {
-      "name" : "_ethernet2",
+      "name" : "_report_ethernet2",
       "id" : 4,
       "header_type" : "ethernet_t",
       "metadata" : false,
       "pi_omit" : true
     },
     {
-      "name" : "_ipv63",
+      "name" : "_report_ipv43",
       "id" : 5,
-      "header_type" : "ipv6_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ipv44",
-      "id" : 6,
       "header_type" : "ipv4_t",
       "metadata" : false,
       "pi_omit" : true
     },
     {
-      "name" : "_id5",
-      "id" : 7,
-      "header_type" : "id_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_mf6",
-      "id" : 8,
-      "header_type" : "mf_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_geo7",
-      "id" : 9,
-      "header_type" : "geo_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_gbc8",
-      "id" : 10,
-      "header_type" : "gbc_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_beacon9",
-      "id" : 11,
-      "header_type" : "beacon_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_ndn_prefix10",
-      "id" : 12,
-      "header_type" : "ndn_prefix_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_name_tlv_ndn_tlv_prefix11",
-      "id" : 13,
-      "header_type" : "ndn_tlv_prefix_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_metaInfo_tlv_ndn_tlv_prefix13",
-      "id" : 14,
-      "header_type" : "ndn_tlv_prefix_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_metaInfo_tlv_content_type_tlv14",
-      "id" : 15,
-      "header_type" : "content_type_tlv_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_metaInfo_tlv_freshness_period_tlv15",
-      "id" : 16,
-      "header_type" : "freshness_period_tlv_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_metaInfo_tlv_final_block_id_tlv16",
-      "id" : 17,
-      "header_type" : "final_block_id_tlv_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_content_tlv17",
-      "id" : 18,
-      "header_type" : "content_tlv_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_tcp18",
-      "id" : 19,
-      "header_type" : "tcp_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_udp19",
-      "id" : 20,
+      "name" : "_report_udp4",
+      "id" : 6,
       "header_type" : "udp_t",
       "metadata" : false,
       "pi_omit" : true
     },
     {
-      "name" : "_icmpv620",
+      "name" : "_report_fixed_header5",
+      "id" : 7,
+      "header_type" : "int_report_fixed_header_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ethernet6",
+      "id" : 8,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ipv67",
+      "id" : 9,
+      "header_type" : "ipv6_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ipv48",
+      "id" : 10,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_flexip9",
+      "id" : 11,
+      "header_type" : "flexip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_id10",
+      "id" : 12,
+      "header_type" : "id_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_mf11",
+      "id" : 13,
+      "header_type" : "mf_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_geo12",
+      "id" : 14,
+      "header_type" : "geo_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_gbc13",
+      "id" : 15,
+      "header_type" : "gbc_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_beacon14",
+      "id" : 16,
+      "header_type" : "beacon_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_ndn_prefix15",
+      "id" : 17,
+      "header_type" : "ndn_prefix_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_name_tlv_ndn_tlv_prefix16",
+      "id" : 18,
+      "header_type" : "ndn_tlv_prefix_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_metaInfo_tlv_ndn_tlv_prefix18",
+      "id" : 19,
+      "header_type" : "ndn_tlv_prefix_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_metaInfo_tlv_content_type_tlv19",
+      "id" : 20,
+      "header_type" : "content_type_tlv_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_metaInfo_tlv_freshness_period_tlv20",
       "id" : 21,
+      "header_type" : "freshness_period_tlv_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_metaInfo_tlv_final_block_id_tlv21",
+      "id" : 22,
+      "header_type" : "final_block_id_tlv_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_content_tlv22",
+      "id" : 23,
+      "header_type" : "content_tlv_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_tcp23",
+      "id" : 24,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_udp24",
+      "id" : 25,
+      "header_type" : "udp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_icmpv625",
+      "id" : 26,
       "header_type" : "icmpv6_t",
       "metadata" : false,
       "pi_omit" : true
     },
     {
-      "name" : "_ndp21",
-      "id" : 22,
+      "name" : "_ndp26",
+      "id" : 27,
       "header_type" : "ndp_t",
       "metadata" : false,
       "pi_omit" : true
     },
     {
-      "name" : "_ndn_name_tlv_components12[0]",
-      "id" : 23,
-      "header_type" : "name_component_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_name_tlv_components12[1]",
-      "id" : 24,
-      "header_type" : "name_component_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_name_tlv_components12[2]",
-      "id" : 25,
-      "header_type" : "name_component_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_name_tlv_components12[3]",
-      "id" : 26,
-      "header_type" : "name_component_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_name_tlv_components12[4]",
-      "id" : 27,
-      "header_type" : "name_component_t",
-      "metadata" : false,
-      "pi_omit" : true
-    },
-    {
-      "name" : "_ndn_name_tlv_components12[5]",
+      "name" : "_int_shim27",
       "id" : 28,
-      "header_type" : "name_component_t",
+      "header_type" : "int_shim_t",
       "metadata" : false,
       "pi_omit" : true
     },
     {
-      "name" : "_ndn_name_tlv_components12[6]",
+      "name" : "_int_header28",
       "id" : 29,
+      "header_type" : "int_header_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_egress_port_tx_util29",
+      "id" : 30,
+      "header_type" : "int_egress_port_tx_util_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_egress_tstamp30",
+      "id" : 31,
+      "header_type" : "int_egress_tstamp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_hop_latency31",
+      "id" : 32,
+      "header_type" : "int_hop_latency_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_ingress_tstamp32",
+      "id" : 33,
+      "header_type" : "int_ingress_tstamp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_level1_port_ids33",
+      "id" : 34,
+      "header_type" : "int_level1_port_ids_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_level2_port_ids34",
+      "id" : 35,
+      "header_type" : "int_level2_port_ids_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_q_occupancy35",
+      "id" : 36,
+      "header_type" : "int_q_occupancy_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_switch_id36",
+      "id" : 37,
+      "header_type" : "int_switch_id_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_int_data37",
+      "id" : 38,
+      "header_type" : "int_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_name_tlv_components17[0]",
+      "id" : 39,
       "header_type" : "name_component_t",
       "metadata" : false,
       "pi_omit" : true
     },
     {
-      "name" : "_ndn_name_tlv_components12[7]",
-      "id" : 30,
+      "name" : "_ndn_name_tlv_components17[1]",
+      "id" : 40,
+      "header_type" : "name_component_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_name_tlv_components17[2]",
+      "id" : 41,
+      "header_type" : "name_component_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_name_tlv_components17[3]",
+      "id" : 42,
+      "header_type" : "name_component_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_name_tlv_components17[4]",
+      "id" : 43,
+      "header_type" : "name_component_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_name_tlv_components17[5]",
+      "id" : 44,
+      "header_type" : "name_component_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_name_tlv_components17[6]",
+      "id" : 45,
+      "header_type" : "name_component_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "_ndn_name_tlv_components17[7]",
+      "id" : 46,
       "header_type" : "name_component_t",
       "metadata" : false,
       "pi_omit" : true
@@ -512,11 +762,11 @@
   ],
   "header_stacks" : [
     {
-      "name" : "_ndn_name_tlv_components12",
+      "name" : "_ndn_name_tlv_components17",
       "id" : 0,
       "header_type" : "name_component_t",
       "size" : 8,
-      "header_ids" : [23, 24, 25, 26, 27, 28, 29, 30]
+      "header_ids" : [39, 40, 41, 42, 43, 44, 45, 46]
     }
   ],
   "header_union_types" : [],
@@ -611,7 +861,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ethernet2"
+                  "value" : "_ethernet6"
                 }
               ],
               "op" : "extract"
@@ -655,6 +905,12 @@
               "next_state" : "parse_ndn"
             },
             {
+              "type" : "hexstr",
+              "value" : "0x3690",
+              "mask" : null,
+              "next_state" : "parse_flexip"
+            },
+            {
               "value" : "default",
               "mask" : null,
               "next_state" : null
@@ -663,7 +919,7 @@
           "transition_key" : [
             {
               "type" : "field",
-              "value" : ["_ethernet2", "ether_type"]
+              "value" : ["_ethernet6", "ether_type"]
             }
           ]
         },
@@ -675,10 +931,23 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ipv44"
+                  "value" : "_ipv48"
                 }
               ],
               "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "local_metadata_t._l4_dscp11"]
+                },
+                {
+                  "type" : "field",
+                  "value" : ["_ipv48", "dscp"]
+                }
+              ],
+              "op" : "set"
             }
           ],
           "transitions" : [
@@ -703,7 +972,7 @@
           "transition_key" : [
             {
               "type" : "field",
-              "value" : ["_ipv44", "protocol"]
+              "value" : ["_ipv48", "protocol"]
             }
           ]
         },
@@ -715,7 +984,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ipv63"
+                  "value" : "_ipv67"
                 }
               ],
               "op" : "extract"
@@ -743,7 +1012,7 @@
           "transition_key" : [
             {
               "type" : "field",
-              "value" : ["_ipv63", "next_hdr"]
+              "value" : ["_ipv67", "next_hdr"]
             }
           ]
         },
@@ -755,7 +1024,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_id5"
+                  "value" : "_id10"
                 }
               ],
               "op" : "extract"
@@ -778,7 +1047,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ndn_ndn_prefix10"
+                  "value" : "_ndn_ndn_prefix15"
                 }
               ],
               "op" : "extract"
@@ -787,7 +1056,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ndn_name_tlv_ndn_tlv_prefix11"
+                  "value" : "_ndn_name_tlv_ndn_tlv_prefix16"
                 }
               ],
               "op" : "extract"
@@ -796,11 +1065,11 @@
               "parameters" : [
                 {
                   "type" : "field",
-                  "value" : ["scalars", "local_metadata_t.name_tlv_length"]
+                  "value" : ["scalars", "local_metadata_t._name_tlv_length12"]
                 },
                 {
                   "type" : "field",
-                  "value" : ["_ndn_name_tlv_ndn_tlv_prefix11", "length"]
+                  "value" : ["_ndn_name_tlv_ndn_tlv_prefix16", "length"]
                 }
               ],
               "op" : "set"
@@ -823,7 +1092,7 @@
               "parameters" : [
                 {
                   "type" : "stack",
-                  "value" : "_ndn_name_tlv_components12"
+                  "value" : "_ndn_name_tlv_components17"
                 }
               ],
               "op" : "extract"
@@ -846,7 +1115,7 @@
           "transition_key" : [
             {
               "type" : "stack_field",
-              "value" : ["_ndn_name_tlv_components12", "end"]
+              "value" : ["_ndn_name_tlv_components17", "end"]
             }
           ]
         },
@@ -858,7 +1127,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ndn_metaInfo_tlv_ndn_tlv_prefix13"
+                  "value" : "_ndn_metaInfo_tlv_ndn_tlv_prefix18"
                 }
               ],
               "op" : "extract"
@@ -867,7 +1136,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ndn_metaInfo_tlv_content_type_tlv14"
+                  "value" : "_ndn_metaInfo_tlv_content_type_tlv19"
                 }
               ],
               "op" : "extract"
@@ -876,7 +1145,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ndn_metaInfo_tlv_freshness_period_tlv15"
+                  "value" : "_ndn_metaInfo_tlv_freshness_period_tlv20"
                 }
               ],
               "op" : "extract"
@@ -885,7 +1154,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ndn_metaInfo_tlv_final_block_id_tlv16"
+                  "value" : "_ndn_metaInfo_tlv_final_block_id_tlv21"
                 }
               ],
               "op" : "extract"
@@ -894,7 +1163,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_ndn_content_tlv17"
+                  "value" : "_ndn_content_tlv22"
                 }
               ],
               "op" : "extract"
@@ -917,7 +1186,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_mf6"
+                  "value" : "_mf11"
                 }
               ],
               "op" : "extract"
@@ -940,7 +1209,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_geo7"
+                  "value" : "_geo12"
                 }
               ],
               "op" : "extract"
@@ -968,7 +1237,7 @@
           "transition_key" : [
             {
               "type" : "field",
-              "value" : ["_geo7", "ht"]
+              "value" : ["_geo12", "ht"]
             }
           ]
         },
@@ -980,7 +1249,7 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_beacon9"
+                  "value" : "_beacon14"
                 }
               ],
               "op" : "extract"
@@ -1003,7 +1272,30 @@
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_gbc8"
+                  "value" : "_gbc13"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_flexip",
+          "id" : 13,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "_flexip9"
                 }
               ],
               "op" : "extract"
@@ -1020,13 +1312,13 @@
         },
         {
           "name" : "parse_tcp",
-          "id" : 13,
+          "id" : 14,
           "parser_ops" : [
             {
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_tcp18"
+                  "value" : "_tcp23"
                 }
               ],
               "op" : "extract"
@@ -1035,11 +1327,11 @@
               "parameters" : [
                 {
                   "type" : "field",
-                  "value" : ["scalars", "local_metadata_t.l4_src_port"]
+                  "value" : ["scalars", "local_metadata_t._l4_src_port9"]
                 },
                 {
                   "type" : "field",
-                  "value" : ["_tcp18", "src_port"]
+                  "value" : ["_tcp23", "src_port"]
                 }
               ],
               "op" : "set"
@@ -1048,11 +1340,11 @@
               "parameters" : [
                 {
                   "type" : "field",
-                  "value" : ["scalars", "local_metadata_t.l4_dst_port"]
+                  "value" : ["scalars", "local_metadata_t._l4_dst_port10"]
                 },
                 {
                   "type" : "field",
-                  "value" : ["_tcp18", "dst_port"]
+                  "value" : ["_tcp23", "dst_port"]
                 }
               ],
               "op" : "set"
@@ -1060,22 +1352,33 @@
           ],
           "transitions" : [
             {
+              "type" : "hexstr",
+              "value" : "0x20",
+              "mask" : null,
+              "next_state" : "parse_int"
+            },
+            {
               "value" : "default",
               "mask" : null,
               "next_state" : null
             }
           ],
-          "transition_key" : []
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "local_metadata_t._l4_dscp11"]
+            }
+          ]
         },
         {
           "name" : "parse_udp",
-          "id" : 14,
+          "id" : 15,
           "parser_ops" : [
             {
               "parameters" : [
                 {
                   "type" : "regular",
-                  "value" : "_udp19"
+                  "value" : "_udp24"
                 }
               ],
               "op" : "extract"
@@ -1084,11 +1387,11 @@
               "parameters" : [
                 {
                   "type" : "field",
-                  "value" : ["scalars", "local_metadata_t.l4_src_port"]
+                  "value" : ["scalars", "local_metadata_t._l4_src_port9"]
                 },
                 {
                   "type" : "field",
-                  "value" : ["_udp19", "src_port"]
+                  "value" : ["_udp24", "src_port"]
                 }
               ],
               "op" : "set"
@@ -1097,14 +1400,61 @@
               "parameters" : [
                 {
                   "type" : "field",
-                  "value" : ["scalars", "local_metadata_t.l4_dst_port"]
+                  "value" : ["scalars", "local_metadata_t._l4_dst_port10"]
                 },
                 {
                   "type" : "field",
-                  "value" : ["_udp19", "dst_port"]
+                  "value" : ["_udp24", "dst_port"]
                 }
               ],
               "op" : "set"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x200000",
+              "mask" : "0x3f0000",
+              "next_state" : "parse_int"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "local_metadata_t._l4_dscp11"]
+            },
+            {
+              "type" : "field",
+              "value" : ["_udp24", "dst_port"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_int",
+          "id" : 16,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "_int_shim27"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "_int_header28"
+                }
+              ],
+              "op" : "extract"
             }
           ],
           "transitions" : [
@@ -1126,11 +1476,11 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/v1model/./include/parsers.p4",
-        "line" : 159,
+        "line" : 179,
         "column" : 8,
         "source_fragment" : "deparser"
       },
-      "order" : ["_packet_in1", "_ethernet2", "_ndn_ndn_prefix10", "_ndn_name_tlv_ndn_tlv_prefix11", "_ndn_name_tlv_components12[0]", "_ndn_name_tlv_components12[1]", "_ndn_name_tlv_components12[2]", "_ndn_name_tlv_components12[3]", "_ndn_name_tlv_components12[4]", "_ndn_name_tlv_components12[5]", "_ndn_name_tlv_components12[6]", "_ndn_name_tlv_components12[7]", "_ndn_metaInfo_tlv_ndn_tlv_prefix13", "_ndn_metaInfo_tlv_content_type_tlv14", "_ndn_metaInfo_tlv_freshness_period_tlv15", "_ndn_metaInfo_tlv_final_block_id_tlv16", "_ndn_content_tlv17", "_mf6", "_id5", "_geo7", "_gbc8", "_beacon9", "_ipv63", "_ipv44", "_tcp18", "_udp19", "_icmpv620", "_ndp21"]
+      "order" : ["_packet_in1", "_report_ethernet2", "_report_ipv43", "_report_udp4", "_report_fixed_header5", "_ethernet6", "_ndn_ndn_prefix15", "_ndn_name_tlv_ndn_tlv_prefix16", "_ndn_name_tlv_components17[0]", "_ndn_name_tlv_components17[1]", "_ndn_name_tlv_components17[2]", "_ndn_name_tlv_components17[3]", "_ndn_name_tlv_components17[4]", "_ndn_name_tlv_components17[5]", "_ndn_name_tlv_components17[6]", "_ndn_name_tlv_components17[7]", "_ndn_metaInfo_tlv_ndn_tlv_prefix18", "_ndn_metaInfo_tlv_content_type_tlv19", "_ndn_metaInfo_tlv_freshness_period_tlv20", "_ndn_metaInfo_tlv_final_block_id_tlv21", "_ndn_content_tlv22", "_mf11", "_id10", "_flexip9", "_geo12", "_gbc13", "_beacon14", "_ipv67", "_ipv48", "_tcp23", "_udp24", "_icmpv625", "_ndp26", "_int_shim27", "_int_header28", "_int_switch_id36", "_int_level1_port_ids33", "_int_hop_latency31", "_int_q_occupancy35", "_int_ingress_tstamp32", "_int_egress_tstamp30", "_int_level2_port_ids34", "_int_egress_port_tx_util29"]
     }
   ],
   "meter_arrays" : [
@@ -1233,7 +1583,7 @@
       "id" : 4,
       "source_info" : {
         "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-        "line" : 262,
+        "line" : 261,
         "column" : 6,
         "source_fragment" : "counters"
       },
@@ -1245,7 +1595,7 @@
       "id" : 5,
       "source_info" : {
         "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-        "line" : 281,
+        "line" : 280,
         "column" : 8,
         "source_fragment" : "counters"
       },
@@ -1304,47 +1654,51 @@
       "input" : [
         {
           "type" : "field",
-          "value" : ["_ipv44", "version"]
+          "value" : ["_ipv48", "version"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "ihl"]
+          "value" : ["_ipv48", "ihl"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "diffserv"]
+          "value" : ["_ipv48", "dscp"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "totalLen"]
+          "value" : ["_ipv48", "ecn"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "identification"]
+          "value" : ["_ipv48", "total_len"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "flags"]
+          "value" : ["_ipv48", "identification"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "fragOffset"]
+          "value" : ["_ipv48", "flags"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "ttl"]
+          "value" : ["_ipv48", "frag_offset"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "protocol"]
+          "value" : ["_ipv48", "ttl"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "srcAddr"]
+          "value" : ["_ipv48", "protocol"]
         },
         {
           "type" : "field",
-          "value" : ["_ipv44", "dstAddr"]
+          "value" : ["_ipv48", "src_addr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["_ipv48", "dst_addr"]
         }
       ]
     }
@@ -1372,7 +1726,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "local_metadata_t.next_hop_id"]
+              "value" : ["scalars", "local_metadata_t._next_hop_id14"]
             },
             {
               "type" : "runtime_data",
@@ -1382,8 +1736,8 @@
           "source_info" : {
             "filename" : "p4src/v1model/./include/control/table0.p4",
             "line" : 30,
-            "column" : 8,
-            "source_fragment" : "local_metadata.next_hop_id = next_hop_id"
+            "column" : 35,
+            "source_fragment" : "= next_hop_id; ..."
           }
         }
       ]
@@ -2069,7 +2423,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 266,
+            "line" : 265,
             "column" : 8,
             "source_fragment" : "standard_metadata.egress_spec = dst_port"
           }
@@ -2281,7 +2635,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/v1model/./include/defines.p4",
-            "line" : 66,
+            "line" : 75,
             "column" : 36,
             "source_fragment" : "8w0; ..."
           }
@@ -2329,7 +2683,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 361,
+            "line" : 360,
             "column" : 12,
             "source_fragment" : "standard_metadata.egress_spec = hdr.packet_out.egress_port"
           }
@@ -2344,7 +2698,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 363,
+            "line" : 362,
             "column" : 12,
             "source_fragment" : "hdr.packet_out.setInvalid()"
           }
@@ -2354,7 +2708,7 @@
           "parameters" : [],
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 365,
+            "line" : 364,
             "column" : 12,
             "source_fragment" : "exit"
           }
@@ -2375,7 +2729,7 @@
             },
             {
               "type" : "field",
-              "value" : ["_ndn_name_tlv_components12[0]", "value"]
+              "value" : ["_ndn_name_tlv_components17[0]", "value"]
             }
           ],
           "source_info" : {
@@ -2394,7 +2748,7 @@
             },
             {
               "type" : "field",
-              "value" : ["_ndn_name_tlv_components12[1]", "value"]
+              "value" : ["_ndn_name_tlv_components17[1]", "value"]
             }
           ],
           "source_info" : {
@@ -2701,49 +3055,49 @@
             {
               "match_type" : "ternary",
               "name" : "hdr.ethernet.src_addr",
-              "target" : ["_ethernet2", "src_addr"],
+              "target" : ["_ethernet6", "src_addr"],
               "mask" : null
             },
             {
               "match_type" : "ternary",
               "name" : "hdr.ethernet.dst_addr",
-              "target" : ["_ethernet2", "dst_addr"],
+              "target" : ["_ethernet6", "dst_addr"],
               "mask" : null
             },
             {
               "match_type" : "ternary",
               "name" : "hdr.ethernet.ether_type",
-              "target" : ["_ethernet2", "ether_type"],
+              "target" : ["_ethernet6", "ether_type"],
               "mask" : null
             },
             {
               "match_type" : "ternary",
-              "name" : "hdr.ipv4.srcAddr",
-              "target" : ["_ipv44", "srcAddr"],
+              "name" : "hdr.ipv4.src_addr",
+              "target" : ["_ipv48", "src_addr"],
               "mask" : null
             },
             {
               "match_type" : "ternary",
-              "name" : "hdr.ipv4.dstAddr",
-              "target" : ["_ipv44", "dstAddr"],
+              "name" : "hdr.ipv4.dst_addr",
+              "target" : ["_ipv48", "dst_addr"],
               "mask" : null
             },
             {
               "match_type" : "ternary",
               "name" : "hdr.ipv4.protocol",
-              "target" : ["_ipv44", "protocol"],
+              "target" : ["_ipv48", "protocol"],
               "mask" : null
             },
             {
               "match_type" : "ternary",
               "name" : "local_metadata.l4_src_port",
-              "target" : ["scalars", "local_metadata_t.l4_src_port"],
+              "target" : ["scalars", "local_metadata_t._l4_src_port9"],
               "mask" : null
             },
             {
               "match_type" : "ternary",
               "name" : "local_metadata.l4_dst_port",
-              "target" : ["scalars", "local_metadata_t.l4_dst_port"],
+              "target" : ["scalars", "local_metadata_t._l4_dst_port10"],
               "mask" : null
             }
           ],
@@ -2812,7 +3166,7 @@
             {
               "match_type" : "lpm",
               "name" : "hdr.ethernet.src_addr",
-              "target" : ["_ethernet2", "src_addr"],
+              "target" : ["_ethernet6", "src_addr"],
               "mask" : null
             }
           ],
@@ -2870,7 +3224,7 @@
           "id" : 7,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 361,
+            "line" : 360,
             "column" : 42,
             "source_fragment" : "= hdr.packet_out.egress_port; ..."
           },
@@ -2907,19 +3261,19 @@
             {
               "match_type" : "exact",
               "name" : "hdr.ethernet.ether_type",
-              "target" : ["_ethernet2", "ether_type"],
+              "target" : ["_ethernet6", "ether_type"],
               "mask" : null
             },
             {
               "match_type" : "exact",
-              "name" : "hdr.id.srcIdentity",
-              "target" : ["_id5", "srcIdentity"],
+              "name" : "hdr.id.src_identity",
+              "target" : ["_id10", "src_identity"],
               "mask" : null
             },
             {
               "match_type" : "exact",
-              "name" : "hdr.id.dstIdentity",
-              "target" : ["_id5", "dstIdentity"],
+              "name" : "hdr.id.dst_identity",
+              "target" : ["_id10", "dst_identity"],
               "mask" : null
             }
           ],
@@ -2956,31 +3310,31 @@
             {
               "match_type" : "exact",
               "name" : "hdr.ethernet.ether_type",
-              "target" : ["_ethernet2", "ether_type"],
+              "target" : ["_ethernet6", "ether_type"],
               "mask" : null
             },
             {
               "match_type" : "exact",
-              "name" : "hdr.gbc.geoAreaPosLat",
-              "target" : ["_gbc8", "geoAreaPosLat"],
+              "name" : "hdr.gbc.geo_area_pos_lat",
+              "target" : ["_gbc13", "geo_area_pos_lat"],
               "mask" : null
             },
             {
               "match_type" : "exact",
-              "name" : "hdr.gbc.geoAreaPosLon",
-              "target" : ["_gbc8", "geoAreaPosLon"],
+              "name" : "hdr.gbc.geo_area_pos_lon",
+              "target" : ["_gbc13", "geo_area_pos_lon"],
               "mask" : null
             },
             {
               "match_type" : "exact",
               "name" : "hdr.gbc.disa",
-              "target" : ["_gbc8", "disa"],
+              "target" : ["_gbc13", "disa"],
               "mask" : null
             },
             {
               "match_type" : "exact",
               "name" : "hdr.gbc.disb",
-              "target" : ["_gbc8", "disb"],
+              "target" : ["_gbc13", "disb"],
               "mask" : null
             }
           ],
@@ -3018,19 +3372,19 @@
             {
               "match_type" : "exact",
               "name" : "hdr.ethernet.ether_type",
-              "target" : ["_ethernet2", "ether_type"],
+              "target" : ["_ethernet6", "ether_type"],
               "mask" : null
             },
             {
               "match_type" : "exact",
               "name" : "hdr.mf.src_guid",
-              "target" : ["_mf6", "src_guid"],
+              "target" : ["_mf11", "src_guid"],
               "mask" : null
             },
             {
               "match_type" : "exact",
-              "name" : "hdr.mf.dest_guid",
-              "target" : ["_mf6", "dest_guid"],
+              "name" : "hdr.mf.dst_guid",
+              "target" : ["_mf11", "dst_guid"],
               "mask" : null
             }
           ],
@@ -3096,13 +3450,13 @@
             {
               "match_type" : "exact",
               "name" : "hdr.ethernet.ether_type",
-              "target" : ["_ethernet2", "ether_type"],
+              "target" : ["_ethernet6", "ether_type"],
               "mask" : null
             },
             {
               "match_type" : "exact",
               "name" : "hdr.ndn.ndn_prefix.code",
-              "target" : ["_ndn_ndn_prefix10", "code"],
+              "target" : ["_ndn_ndn_prefix15", "code"],
               "mask" : null
             },
             {
@@ -3120,7 +3474,7 @@
             {
               "match_type" : "exact",
               "name" : "hdr.ndn.content_tlv.value",
-              "target" : ["_ndn_content_tlv17", "value"],
+              "target" : ["_ndn_content_tlv22", "value"],
               "mask" : null
             }
           ],
@@ -3149,7 +3503,7 @@
           "id" : 13,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 249,
+            "line" : 248,
             "column" : 10,
             "source_fragment" : "routing_v6_table"
           },
@@ -3157,19 +3511,19 @@
             {
               "match_type" : "exact",
               "name" : "hdr.ethernet.ether_type",
-              "target" : ["_ethernet2", "ether_type"],
+              "target" : ["_ethernet6", "ether_type"],
               "mask" : null
             },
             {
               "match_type" : "exact",
               "name" : "hdr.ipv6.src_addr",
-              "target" : ["_ipv63", "src_addr"],
+              "target" : ["_ipv67", "src_addr"],
               "mask" : null
             },
             {
               "match_type" : "exact",
               "name" : "hdr.ipv6.dst_addr",
-              "target" : ["_ipv63", "dst_addr"],
+              "target" : ["_ipv67", "dst_addr"],
               "mask" : null
             }
           ],
@@ -3193,7 +3547,7 @@
           "id" : 14,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 269,
+            "line" : 268,
             "column" : 10,
             "source_fragment" : "routing_v4_table"
           },
@@ -3201,19 +3555,19 @@
             {
               "match_type" : "exact",
               "name" : "hdr.ethernet.ether_type",
-              "target" : ["_ethernet2", "ether_type"],
+              "target" : ["_ethernet6", "ether_type"],
               "mask" : null
             },
             {
               "match_type" : "exact",
-              "name" : "hdr.ipv4.srcAddr",
-              "target" : ["_ipv44", "srcAddr"],
+              "name" : "hdr.ipv4.src_addr",
+              "target" : ["_ipv48", "src_addr"],
               "mask" : null
             },
             {
               "match_type" : "exact",
-              "name" : "hdr.ipv4.dstAddr",
-              "target" : ["_ipv44", "dstAddr"],
+              "name" : "hdr.ipv4.dst_addr",
+              "target" : ["_ipv48", "dst_addr"],
               "mask" : null
             }
           ],
@@ -3339,7 +3693,7 @@
           "id" : 3,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 359,
+            "line" : 358,
             "column" : 12,
             "source_fragment" : "hdr.packet_out.isValid()"
           },
@@ -3362,7 +3716,7 @@
           "id" : 4,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 367,
+            "line" : 366,
             "column" : 12,
             "source_fragment" : "hdr.ethernet.ether_type == ETHERTYPE_ID && hdr.id.isValid()"
           },
@@ -3376,7 +3730,7 @@
                   "op" : "==",
                   "left" : {
                     "type" : "field",
-                    "value" : ["_ethernet2", "ether_type"]
+                    "value" : ["_ethernet6", "ether_type"]
                   },
                   "right" : {
                     "type" : "hexstr",
@@ -3391,7 +3745,7 @@
                   "left" : null,
                   "right" : {
                     "type" : "field",
-                    "value" : ["_id5", "$valid$"]
+                    "value" : ["_id10", "$valid$"]
                   }
                 }
               }
@@ -3405,7 +3759,7 @@
           "id" : 5,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 369,
+            "line" : 368,
             "column" : 19,
             "source_fragment" : "hdr.ethernet.ether_type == ETHERTYPE_GEO && hdr.geo.isValid()"
           },
@@ -3419,7 +3773,7 @@
                   "op" : "==",
                   "left" : {
                     "type" : "field",
-                    "value" : ["_ethernet2", "ether_type"]
+                    "value" : ["_ethernet6", "ether_type"]
                   },
                   "right" : {
                     "type" : "hexstr",
@@ -3434,7 +3788,7 @@
                   "left" : null,
                   "right" : {
                     "type" : "field",
-                    "value" : ["_geo7", "$valid$"]
+                    "value" : ["_geo12", "$valid$"]
                   }
                 }
               }
@@ -3448,7 +3802,7 @@
           "id" : 6,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 371,
+            "line" : 370,
             "column" : 19,
             "source_fragment" : "hdr.ethernet.ether_type == ETHERTYPE_MF && hdr.mf.isValid()"
           },
@@ -3462,7 +3816,7 @@
                   "op" : "==",
                   "left" : {
                     "type" : "field",
-                    "value" : ["_ethernet2", "ether_type"]
+                    "value" : ["_ethernet6", "ether_type"]
                   },
                   "right" : {
                     "type" : "hexstr",
@@ -3477,7 +3831,7 @@
                   "left" : null,
                   "right" : {
                     "type" : "field",
-                    "value" : ["_mf6", "$valid$"]
+                    "value" : ["_mf11", "$valid$"]
                   }
                 }
               }
@@ -3491,7 +3845,7 @@
           "id" : 7,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 373,
+            "line" : 372,
             "column" : 19,
             "source_fragment" : "hdr.ethernet.ether_type == ETHERTYPE_NDN"
           },
@@ -3501,7 +3855,7 @@
               "op" : "==",
               "left" : {
                 "type" : "field",
-                "value" : ["_ethernet2", "ether_type"]
+                "value" : ["_ethernet6", "ether_type"]
               },
               "right" : {
                 "type" : "hexstr",
@@ -3517,7 +3871,7 @@
           "id" : 8,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 375,
+            "line" : 374,
             "column" : 19,
             "source_fragment" : "hdr.ipv6.isValid()"
           },
@@ -3528,7 +3882,7 @@
               "left" : null,
               "right" : {
                 "type" : "field",
-                "value" : ["_ipv63", "$valid$"]
+                "value" : ["_ipv67", "$valid$"]
               }
             }
           },
@@ -3540,7 +3894,7 @@
           "id" : 9,
           "source_info" : {
             "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-            "line" : 379,
+            "line" : 378,
             "column" : 19,
             "source_fragment" : "hdr.ipv4.isValid()"
           },
@@ -3551,7 +3905,7 @@
               "left" : null,
               "right" : {
                 "type" : "field",
-                "value" : ["_ipv44", "$valid$"]
+                "value" : ["_ipv48", "$valid$"]
               }
             }
           },
@@ -3565,7 +3919,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "p4src/v1model/bmv2_IP_ID_GEO_MF_NDN.p4",
-        "line" : 397,
+        "line" : 396,
         "column" : 8,
         "source_fragment" : "egress"
       },
@@ -3726,7 +4080,7 @@
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ipv4.isValid(), ..."
       },
-      "target" : ["_ipv44", "hdrChecksum"],
+      "target" : ["_ipv48", "hdr_checksum"],
       "type" : "generic",
       "calculation" : "calc",
       "verify" : false,
@@ -3738,7 +4092,7 @@
           "left" : null,
           "right" : {
             "type" : "field",
-            "value" : ["_ipv44", "$valid$"]
+            "value" : ["_ipv48", "$valid$"]
           }
         }
       }

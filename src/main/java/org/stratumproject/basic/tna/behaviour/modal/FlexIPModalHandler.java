@@ -190,10 +190,10 @@ public class FlexIPModalHandler {
         int dstLength = flexip_prefix & 0x7ff;
         log.warn("flexip_prefix:{}, srcLength:{}, dstLength:{}", flexip_prefix, srcLength, dstLength);
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        PiMatchFieldId srcFormatFieldId = PiMatchFieldId.of("hdr.flexip.srcFormat");
-        PiMatchFieldId dstFormatFieldId = PiMatchFieldId.of("hdr.flexip.dstFormat");
-        PiMatchFieldId srcAddrFieldId = PiMatchFieldId.of("hdr.flexip.srcAddr");
-        PiMatchFieldId dstAddrFieldId = PiMatchFieldId.of("hdr.flexip.dstAddr");
+        PiMatchFieldId srcFormatFieldId = PiMatchFieldId.of("hdr.flexip.src_format");
+        PiMatchFieldId dstFormatFieldId = PiMatchFieldId.of("hdr.flexip.dst_format");
+        PiMatchFieldId srcAddrFieldId = PiMatchFieldId.of("hdr.flexip.src_addr");
+        PiMatchFieldId dstAddrFieldId = PiMatchFieldId.of("hdr.flexip.dst_addr");
         
         byte[] srcAddr = new byte[srcLength/8];
         buffer.position(52-srcLength/8);

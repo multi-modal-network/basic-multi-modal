@@ -35,7 +35,7 @@ public class MFModalHandler {
     public FlowRule applyMFFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
         PiMatchFieldId srcGuidFieldId = PiMatchFieldId.of("hdr.mf.src_guid");
-        PiMatchFieldId dstGuidFieldId = PiMatchFieldId.of("hdr.mf.dest_guid");
+        PiMatchFieldId dstGuidFieldId = PiMatchFieldId.of("hdr.mf.dst_guid");
         
         byte[] srcMFGuid = new byte[4];
         buffer.position(4);

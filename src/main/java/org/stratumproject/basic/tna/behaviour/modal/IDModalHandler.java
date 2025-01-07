@@ -34,8 +34,8 @@ public class IDModalHandler {
 
     public FlowRule applyIDFlow(DeviceId deviceId, ApplicationId appId, int port, ByteBuffer buffer){
         PiMatchFieldId etherTypeFieldId = PiMatchFieldId.of("hdr.ethernet.ether_type");
-        PiMatchFieldId srcIdentityFieldId = PiMatchFieldId.of("hdr.id.srcIdentity");
-        PiMatchFieldId dstIdentityFieldId = PiMatchFieldId.of("hdr.id.dstIdentity");
+        PiMatchFieldId srcIdentityFieldId = PiMatchFieldId.of("hdr.id.src_identity");
+        PiMatchFieldId dstIdentityFieldId = PiMatchFieldId.of("hdr.id.dst_identity");
 
         byte[] srcIdentity = new byte[4];
         buffer.position(0);

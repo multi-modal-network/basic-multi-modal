@@ -26,7 +26,7 @@ MVN_FLAGS ?=
 
 ONOS_HOST ?= localhost
 ONOS_URL ?= http://$(ONOS_HOST):8181/onos
-ONOS_UTIL_URL ?=http://$(ONOS_HOST):8088/api
+ONOS_UTIL_URL ?=http://$(ONOS_HOST):8188/api
 ONOS_CURL := curl --fail -sSL --user onos:rocks --noproxy localhost
 
 PIPECONF_APP_NAME := org.stratumproject.basic-tna

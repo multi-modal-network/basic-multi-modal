@@ -132,13 +132,13 @@ tables {
   }
   match_fields {
     id: 2
-    name: "hdr.ipv4.srcAddr"
+    name: "hdr.ipv4.src_addr"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
     id: 3
-    name: "hdr.ipv4.dstAddr"
+    name: "hdr.ipv4.dst_addr"
     bitwidth: 32
     match_type: EXACT
   }
@@ -198,13 +198,13 @@ tables {
   }
   match_fields {
     id: 2
-    name: "hdr.id.srcIdentity"
+    name: "hdr.id.src_identity"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
     id: 3
-    name: "hdr.id.dstIdentity"
+    name: "hdr.id.dst_identity"
     bitwidth: 32
     match_type: EXACT
   }
@@ -231,13 +231,13 @@ tables {
   }
   match_fields {
     id: 2
-    name: "hdr.gbc.geoAreaPosLat"
+    name: "hdr.gbc.geo_area_pos_lat"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
     id: 3
-    name: "hdr.gbc.geoAreaPosLon"
+    name: "hdr.gbc.geo_area_pos_lon"
     bitwidth: 32
     match_type: EXACT
   }
@@ -285,7 +285,7 @@ tables {
   }
   match_fields {
     id: 3
-    name: "hdr.mf.dest_guid"
+    name: "hdr.mf.dst_guid"
     bitwidth: 32
     match_type: EXACT
   }
