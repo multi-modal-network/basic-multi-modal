@@ -343,6 +343,51 @@ tables {
   direct_resource_ids: 334610145
   size: 1024
 }
+tables {
+  preamble {
+    id: 48703812
+    name: "BasicIngress.multi.routing_flexip_table"
+    alias: "routing_flexip_table"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.ether_type"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.flexip.src_format"
+    bitwidth: 2
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "hdr.flexip.dst_format"
+    bitwidth: 2
+    match_type: EXACT
+  }
+  match_fields {
+    id: 4
+    name: "hdr.flexip.src_addr"
+    bitwidth: 384
+    match_type: EXACT
+  }
+  match_fields {
+    id: 5
+    name: "hdr.flexip.dst_addr"
+    bitwidth: 384
+    match_type: EXACT
+  }
+  action_refs {
+    id: 30738452
+  }
+  action_refs {
+    id: 30672166
+  }
+  direct_resource_ids: 334817746
+  size: 1024
+}
 actions {
   preamble {
     id: 21257015
@@ -537,6 +582,25 @@ actions {
     alias: "ndn_to_cpu"
   }
 }
+actions {
+  preamble {
+    id: 30738452
+    name: "BasicIngress.multi.set_next_flexip_hop"
+    alias: "set_next_flexip_hop"
+  }
+  params {
+    id: 1
+    name: "dst_port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 30672166
+    name: "BasicIngress.multi.flexip_to_cpu"
+    alias: "flexip_to_cpu"
+  }
+}
 direct_counters {
   preamble {
     id: 325021908
@@ -624,6 +688,17 @@ direct_counters {
     unit: BOTH
   }
   direct_table_id: 38106563
+}
+direct_counters {
+  preamble {
+    id: 334817746
+    name: "BasicIngress.multi.flexip_counter"
+    alias: "flexip_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 48703812
 }
 controller_packet_metadata {
   preamble {

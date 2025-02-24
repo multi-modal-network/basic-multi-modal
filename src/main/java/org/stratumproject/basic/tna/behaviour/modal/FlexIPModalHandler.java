@@ -29,8 +29,8 @@ public class FlexIPModalHandler {
     // ---------------------FlexIP模态---------------------
     private static final int FLEXIP_GAP_F0 = 255;
     private static final int FLEXIP_GAP_F1 = 255*255;
-    private static final long FLEXIP_GAP_F2 = 255*255*255;
-    private static final long FLEXIP_GAP_F4 = 255*255*255*255;
+    private static final int FLEXIP_GAP_F2 = 255*255*255;
+    private static final long FLEXIP_GAP_F4 = 255*255*255*255L;
 
     private static final int RESTRAINED = 0;
     private static final int EXTENDABLE = 1;
@@ -123,7 +123,7 @@ public class FlexIPModalHandler {
         long flexip = ((long)FlexIP[31] & 0xff) +
                         (((long)FlexIP[30] & 0xff) << 8) + 
                         (((long)FlexIP[29] & 0xff) << 16) + 
-                        (((long)FlexIP[28] & 0xff) << 24)
+                        (((long)FlexIP[28] & 0xff) << 24);
         return calculateHost(flexip, FLEXIP_GAP_F4);
     }
 
