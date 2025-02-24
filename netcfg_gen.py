@@ -34,15 +34,15 @@ for vmx in range(0,2):
                 "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
             }
         }
-    for i in range(1, 128):
-        links.append({
-            "endpoint1": f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}",
-            "endpoint2": f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2}"
-        })
-        links.append({
-            "endpoint1": f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}",
-            "endpoint2": f"device:domain1:group{vmx + 1}:{get_level(i*2+1)}:s{i*2+1}"
-        })
+    # for i in range(1, 128):
+    #     links.append({
+    #         "endpoint1": f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}",
+    #         "endpoint2": f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2}"
+    #     })
+    #     links.append({
+    #         "endpoint1": f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}",
+    #         "endpoint2": f"device:domain1:group{vmx + 1}:{get_level(i*2+1)}:s{i*2+1}"
+    #     })
 
 # 循环创建domain5
 # for vmx in range(3,6):
@@ -88,7 +88,8 @@ for vmx in range(0,2):
 
 
 # 创建最终的JSON对象
-json_data = {"devices": devices, "links": links}
+# json_data = {"devices": devices, "links": links}
+json_data = {"devices": devices}
 
 # 将JSON对象转换为字符串，格式化输出
 json_str = json.dumps(json_data, indent=2)

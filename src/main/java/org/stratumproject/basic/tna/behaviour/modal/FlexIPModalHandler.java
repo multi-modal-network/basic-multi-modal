@@ -27,19 +27,22 @@ public class FlexIPModalHandler {
     private static final Logger log = getLogger(FlexIPModalHandler.class);
 
     // ---------------------FlexIP模态---------------------
-    private static final int FLEXIP_OFFSET_F0 = 2048;
-    private static final int FLEXIP_OFFSET_F1 = 202271720;
-    private static final long FLEXIP_OFFSET_F2 = 1L << 50;
-
-    private static final int FLEXIP_GAP_F0 = 100;
-    private static final int FLEXIP_GAP_F1 = 100000;
-    private static final long FLEXIP_GAP_F2 = 100000000L;
-    private static final long FLEXIP_GAP_F4 = 100000000000L;
+    private static final int FLEXIP_GAP_F0 = 255;
+    private static final int FLEXIP_GAP_F1 = 255*255;
+    private static final long FLEXIP_GAP_F2 = 255*255*255;
+    private static final long FLEXIP_GAP_F4 = 255*255*255*255;
 
     private static final int RESTRAINED = 0;
     private static final int EXTENDABLE = 1;
     private static final int HIERARCHICAL = 2;
     private static final int MULTISEMANTICS = 3;
+
+    private int processRestrainedFormat(ByteBuffer buffer) {
+        int value = buffer.get() & 0xff;
+        int vmx = value / 20;
+        int hostId = value - vmx * 20 + 128;
+        return vmx * 255 + hostId;
+    }
 
     private int processExtendableFormat(ByteBuffer buffer) {
         int host = 0;
@@ -78,9 +81,10 @@ public class FlexIPModalHandler {
                 host = processF2(buffer);
                 break;
             default:
-                // todo: vmx标记
-                int vmx = 1;
-                host = vmx * 100 + afterByte;
+                int value = buffer.get() & 0xff;
+                int vmx = value / 20;
+                int hostId = value - vmx * 20 + 128;
+                host = vmx * 255 + hostId;
                 break;
         }
         return host;
@@ -90,7 +94,7 @@ public class FlexIPModalHandler {
         byte[] FlexIP = new byte[2];
         buffer.get(FlexIP, 0, 2);
         int flexip = ((FlexIP[0] & 0xff) << 8) + (FlexIP[1] & 0xff);
-        return calculateHost(flexip, FLEXIP_OFFSET_F0, FLEXIP_GAP_F0);
+        return calculateHost(flexip, FLEXIP_GAP_F0);
     }
 
     private int processF1(ByteBuffer buffer) {
@@ -100,21 +104,17 @@ public class FlexIPModalHandler {
                      ((FlexIP[1] & 0xff) << 16) + 
                      ((FlexIP[2] & 0xff) << 8) + 
                      (FlexIP[3] & 0xff);
-        return calculateHost(flexip, FLEXIP_OFFSET_F1, FLEXIP_GAP_F1);
+        return calculateHost(flexip, FLEXIP_GAP_F1);
     }
 
     private int processF2(ByteBuffer buffer) {
         byte[] FlexIP = new byte[8];
         buffer.get(FlexIP, 0, 8);
-        long flexip = (((long)FlexIP[0] & 0xff) << 56) +
-                        (((long)FlexIP[1] & 0xff) << 48) + 
-                        (((long)FlexIP[2] & 0xff) << 40) + 
-                        (((long)FlexIP[3] & 0xff) << 32) +
-                        (((long)FlexIP[4] & 0xff) << 24) + 
+        long flexip = (((long)FlexIP[4] & 0xff) << 24) + 
                         (((long)FlexIP[5] & 0xff) << 16) + 
                         (((long)FlexIP[6] & 0xff) << 8) + 
                         ((long)FlexIP[7] & 0xff);
-        return calculateHost(flexip, FLEXIP_OFFSET_F2, FLEXIP_GAP_F2);
+        return calculateHost(flexip, FLEXIP_GAP_F2);
     }
 
     private int processF4(ByteBuffer buffer) {
@@ -123,21 +123,19 @@ public class FlexIPModalHandler {
         long flexip = ((long)FlexIP[31] & 0xff) +
                         (((long)FlexIP[30] & 0xff) << 8) + 
                         (((long)FlexIP[29] & 0xff) << 16) + 
-                        (((long)FlexIP[28] & 0xff) << 24) + 
-                        (((long)FlexIP[27] & 0xff) << 32) + 
-                        (((long)FlexIP[26] & 0xff) << 40);
-        return calculateHost(flexip, 0L, FLEXIP_GAP_F4);
+                        (((long)FlexIP[28] & 0xff) << 24)
+        return calculateHost(flexip, FLEXIP_GAP_F4);
     }
 
-    private int calculateHost(int flexip, int offset, int gap) {
-        int vmx = (flexip - offset) / gap;
-        int i = flexip - offset - vmx * gap + 64;
+    private int calculateHost(int flexip, int gap) {
+        int vmx = flexip / gap;
+        int i = flexip - vmx * gap;
         return vmx * 255 + i;
     }
 
-    private int calculateHost(long flexip, long offset, long gap) {
-        long vmx = (flexip - offset) / gap;
-        long i = flexip - offset - vmx * gap + 64L;
+    private int calculateHost(long flexip, long gap) {
+        long vmx = flexip / gap;
+        long i = flexip - vmx * gap;
         return (int)(vmx * 255 + i);
     }
 
@@ -147,8 +145,7 @@ public class FlexIPModalHandler {
         int host = 0;
         switch (format) {
             case RESTRAINED:
-                int vmx = 1;
-                host =  vmx * 255 + (buffer.get() & 0xff);
+                host = processRestrainedFormat(buffer);
                 break;
             case EXTENDABLE:
                 host = processExtendableFormat(buffer);
@@ -163,12 +160,12 @@ public class FlexIPModalHandler {
     }
 
     public int transferDstFlexIP2Host(ByteBuffer buffer, int format, int length) {
+        log.warn("transferDstFlexIP2Host flexIPParam:{}", buffer);
         buffer.position(100 - length/8);
         int host = 0;
         switch (format) {
             case RESTRAINED:
-                int vmx = 1;
-                host =  vmx * 100 + (buffer.get() & 0xff);
+                host = processRestrainedFormat(buffer);
                 break;
             case EXTENDABLE:
                 host = processExtendableFormat(buffer);
