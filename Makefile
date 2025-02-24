@@ -105,7 +105,7 @@ pipeconf-uninstall:
 netcfg:
 	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
 	$(ONOS_CURL) -X POST -H Content-Type:application/json \
-		$(ONOS_UTIL_URL)/topo -d@./tofino-netcfg.json
+		$(ONOS_URL)/v1/network/configuration -d@./tofino-netcfg.json
 	@echo
 
 p4i:

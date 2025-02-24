@@ -1,6 +1,6 @@
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/pipeliner/AbstractObjectiveTranslator.java
-/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreter.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/modal/GEOModalHandler.java
+/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreter.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/pipeliner/ForwardingObjectiveTranslator.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/modal/NDNModalHandler.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/ModalHandler.java
@@ -11,10 +11,10 @@
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreterMF.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/P4InfoConstants.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/pipeliner/Commons.java
-/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreterGEO.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreterIPv4.java
-/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicInterpreter.java
+/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreterGEO.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/modal/MFModalHandler.java
+/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicInterpreter.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicTreatmentInterpreterFlexIP.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/modal/FlexIPModalHandler.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/package-info.java
@@ -24,7 +24,7 @@
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/modal/IDModalHandler.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/pipeliner/package-info.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/pipeliner/BasicPipelinerException.java
-/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/AbstractBasicHandlerBehavior.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/package-info.java
+/mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/AbstractBasicHandlerBehavior.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/BasicCapabilities.java
 /mvn-src/src/main/java/org/stratumproject/basic/tna/behaviour/pipeliner/BasicPipeliner.java
