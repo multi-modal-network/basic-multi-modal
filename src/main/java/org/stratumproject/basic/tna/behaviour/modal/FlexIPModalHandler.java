@@ -81,7 +81,7 @@ public class FlexIPModalHandler {
                 host = processF2(buffer);
                 break;
             default:
-                int value = buffer.get() & 0xff;
+                int value = afterByte & 0xff;
                 int vmx = value / 20;
                 int hostId = value - vmx * 20 + 128;
                 host = vmx * 255 + hostId;

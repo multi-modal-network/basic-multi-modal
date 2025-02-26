@@ -93,8 +93,8 @@ public class ModalHandler {
                 int flexip_prefix = ((buffer.get(0) & 0xff) << 24 | (buffer.get(1) & 0xff) << 16 | (buffer.get(2) & 0xff) << 8 | (buffer.get(3) & 0xff));
                 int srcFormat = flexip_prefix >> 26 & 0x3;
                 int dstFormat = flexip_prefix >> 24 & 0x3;
-                int srcLength = flexip_prefix >> 12 & 0x7ff;
-                int dstLength = flexip_prefix & 0x7ff;
+                int srcLength = flexip_prefix >> 12 & 0xfff;
+                int dstLength = flexip_prefix & 0xfff;
                 srcHost = flexip.transferSrcFlexIP2Host(buffer, srcFormat, srcLength);
                 dstHost = flexip.transferDstFlexIP2Host(buffer, dstFormat, dstLength);
                 break;
@@ -120,9 +120,9 @@ public class ModalHandler {
     private static final int up = 1;
 
     // tofino交换机端口设置
-    private static final int[] domain2TofinoPorts = {128,144,160,176};
-    private static final int[] domain4TofinoPorts = {128,144,160,176};
-    private static final int[] domain6TofinoPorts = {128,144,176};
+    private static final int[] domain2TofinoPorts = {132,140,148,164};
+    private static final int[] domain4TofinoPorts = {132,140,164};
+    private static final int[] domain6TofinoPorts = {132,140,148,164};
 
     // tofino交换机deviceId
     private static final int domain2TofinoSwitch = 2000;
@@ -132,10 +132,20 @@ public class ModalHandler {
     private int getDomain(int vmx) {
         if (vmx >= 0 && vmx <= 2) {
             return 1;
-        } else if (vmx >= 3 && vmx <= 5) {
+        } else if (vmx >= 3 && vmx <= 4) {
             return 5;
         } else {
             return 7;
+        }
+    }
+
+    private int getGroup(int vmx) {
+        if (vmx == 0 || vmx == 3 || vmx==5) {
+            return 1;
+        } else if (vmx == 1 || vmx == 4 || vmx == 6) {
+            return 2;
+        } else {
+            return 3;
         }
     }
 
@@ -218,8 +228,8 @@ public class ModalHandler {
                     involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[dstVmx % 3]));
                     break;
                 case 7:
-                    postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[dstVmx % 3], buffer);
-                    involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[dstVmx % 3]));
+                    postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[(dstVmx+1) % 3], buffer);
+                    involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[(dstVmx+1) % 3]));
                     break;
             }
             // 目的groupS1直接发至目的主机
@@ -251,8 +261,8 @@ public class ModalHandler {
                         postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[dstVmx % 3], buffer);
                         involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[dstVmx % 3]));
                     } else {                            // 5,1
-                        postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[3], buffer);
-                        involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[3]));
+                        postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[2], buffer);
+                        involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[2]));
                         postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[dstVmx % 3], buffer);
                         involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[dstVmx % 3]));
                     }
@@ -261,24 +271,24 @@ public class ModalHandler {
                     if (srcDomain < dstDomain) {        // 1,7 (对应的tofino交换机在domain2和domain6)
                         postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[3], buffer);
                         involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[3]));
-                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[dstVmx % 3], buffer);
-                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[dstVmx % 3]));
+                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[(dstVmx+1) % 3], buffer);
+                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[(dstVmx+1) % 3]));
                     } else {                            // 7,1
-                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[2], buffer);
-                        involvedSwitches.add(String.format("domain6-%d", domain4TofinoPorts[2]));
+                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[3], buffer);
+                        involvedSwitches.add(String.format("domain6-%d", domain4TofinoPorts[3]));
                         postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[dstVmx % 3], buffer);
                         involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[dstVmx % 3]));
                     }
                     break;
                 case 12:
                     if (srcDomain < dstDomain) {        // 5,7
-                        postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[3], buffer);
-                        involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[3]));
-                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[dstVmx % 3], buffer);
-                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[dstVmx % 3]));
+                        postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[2], buffer);
+                        involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[2]));
+                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[(dstVmx+1) % 3], buffer);
+                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[(dstVmx+1) % 3]));
                     } else {                            // 7,5
-                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[2], buffer);
-                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[2]));
+                        postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[3], buffer);
+                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[3]));
                         postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[dstVmx % 3], buffer);
                         involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[dstVmx % 3]));
                     }
@@ -311,7 +321,7 @@ public class ModalHandler {
             deviceId = DeviceId.deviceId(String.format("device:domain6:p6"));
         } else {
             int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
-            deviceId = DeviceId.deviceId(String.format("device:domain%d:group%d:level%d:s%d", getDomain(vmx), vmx + 1, level, switchID));
+            deviceId = DeviceId.deviceId(String.format("device:domain%d:group%d:level%d:s%d", getDomain(vmx), getGroup(vmx), level, switchID + 255 * vmx));
         }
         FlowRule flowRule;
         switch (modalType) {

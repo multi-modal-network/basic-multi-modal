@@ -18,7 +18,7 @@ services:
   #     - "50004:50004"
   #   entrypoint: "/mininet/topo.py"
   onos:
-    image: onos3.0
+    image: onosproject/onos:2.6.0
     hostname: onos
     container_name: onos
     ports:
@@ -28,5 +28,3 @@ services:
     volumes:
       - ./tmp/onos:/root/onos/apache-karaf-4.2.8/data/tmp
       - /home/onos/Desktop/:/home/onos/Desktop
-    environment:
-      - ONOS_APPS=gui2,drivers.bmv2

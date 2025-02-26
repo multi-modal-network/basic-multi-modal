@@ -280,7 +280,7 @@ tables {
   match_fields {
     id: 1
     name: "ig_port"
-    bitwidth: 32
+    bitwidth: 9
     match_type: TERNARY
     type_name {
       name: "BasicPortId_t"
@@ -520,7 +520,7 @@ actions {
   params {
     id: 1
     name: "port_num"
-    bitwidth: 32
+    bitwidth: 9
     type_name {
       name: "BasicPortId_t"
     }
@@ -631,7 +631,7 @@ controller_packet_metadata {
   metadata {
     id: 1
     name: "ingress_port"
-    bitwidth: 32
+    bitwidth: 9
     type_name {
       name: "BasicPortId_t"
     }
@@ -658,7 +658,7 @@ controller_packet_metadata {
   metadata {
     id: 2
     name: "egress_port"
-    bitwidth: 32
+    bitwidth: 9
     type_name {
       name: "BasicPortId_t"
     }
@@ -683,9 +683,12 @@ type_info {
   new_types {
     key: "BasicPortId_t"
     value {
-      translated_type {
-        uri: "tna/PortId_t"
-        sdn_bitwidth: 32
+      original_type {
+        bitstring {
+          bit {
+            bitwidth: 9
+          }
+        }
       }
     }
   }
