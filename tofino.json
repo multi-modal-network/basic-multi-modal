@@ -1,0 +1,25 @@
+{
+    "devices": {
+      "device:domain6:p6": {
+        "basic": {
+          "managementAddress": "grpc://172.23.20.68:9559?device_id=1",
+          "driver": "stratum-tofino",
+          "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.tna"
+        }
+      },
+      "device:domain2:p1": {
+        "basic": {
+          "managementAddress": "grpc://172.23.20.69:9559?device_id=1",
+          "driver": "stratum-tofino",
+          "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.tna"
+        }
+      },
+      "device:domain4:p4": {
+        "basic": {
+          "managementAddress": "grpc://172.23.20.70:9559?device_id=1",
+          "driver": "stratum-tofino",
+          "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.tna"
+        }
+      }
+    }
+}
