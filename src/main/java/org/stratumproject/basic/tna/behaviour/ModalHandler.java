@@ -359,11 +359,11 @@ public class ModalHandler {
         } else if (switchID == domain6TofinoSwitch) {
             deviceId = DeviceId.deviceId(String.format("device:domain6:p6"));
         } else if (switchID == domain3SatelliteSwitch1) {
-            deviceId = DeviceId.deviceId(String.format("device:satellite1"));
+            deviceId = DeviceId.deviceId(String.format("device_satellite1"));
         } else if (switchID == domain3SatelliteSwitch2) {
-            deviceId = DeviceId.deviceId(String.format("device:satellite2"));
+            deviceId = DeviceId.deviceId(String.format("device_satellite2"));
         } else if (switchID == domain3SatelliteSwitch3) {
-            deviceId = DeviceId.deviceId(String.format("device:satellite3"));
+            deviceId = DeviceId.deviceId(String.format("device_satellite3"));
         } else {
             int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
             deviceId = DeviceId.deviceId(String.format("device:domain%d:group%d:level%d:s%d", getDomain(vmx), getGroup(vmx), level, switchID + 255 * vmx));
