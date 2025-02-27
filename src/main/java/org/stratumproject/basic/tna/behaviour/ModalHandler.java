@@ -136,8 +136,8 @@ public class ModalHandler {
 
     // 卫星BMv2交换机deviceId
     private static final int domain3SatelliteSwitch1 = 3100;
-    private static final int domain3SatelliteSwitch1 = 3200;
-    private static final int domain3SatelliteSwitch1 = 3300;
+    private static final int domain3SatelliteSwitch2 = 3200;
+    private static final int domain3SatelliteSwitch3 = 3300;
     // 卫星交换机转发端口
     private static final int[] domain3SatellitePorts = {1,2,3};
 
