@@ -102,10 +102,22 @@ pipeconf-uninstall:
 	-$(ONOS_CURL) -X DELETE $(ONOS_URL)/v1/applications/$(PIPECONF_APP_NAME)
 	@echo
 
-netcfg:
+netcfg-tofino:
 	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
 	$(ONOS_CURL) -X POST -H Content-Type:application/json \
-		$(ONOS_URL)/v1/network/configuration -d@./tofino-netcfg.json
+		$(ONOS_URL)/v1/network/configuration -d@./tofino.json
+	@echo
+
+netcfg-bmv2:
+	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
+	$(ONOS_CURL) -X POST -H Content-Type:application/json \
+		$(ONOS_URL)/v1/network/configuration -d@./domain1-5-7-new-oar.json
+	@echo
+
+netcfg-satellite:
+	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
+	$(ONOS_CURL) -X POST -H Content-Type:application/json \
+		$(ONOS_URL)/v1/network/configuration -d@./domain3-satellite.json
 	@echo
 
 p4i:

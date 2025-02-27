@@ -1,22 +1,22 @@
 {
     "devices": {
-      "device_satellite1": {
+      "device:satellite1": {
         "basic": {
-          "managementAddress": "grpc://218.199.84.172:49991?device_id=1",
+          "managementAddress": "grpc://218.199.84.172:49995?device_id=1",
           "driver": "stratum-bmv2",
           "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
         }
       },
-      "device_satellite2": {
+      "device:satellite2": {
         "basic": {
-          "managementAddress": "grpc://218.199.84.172:49992?device_id=1",
+          "managementAddress": "grpc://218.199.84.172:49996?device_id=1",
           "driver": "stratum-bmv2",
           "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
         }
       },
-      "device_satellite3": {
+      "device:satellite3": {
         "basic": {
-          "managementAddress": "grpc://218.199.84.172:49993?device_id=1",
+          "managementAddress": "grpc://218.199.84.172:49997?device_id=1",
           "driver": "stratum-bmv2",
           "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
         }

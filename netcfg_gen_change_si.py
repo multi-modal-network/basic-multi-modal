@@ -26,13 +26,13 @@ def get_level(i):
 def get_group(i):
     if i==0 or i==3 or i==5:
         return 1
-    elif i==4 or i==6:
+    elif i==1 or i==4 or i==6:
         return 2
     else:
         return 3
 
 # 循环创建domain1
-for vmx in range(0,2):
+for vmx in range(0,3):
     for i in range(1, 256):
         device_id = f"device:domain1:group{get_group(vmx)}:{get_level(i)}:s{i+vmx*255}"  # 格式化设备ID，确保它是5位数
         devices[device_id] = {
@@ -74,7 +74,7 @@ for vmx in range(3,4):
 #         })
 
 # # 循环创建domain7
-# for vmx in range(5,7):
+# for vmx in range(4,7):
 #     for i in range(1, 256):
 #         device_id = f"device:domain7:group{get_group(vmx)}:{get_level(i)}:s{i+vmx*255}"  # 格式化设备ID，确保它是5位数
 #         devices[device_id] = {
