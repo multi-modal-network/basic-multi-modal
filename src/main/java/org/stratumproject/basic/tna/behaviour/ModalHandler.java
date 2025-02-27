@@ -134,12 +134,19 @@ public class ModalHandler {
     private static final int domain4TofinoSwitch = 4000;
     private static final int domain6TofinoSwitch = 6000;    
 
+    // 卫星BMv2交换机deviceId
+    private static final int domain3SatelliteSwitch1 = 3100;
+    private static final int domain3SatelliteSwitch1 = 3200;
+    private static final int domain3SatelliteSwitch1 = 3300;
+    // 卫星交换机转发端口
+    private static final int[] domain3SatellitePorts = {1,2,3};
+
     private int getDomain(int vmx) {
-        if (vmx >= 0 && vmx <= 2) {
+        if (vmx >= 0 && vmx <= 2) {            // A区是domain1，包含vmx0\vmx1\vmx2
             return 1;
-        } else if (vmx >= 3 && vmx <= 4) {
+        } else if (vmx >= 3 && vmx <= 4) {     // B区是domain5，包含vmx3\vmx4
             return 5;
-        } else {
+        } else {                               // C区是domain7，包含vmx5\vmx6\vmx7
             return 7;
         }
     }
@@ -260,40 +267,67 @@ public class ModalHandler {
             // tofino交换机下发流表
             switch(srcDomain + dstDomain) {
                 case 6:
-                    if (srcDomain < dstDomain) {        // 1,5 (对应的tofino交换机在domain2和domain4)
+                    if (srcDomain < dstDomain) {        // 1->5 (对应的tofino交换机在domain2和domain4)
+                        // domain2的Tofino交换机
                         postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[3], buffer);
                         involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[3]));
+                        // 中间的卫星BMv2交换机 (三台都下发流表)
+                        postFlow(modalType, domain3SatelliteSwitch1, 0, domain3SatellitePorts[1], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch2, 0, domain3SatellitePorts[1], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch3, 0, domain3SatellitePorts[1], buffer);
+                        involvedSwitches.add(String.format("domain3-%d", domain3SatellitePorts[1]));
+                        // domain4的Tofino交换机
                         postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[dstVmx % 3], buffer);
                         involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[dstVmx % 3]));
-                    } else {                            // 5,1
+                    } else {                            // 5->1
                         postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[2], buffer);
                         involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[2]));
+                        postFlow(modalType, domain3SatelliteSwitch1, 0, domain3SatellitePorts[0], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch2, 0, domain3SatellitePorts[0], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch3, 0, domain3SatellitePorts[0], buffer);
+                        involvedSwitches.add(String.format("domain3-%d", domain3SatellitePorts[0]));
                         postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[dstVmx % 3], buffer);
                         involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[dstVmx % 3]));
                     }
                     break;
                 case 8:
-                    if (srcDomain < dstDomain) {        // 1,7 (对应的tofino交换机在domain2和domain6)
+                    if (srcDomain < dstDomain) {        // 1->7 (对应的tofino交换机在domain2和domain6)
                         postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[3], buffer);
                         involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[3]));
+                        postFlow(modalType, domain3SatelliteSwitch1, 0, domain3SatellitePorts[2], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch2, 0, domain3SatellitePorts[2], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch3, 0, domain3SatellitePorts[2], buffer);
+                        involvedSwitches.add(String.format("domain3-%d", domain3SatellitePorts[2]));
                         postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[(dstVmx+1) % 3], buffer);
                         involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[(dstVmx+1) % 3]));
-                    } else {                            // 7,1
+                    } else {                            // 7->1
                         postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[3], buffer);
                         involvedSwitches.add(String.format("domain6-%d", domain4TofinoPorts[3]));
+                        postFlow(modalType, domain3SatelliteSwitch1, 0, domain3SatellitePorts[0], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch2, 0, domain3SatellitePorts[0], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch3, 0, domain3SatellitePorts[0], buffer);
+                        involvedSwitches.add(String.format("domain3-%d", domain3SatellitePorts[0]));
                         postFlow(modalType, domain2TofinoSwitch, 0, domain2TofinoPorts[dstVmx % 3], buffer);
                         involvedSwitches.add(String.format("domain2-%d", domain2TofinoPorts[dstVmx % 3]));
                     }
                     break;
                 case 12:
-                    if (srcDomain < dstDomain) {        // 5,7
+                    if (srcDomain < dstDomain) {        // 5->7
                         postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[2], buffer);
                         involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[2]));
+                        postFlow(modalType, domain3SatelliteSwitch1, 0, domain3SatellitePorts[2], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch2, 0, domain3SatellitePorts[2], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch3, 0, domain3SatellitePorts[2], buffer);
+                        involvedSwitches.add(String.format("domain3-%d", domain3SatellitePorts[2]));
                         postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[(dstVmx+1) % 3], buffer);
                         involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[(dstVmx+1) % 3]));
-                    } else {                            // 7,5
+                    } else {                            // 7->5
                         postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[3], buffer);
                         involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[3]));
+                        postFlow(modalType, domain3SatelliteSwitch1, 0, domain3SatellitePorts[1], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch2, 0, domain3SatellitePorts[1], buffer);
+                        postFlow(modalType, domain3SatelliteSwitch3, 0, domain3SatellitePorts[1], buffer);
+                        involvedSwitches.add(String.format("domain3-%d", domain3SatellitePorts[1]));
                         postFlow(modalType, domain4TofinoSwitch, 0, domain4TofinoPorts[dstVmx % 3], buffer);
                         involvedSwitches.add(String.format("domain4-%d", domain4TofinoPorts[dstVmx % 3]));
                     }
@@ -324,6 +358,12 @@ public class ModalHandler {
             deviceId = DeviceId.deviceId(String.format("device:domain4:p4"));
         } else if (switchID == domain6TofinoSwitch) {
             deviceId = DeviceId.deviceId(String.format("device:domain6:p6"));
+        } else if (switchID == domain3SatelliteSwitch1) {
+            deviceId = DeviceId.deviceId(String.format("device:satellite1"));
+        } else if (switchID == domain3SatelliteSwitch2) {
+            deviceId = DeviceId.deviceId(String.format("device:satellite2"));
+        } else if (switchID == domain3SatelliteSwitch3) {
+            deviceId = DeviceId.deviceId(String.format("device:satellite3"));
         } else {
             int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
             deviceId = DeviceId.deviceId(String.format("device:domain%d:group%d:level%d:s%d", getDomain(vmx), getGroup(vmx), level, switchID + 255 * vmx));
