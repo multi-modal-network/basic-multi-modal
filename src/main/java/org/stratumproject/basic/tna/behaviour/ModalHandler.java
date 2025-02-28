@@ -99,7 +99,7 @@ public class ModalHandler {
         }
         if (modalType == "ipv4" || modalType == "id" || modalType == "geo" || modalType == "mf" || modalType == "ndn" || modalType == "flexip") {
             log.warn("modalType: {}, srcHost: {}, dstHost: {}", modalType, srcHost, dstHost);
-            String path = "/home/onos/Desktop/ngsdn/mininet/flows.out";
+            String path = "/flows.out";
             String content = modalType + " " + srcHost + " " + dstHost;
             try (FileOutputStream fos = new FileOutputStream(path, true)) {
                 fos.write(System.lineSeparator().getBytes());
@@ -357,11 +357,11 @@ public class ModalHandler {
         } else if (switchID == domain6TofinoSwitch) {
             deviceId = DeviceId.deviceId(String.format("device:domain6:p6"));
         } else if (switchID == domain3SatelliteSwitch1) {
-            deviceId = DeviceId.deviceId(String.format("device_satellite1"));
+            deviceId = DeviceId.deviceId(String.format("device:satellite1"));
         } else if (switchID == domain3SatelliteSwitch2) {
-            deviceId = DeviceId.deviceId(String.format("device_satellite2"));
+            deviceId = DeviceId.deviceId(String.format("device:satellite2"));
         } else if (switchID == domain3SatelliteSwitch3) {
-            deviceId = DeviceId.deviceId(String.format("device_satellite3"));
+            deviceId = DeviceId.deviceId(String.format("device:satellite3"));
         } else {
             int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
             deviceId = DeviceId.deviceId(String.format("device:domain%d:group%d:level%d:s%d", getDomain(vmx), getGroup(vmx), level, switchID + 255 * vmx));
