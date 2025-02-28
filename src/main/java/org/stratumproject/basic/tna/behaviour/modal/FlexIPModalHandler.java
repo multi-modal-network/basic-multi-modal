@@ -123,7 +123,8 @@ public class FlexIPModalHandler {
         long flexip = ((long)FlexIP[31] & 0xff) +
                         (((long)FlexIP[30] & 0xff) << 8) + 
                         (((long)FlexIP[29] & 0xff) << 16) + 
-                        (((long)FlexIP[28] & 0xff) << 24);
+                        (((long)FlexIP[28] & 0xff) << 24) +
+                        (((long)FlexIP[27] & 0xff) << 32);
         return calculateHost(flexip, FLEXIP_GAP_F4);
     }
 
