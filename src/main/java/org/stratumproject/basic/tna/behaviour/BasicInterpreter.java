@@ -506,13 +506,6 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
         return Optional.empty();
     }
 
-    @Override
-    public Optional<Long> mapLogicalPort(PortNumber port) {
-      if (!port.equals(CONTROLLER)) {
-          return Optional.empty();
-      }
-      return capabilities.cpuPort();
-    }
 
     /* Connect point generated using sb metadata does not have port name
        we use the device service as translation service */

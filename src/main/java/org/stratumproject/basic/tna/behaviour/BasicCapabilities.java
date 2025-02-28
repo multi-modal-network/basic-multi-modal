@@ -45,21 +45,4 @@ public class BasicCapabilities {
             return 0;
         }
     }
-
-    public boolean isArchV1model() {
-        return pipeconf.pipelineModel().architecture()
-                .map(a -> a.equals(V1MODEL))
-                .orElse(false);
-    }
-
-    public boolean isArchTna() {
-        return pipeconf.pipelineModel().architecture()
-                .map(a -> a.equals(TNA))
-                .orElse(false);
-    }
-
-    public Optional<Long> cpuPort() {
-        return isArchTna() ? Optional.of(PORT_CPU) : Optional.of(PORT_CPU_BMV2);
-    }
-
 }
