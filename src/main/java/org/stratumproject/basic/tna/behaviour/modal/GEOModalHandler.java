@@ -29,9 +29,11 @@ public class GEOModalHandler {
         log.warn("transferGEO2Host lat:{}, lon:{}", lat, lon);
         int i = lat + 63;
         int sign = ((lon >> 30) & 3) == 1 ? -1 : 1;
-        int integerPart = ((lon >> 15) & 0x7fff) * sign;
-        log.warn("geolatlon", sign, integerPart);
-        int vmx = (int) Math.floor(((integerPart + 180) - (i - 64) * 0.4) / 20);
+        int integerPart = ((lon >> 15) & 0x7fff);
+        int fractionPart = Math.round((lon & 0x7fff) * 10.0f / 32767);
+        log.warn("geolatlon, sign:{}, integer:{}, fraction:{}", sign, integerPart, fractionPart);
+        double tmp = (integerPart + fractionPart * 1.0 / 10) * sign;
+        int vmx = (int) Math.round(((tmp + 180) - (i - 64) * 0.4) / 20);
         return vmx * 255 + i;
     }
 

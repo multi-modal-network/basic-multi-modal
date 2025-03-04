@@ -118,14 +118,14 @@ public class ModalHandler {
     private static final int up = 1;
 
     // 烽火tofino交换机端口设置
-    // private static final int[] domain2TofinoPorts = {132,140,148,164};
-    // private static final int[] domain4TofinoPorts = {132,140,164};
-    // private static final int[] domain6TofinoPorts = {132,140,148,164};
+    private static final int[] domain2TofinoPorts = {132,140,148,164};
+    private static final int[] domain4TofinoPorts = {132,140,164};
+    private static final int[] domain6TofinoPorts = {132,140,148,164};
 
     // 武大tofino交换机端口设置
-    private static final int[] domain2TofinoPorts = {128,144,160,176};
-    private static final int[] domain4TofinoPorts = {128,144,176};
-    private static final int[] domain6TofinoPorts = {128,144,160,176};
+    // private static final int[] domain2TofinoPorts = {128,144,160,176};
+    // private static final int[] domain4TofinoPorts = {128,144,176};
+    // private static final int[] domain6TofinoPorts = {128,144,160,176};
 
     // tofino交换机deviceId
     private static final int domain2TofinoSwitch = 2000;
@@ -175,7 +175,7 @@ public class ModalHandler {
             // srcSwitch至lca(srcSwitch,dstSwitch)路径中交换机需要下发流表（当前节点向父节点转发）
             // lca(srcSwitch,dstSwitch)至dstSwitch路径中交换机需要下发流表（当前节点的父节点向当前节点转发）
             postFlow(modalType, dstSwitch, commonVmx, left, buffer);   // dstSwitch需要向网卡eth2的端口转发
-            involvedSwitches.add(String.format("%d-%d", commonVmx, dstSwitch));
+            involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, dstSwitch));
             int srcDepth = (int) Math.floor(Math.log(srcSwitch)/Math.log(2)) + 1;
             int dstDepth = (int) Math.floor(Math.log(dstSwitch)/Math.log(2)) + 1;
             log.warn("srcHost:{}, dstHost:{}, srcSwitch:{}, dstSwitch:{}, srcDepth:{}, dstDepth:{}",
@@ -184,7 +184,7 @@ public class ModalHandler {
             if (srcDepth > dstDepth) {
                 while (srcDepth != dstDepth) {
                     postFlow(modalType, srcSwitch, commonVmx, up, buffer);  // 只能通过eth1向父节点转发
-                    involvedSwitches.add(String.format("%d-%d", commonVmx, srcSwitch));
+                    involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, srcSwitch));
                     srcSwitch = (int) Math.floor(srcSwitch / 2);
                     srcDepth = srcDepth - 1;
                 } 
@@ -198,7 +198,7 @@ public class ModalHandler {
                     } else {
                         postFlow(modalType, father, commonVmx, right, buffer);   // 通过eth3向右儿子转发
                     }
-                    involvedSwitches.add(String.format("%d-%d", commonVmx, father));
+                    involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, father));
                     dstSwitch = (int) Math.floor(dstSwitch / 2);
                     dstDepth = dstDepth - 1;
                 }
@@ -212,8 +212,8 @@ public class ModalHandler {
                 } else {
                     postFlow(modalType, father, commonVmx, right, buffer);
                 }
-                involvedSwitches.add(String.format("%d-%d", commonVmx, srcSwitch));
-                involvedSwitches.add(String.format("%d-%d", commonVmx, father));
+                involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, srcSwitch));
+                involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, father));
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
                 dstSwitch = (int) Math.floor(dstSwitch / 2);
                 if (srcSwitch == dstSwitch) {
@@ -224,7 +224,7 @@ public class ModalHandler {
             // 源group源主机直接发至S1
             while(srcSwitch != 0) {
                 postFlow(modalType, srcSwitch, srcVmx, up, buffer);
-                involvedSwitches.add(String.format("%d-%d", srcVmx, srcSwitch));
+                involvedSwitches.add(String.format("t%d-s%d", srcVmx+1, srcSwitch));
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
             }
             // tofino交换机下发流表
@@ -244,7 +244,7 @@ public class ModalHandler {
             }
             // 目的groupS1直接发至目的主机
             postFlow(modalType, dstSwitch, dstVmx, left, buffer);
-            involvedSwitches.add(String.format("%d-%d", dstVmx, dstSwitch));
+            involvedSwitches.add(String.format("t%d-s%d", dstVmx+1, dstSwitch));
             while(dstSwitch != 1) {
                 int father = (int) Math.floor(dstSwitch / 2);
                 if (father * 2 == dstSwitch) {
@@ -252,14 +252,14 @@ public class ModalHandler {
                 } else {
                     postFlow(modalType, father, dstVmx, right, buffer);
                 }
-                involvedSwitches.add(String.format("%d-%d", dstVmx, father));
+                involvedSwitches.add(String.format("t%d-s%d", dstVmx+1, father));
                 dstSwitch = (int) Math.floor(dstSwitch / 2);
             }
         } else {                // 异域
             // 源group源主机直接发至S1
             while(srcSwitch != 0) {
                 postFlow(modalType, srcSwitch, srcVmx, up, buffer);
-                involvedSwitches.add(String.format("%d-%d", srcVmx, srcSwitch));
+                involvedSwitches.add(String.format("t%d-s%d", srcVmx+1, srcSwitch));
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
             }
             // tofino交换机下发流表
@@ -300,7 +300,7 @@ public class ModalHandler {
                         involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[(dstVmx+1) % 3]));
                     } else {                            // 7->1
                         postFlow(modalType, domain6TofinoSwitch, 0, domain6TofinoPorts[3], buffer);
-                        involvedSwitches.add(String.format("domain6-%d", domain4TofinoPorts[3]));
+                        involvedSwitches.add(String.format("domain6-%d", domain6TofinoPorts[3]));
                         postFlow(modalType, domain3SatelliteSwitch1, 0, domain3SatellitePorts[0], buffer);
                         postFlow(modalType, domain3SatelliteSwitch2, 0, domain3SatellitePorts[0], buffer);
                         postFlow(modalType, domain3SatelliteSwitch3, 0, domain3SatellitePorts[0], buffer);
@@ -333,7 +333,7 @@ public class ModalHandler {
             }
             // 目的groupS1直接发至目的主机
             postFlow(modalType, dstSwitch, dstVmx, left, buffer);
-            involvedSwitches.add(String.format("%d-%d", dstVmx, dstSwitch));
+            involvedSwitches.add(String.format("t%d-s%d", dstVmx+1, dstSwitch));
             while(dstSwitch != 1) {
                 int father = (int) Math.floor(dstSwitch / 2);
                 if (father * 2 == dstSwitch) {
@@ -341,7 +341,7 @@ public class ModalHandler {
                 } else {
                     postFlow(modalType, father, dstVmx, right, buffer);
                 }
-                involvedSwitches.add(String.format("%d-%d", dstVmx, father));
+                involvedSwitches.add(String.format("t%d-s%d", dstVmx+1, father));
                 dstSwitch = (int) Math.floor(dstSwitch / 2);
             }
         }
