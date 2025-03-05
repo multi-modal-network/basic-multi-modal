@@ -61,7 +61,7 @@ public class ModalHandler {
         log.warn("payload: {}, buffer: {}, deviceId: {}", payload, buffer, deviceId);
         switch(pktType){
             case 0x0800:    // IP
-                if((buffer.get(12) & 0xff) == 0xac && (buffer.get(13) & 0xff) == 0x17 && (buffer.get(16) & 0xff) == 0xac && (buffer.get(17) & 0xff) == 0x17){
+                if((buffer.get(12) & 0xff) == 0xac && (buffer.get(13) & 0xff) == 0x14 && (buffer.get(16) & 0xff) == 0xac && (buffer.get(17) & 0xff) == 0x14){
                     modalType = "ipv4";
                     srcHost = ipv4.transferIP2Host(((buffer.get(14) & 0xff) << 8) + (buffer.get(15) & 0xff));
                     dstHost = ipv4.transferIP2Host(((buffer.get(18) & 0xff) << 8) + (buffer.get(19) & 0xff));
