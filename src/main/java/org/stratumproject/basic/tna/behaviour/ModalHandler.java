@@ -120,14 +120,14 @@ public class ModalHandler {
     private static final int up = 1;
 
     // 烽火tofino交换机端口设置
-    // private static final int[] domain2TofinoPorts = {132,140,148,164};
-    // private static final int[] domain4TofinoPorts = {132,140,164};
-    // private static final int[] domain6TofinoPorts = {132,140,148,164};
+    private static final int[] domain2TofinoPorts = {132,140,148,164};
+    private static final int[] domain4TofinoPorts = {132,140,164};
+    private static final int[] domain6TofinoPorts = {132,140,148,164};
 
     // 武大tofino交换机端口设置
-    private static final int[] domain2TofinoPorts = {128,144,160,176};
-    private static final int[] domain4TofinoPorts = {128,144,176};
-    private static final int[] domain6TofinoPorts = {128,144,160,176};
+    // private static final int[] domain2TofinoPorts = {128,144,160,176};
+    // private static final int[] domain4TofinoPorts = {128,144,176};
+    // private static final int[] domain6TofinoPorts = {128,144,160,176};
 
     // tofino交换机deviceId
     private static final int domain2TofinoSwitch = 2000;
