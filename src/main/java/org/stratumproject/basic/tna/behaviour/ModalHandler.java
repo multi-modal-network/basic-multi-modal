@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+
+import org.json.JSONObject;
 import org.onlab.util.ImmutableByteSequence;
 import org.onosproject.core.ApplicationId;
 import org.onosproject.core.CoreService;
@@ -26,6 +28,14 @@ import org.onosproject.net.pi.runtime.PiPacketMetadata;
 import org.onosproject.net.pi.runtime.PiPacketOperation;
 import org.onosproject.net.pi.runtime.PiTableAction;
 import org.slf4j.Logger;
+import java.sql.*;
+import java.util.Base64;
+import org.json.JSONArray;
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.io.OutputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 import static org.onlab.util.ImmutableByteSequence.copyFrom;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -54,7 +64,7 @@ public class ModalHandler {
         this.mf = new MFModalHandler();
     }
 
-    public void handleModalPacket(int pktType, byte[] payload, DeviceId deviceId) {
+    public void handleModalPacket(int pktType, byte[] payload, DeviceId deviceId) throws Exception{
         String modalType = "";
         int srcHost = 0, dstHost = 0;
         ByteBuffer buffer = ByteBuffer.wrap(payload);
@@ -161,7 +171,7 @@ public class ModalHandler {
         }
     }
 
-    public void executeAddFlow(String modalType, int srcHost, int dstHost, ByteBuffer buffer) {
+    public void executeAddFlow(String modalType, int srcHost, int dstHost, ByteBuffer buffer) throws Exception {
         // 获取源目主机的vmx
         int srcVmx = srcHost / 256;
         int dstVmx = dstHost / 256;
@@ -171,12 +181,21 @@ public class ModalHandler {
         int srcSwitch = (srcHost-1) % 255 + 1;
         int dstSwitch = (dstHost-1) % 255 + 1;
         ArrayList<String> involvedSwitches = new ArrayList<>();
+
+        // 发送给go程序带有deviceID的数组
+        ArrayList<String> sendArray = new ArrayList<>();
+
         if(srcVmx == dstVmx) {          // 同group
             int commonVmx = srcVmx;
             // 交换机的eth0\eth1\eth2对应转发端口0\1\2
             // srcSwitch至lca(srcSwitch,dstSwitch)路径中交换机需要下发流表（当前节点向父节点转发）
             // lca(srcSwitch,dstSwitch)至dstSwitch路径中交换机需要下发流表（当前节点的父节点向当前节点转发）
             postFlow(modalType, dstSwitch, commonVmx, left, buffer);   // dstSwitch需要向网卡eth2的端口转发
+
+            int sendlevel = (int) (Math.log(dstSwitch)/Math.log(2)) + 1;
+            sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(commonVmx), getGroup(commonVmx), sendlevel, dstSwitch + 255 * commonVmx));
+            // 数据平面group内实际交换机都是s1-s255,所以这里还是加一步SwitchID + 255 * commonVmx
+
             involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, dstSwitch));
             int srcDepth = (int) Math.floor(Math.log(srcSwitch)/Math.log(2)) + 1;
             int dstDepth = (int) Math.floor(Math.log(dstSwitch)/Math.log(2)) + 1;
@@ -186,6 +205,10 @@ public class ModalHandler {
             if (srcDepth > dstDepth) {
                 while (srcDepth != dstDepth) {
                     postFlow(modalType, srcSwitch, commonVmx, up, buffer);  // 只能通过eth1向父节点转发
+
+                    int level = (int) (Math.log(dstSwitch)/Math.log(2)) + 1;
+                    sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(commonVmx), getGroup(commonVmx), level, srcSwitch + 255 * commonVmx));
+
                     involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, srcSwitch));
                     srcSwitch = (int) Math.floor(srcSwitch / 2);
                     srcDepth = srcDepth - 1;
@@ -200,6 +223,10 @@ public class ModalHandler {
                     } else {
                         postFlow(modalType, father, commonVmx, right, buffer);   // 通过eth3向右儿子转发
                     }
+
+                    int level = (int) (Math.log(father)/Math.log(2)) + 1;
+                    sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(commonVmx), getGroup(commonVmx), level, father + 255 * commonVmx));
+
                     involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, father));
                     dstSwitch = (int) Math.floor(dstSwitch / 2);
                     dstDepth = dstDepth - 1;
@@ -214,6 +241,13 @@ public class ModalHandler {
                 } else {
                     postFlow(modalType, father, commonVmx, right, buffer);
                 }
+
+                int level = (int) (Math.log(srcSwitch)/Math.log(2)) + 1;
+                sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(commonVmx), getGroup(commonVmx), level, srcSwitch + 255 * commonVmx));
+
+                level = (int) (Math.log(father)/Math.log(2)) + 1;
+                sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(commonVmx), getGroup(commonVmx), level, father + 255 * commonVmx));
+
                 involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, srcSwitch));
                 involvedSwitches.add(String.format("t%d-s%d", commonVmx+1, father));
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
@@ -226,6 +260,10 @@ public class ModalHandler {
             // 源group源主机直接发至S1
             while(srcSwitch != 0) {
                 postFlow(modalType, srcSwitch, srcVmx, up, buffer);
+
+                int level = (int) (Math.log(srcSwitch)/Math.log(2)) + 1;
+                sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(srcVmx), getGroup(srcVmx), level, srcSwitch + 255 * srcVmx));
+
                 involvedSwitches.add(String.format("t%d-s%d", srcVmx+1, srcSwitch));
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
             }
@@ -246,6 +284,10 @@ public class ModalHandler {
             }
             // 目的groupS1直接发至目的主机
             postFlow(modalType, dstSwitch, dstVmx, left, buffer);
+
+            int level = (int) (Math.log(dstSwitch)/Math.log(2)) + 1;
+            sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(dstVmx), getGroup(dstVmx), level, dstSwitch + 255 * dstVmx));
+
             involvedSwitches.add(String.format("t%d-s%d", dstVmx+1, dstSwitch));
             while(dstSwitch != 1) {
                 int father = (int) Math.floor(dstSwitch / 2);
@@ -254,6 +296,10 @@ public class ModalHandler {
                 } else {
                     postFlow(modalType, father, dstVmx, right, buffer);
                 }
+
+                int sendlevel = (int) (Math.log(father)/Math.log(2)) + 1;
+                sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(dstVmx), getGroup(dstVmx), sendlevel, father + 255 * dstVmx));
+
                 involvedSwitches.add(String.format("t%d-s%d", dstVmx+1, father));
                 dstSwitch = (int) Math.floor(dstSwitch / 2);
             }
@@ -261,6 +307,10 @@ public class ModalHandler {
             // 源group源主机直接发至S1
             while(srcSwitch != 0) {
                 postFlow(modalType, srcSwitch, srcVmx, up, buffer);
+
+                int sendlevel = (int) (Math.log(srcSwitch)/Math.log(2)) + 1;
+                sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(srcVmx), getGroup(srcVmx), sendlevel, srcSwitch + 255 * srcVmx));
+
                 involvedSwitches.add(String.format("t%d-s%d", srcVmx+1, srcSwitch));
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
             }
@@ -335,6 +385,10 @@ public class ModalHandler {
             }
             // 目的groupS1直接发至目的主机
             postFlow(modalType, dstSwitch, dstVmx, left, buffer);
+
+            int sendlevel = (int) (Math.log(dstSwitch)/Math.log(2)) + 1;
+            sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(dstVmx), getGroup(dstVmx), sendlevel, dstSwitch + 255 * dstVmx));
+
             involvedSwitches.add(String.format("t%d-s%d", dstVmx+1, dstSwitch));
             while(dstSwitch != 1) {
                 int father = (int) Math.floor(dstSwitch / 2);
@@ -343,31 +397,174 @@ public class ModalHandler {
                 } else {
                     postFlow(modalType, father, dstVmx, right, buffer);
                 }
+
+                int level = (int) (Math.log(father)/Math.log(2)) + 1;
+                sendArray.add(String.format("device:domain%d:group%d:level%d:s%d", getDomain(dstVmx), getGroup(dstVmx), level, father + 255 * dstVmx));
+
                 involvedSwitches.add(String.format("t%d-s%d", dstVmx+1, father));
                 dstSwitch = (int) Math.floor(dstSwitch / 2);
             }
         }
+
+        String IP = "218.199.84.172";
+        // String APP_ID = "org.stratumproject.basic-tna";  // 这个app_id决定go的接口是什么
+        String urlString = String.format("http://%s:8188/api/checkpipe", IP);
+        String auth = "onos:rocks";//
+        String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes());
+
+
+//        // 将ArrayList中的元素用逗号拼接成字符串
+//        StringBuilder stringBuilder = new StringBuilder();
+//        for (String s : involvedSwitches) {
+//            if (stringBuilder.length() > 0) {
+//                stringBuilder.append(",");
+//            }
+//            stringBuilder.append(s);
+//        }
+//        String listAsString = stringBuilder.toString();
+//        urlString = urlString + "&list=" + listAsString;
+
+        // 生成请求的json数据
+        JSONObject jsonData = new JSONObject();;
+        // 将 ArrayList 转换为 JSON 数组
+        JSONArray jsonArray = new JSONArray(sendArray);
+        // 将 JSONArray 添加到 jsonData 对象中
+        jsonData.put("sendArray", jsonArray);
+
+        jsonData.put("modalType", modalType);
+
+        // 发送请求
+        try {
+            log.warn("------------data------------\n");
+            // 创建一个HTTP POST请求
+            URL url = new URL(urlString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+            // connection.setRequestMethod("GET");
+
+            // 设置 HTTP 请求头的属性
+            // 例如 Content-Type 属性设置成 application/json，告知服务器客户端发送的数据类型是 JSON 格式。
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setRequestProperty("Authorization", "Basic " + encodedAuth);  // HTTP 的认证格式
+            connection.setDoOutput(true);  // 允许向服务器输出数据
+
+            // 发送JSON数据
+            try (OutputStream os = connection.getOutputStream()) {
+                byte[] input = jsonData.toString().getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            // 获取服务器的响应码 responseCode，如果响应码为 HTTP_OK（200）
+            int responseCode = connection.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                log.warn("Success: " + connection.getResponseMessage());
+
+                // 读取响应内容
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();  //  处理可变的字符串
+
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        response.append(line);
+                    }
+
+                    // 解析 JSON 响应
+                    try {
+                        JSONObject jsonResponse = new JSONObject(response.toString());
+                        // 获得不支持该模态的主机列表
+                        if (jsonResponse.has("unsupported")) {
+                            JSONArray dataArray = jsonResponse.getJSONArray("unsupported");
+
+                            // 打印 unsupported 数组内容到日志
+                            for (int i = 0; i < dataArray.length(); i++) {
+                                log.warn("不支持该模态的主机为 {}: {}", i, dataArray.get(i));
+                            }
+                        } else {
+                            log.warn("返回的 json 文件不包含 'unsupported' 数组.");
+                        }
+                    } catch (Exception e) {
+                        log.error("Error parsing JSON response: ", e);
+                    }
+                }
+            }
+            else {
+                log.warn("Status Code: " + responseCode);
+                log.warn("Response Body: " + connection.getResponseMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+//        ArrayList<Boolean> isContain = new ArrayList<>();
+//        for (int i = 0; i < isContain.size(); i++) {
+//            if(isContain.get(i) == false){
+//                log.warn("不包含该模态");
+//            }
+//        }
+
         log.warn("involvedSwitches:{}", involvedSwitches);
     }
 
     public void postFlow(String modalType, int switchID, int vmx, int port, ByteBuffer buffer) {
         DeviceId deviceId;
+        //String deviceIdStr;
         if (switchID == domain2TofinoSwitch) {
             deviceId = DeviceId.deviceId(String.format("device:domain2:p1"));
+            //deviceIdStr = String.format("device:domain2:p1");
         } else if (switchID == domain4TofinoSwitch) {
             deviceId = DeviceId.deviceId(String.format("device:domain4:p4"));
+            //deviceIdStr = String.format("device:domain4:p4");
         } else if (switchID == domain6TofinoSwitch) {
             deviceId = DeviceId.deviceId(String.format("device:domain6:p6"));
+            //deviceIdStr = String.format("device:domain6:p6");
         } else if (switchID == domain3SatelliteSwitch1) {
             deviceId = DeviceId.deviceId(String.format("device:satellite1"));
+            //deviceIdStr = String.format("device:satellite1");
         } else if (switchID == domain3SatelliteSwitch2) {
             deviceId = DeviceId.deviceId(String.format("device:satellite2"));
+            //deviceIdStr = String.format("device:satellite2");
         } else if (switchID == domain3SatelliteSwitch3) {
             deviceId = DeviceId.deviceId(String.format("device:satellite3"));
+            //deviceIdStr = String.format("device:satellite3");
         } else {
             int level = (int) (Math.log(switchID)/Math.log(2)) + 1;
             deviceId = DeviceId.deviceId(String.format("device:domain%d:group%d:level%d:s%d", getDomain(vmx), getGroup(vmx), level, switchID + 255 * vmx));
+            //deviceIdStr = String.format("device:domain%d:group%d:level%d:s%d", getDomain(vmx), getGroup(vmx), level, switchID + 255 * vmx);
         }
+//        String url  = "jdbc:mysql://localhost:3306/devices?";
+//        String user = "root";
+//        String password = "root";
+//        String sql = "SELECT support_modal FROM devices WHERE device_id = ?";
+//        try{
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//        }catch(ClassNotFoundException e) {
+//            System.out.println("未找到 MySQL JDBC 驱动！");
+//            e.printStackTrace();
+//        }
+//        try (Connection conn = DriverManager.getConnection(url, user, password);
+//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+//            pstmt.setString(1, deviceIdStr);
+//            try (ResultSet rs = pstmt.executeQuery()) {
+//                if (rs.next()) {
+//                    String supportModal = rs.getString("support_modal");
+//                    if (supportModal == null || !supportModal.contains(modalType)) {
+//                        String message = String.format(
+//                            "Device ID: %s does not support modal type: %s\n",
+//                            deviceIdStr, modalType
+//                        );
+//                        String path = "/unsurpported.out";
+//                        try (FileOutputStream fos = new FileOutputStream(path, true)) {
+//                                fos.write(message.getBytes());
+//                                log.info("message written to file... {}", message);
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
         FlowRule flowRule;
         switch (modalType) {
             case "ipv4":

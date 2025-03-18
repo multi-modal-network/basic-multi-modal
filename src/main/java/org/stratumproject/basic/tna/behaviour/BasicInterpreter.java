@@ -7,6 +7,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.primitives.UnsignedInteger;
+import org.json.JSONObject;
 import org.onlab.packet.DeserializationException;
 import org.onlab.packet.Ethernet;
 import org.onlab.packet.IP;
@@ -297,7 +298,14 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
                 ApplicationId appId = coreService.getAppId("org.stratumproject.basic-tna");
                 FlowRuleService flowRuleService = handler().get(FlowRuleService.class);
                 ModalHandler modalHandler = new ModalHandler(appId, flowRuleService);
-                modalHandler.handleModalPacket(pktType, ethPkt.getPayload().serialize(), deviceId);
+
+                try {
+                    // 调用可能抛出异常的方法
+                    modalHandler.handleModalPacket(pktType, ethPkt.getPayload().serialize(), deviceId);
+                } catch (Exception e) {
+                    // 处理异常
+                    e.printStackTrace();
+                }
                 // sendToMMQueue(ethPkt);
 
                 // 构造PakcetOut数据包发回原始数据
@@ -442,63 +450,70 @@ public class BasicInterpreter extends AbstractBasicHandlerBehavior
     //     return new JSONObject().put("flows", new JSONArray().put(flowObject));
     // }
 
-    // public void postFlow(String modalType, int switchID, int port, int srcIdentifier, int dstIdentifier) {
-    //     String IP = "218.199.84.171";
-    //     String APP_ID = "org.stratumproject.basic-tna";
-    //     String urlString = String.format("http://%s:8181/onos/v1/flows?appId=%s",IP,APP_ID);
-    //     String auth = "onos:rocks";
-    //     String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes());
 
-    //     JSONObject jsonData = null;
-
-    //     switch (modalType) {
-    //         case "ip":
-    //             jsonData = generateIPFlows(switchID, port, srcIdentifier, dstIdentifier);
-    //             break;
-    //         case "id":
-    //             jsonData = generateIDFlows(switchID, port, srcIdentifier, dstIdentifier);
-    //             break;
-    //         case "geo":
-    //             // jsonData = generateGEOFlows(switchID, port, srcIdentifier, dstIdentifier);
-    //             break;
-    //         case "mf":
-    //             jsonData = generateMFFlows(switchID, port, srcIdentifier, dstIdentifier);
-    //             break;
-    //         case "ndn":
-    //             jsonData = generateNDNFlows(switchID, port, srcIdentifier, dstIdentifier);
-    //             break;
-    //         default:
-    //             log.error("Invalid modal type: {}", modalType);
-    //     }
-
-    //     // 发送请求
-    //     try {
-    //         log.warn("------------data------------\n");
-    //         URL url = new URL(urlString);
-    //         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-    //         connection.setRequestMethod("POST");
-    //         connection.setRequestProperty("Content-Type", "application/json");
-    //         connection.setRequestProperty("Authorization", "Basic " + encodedAuth);
-    //         connection.setDoOutput(true);
-
-    //         // 发送JSON数据
-    //         try (OutputStream os = connection.getOutputStream()) {
-    //             byte[] input = jsonData.toString().getBytes("utf-8");
-    //             os.write(input, 0, input.length);
-    //         }
-
-    //         int responseCode = connection.getResponseCode();
-    //         if (responseCode == HttpURLConnection.HTTP_OK) {
-    //             log.warn("Success: " + connection.getResponseMessage());
-    //         } else {
-    //             log.warn("Status Code: " + responseCode);
-    //             log.warn("Response Body: " + connection.getResponseMessage());
-    //         }
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
-    //     return;
-    // }
+    // 修改内容
+//     public void postFlow(String modalType, int switchID, int port, int srcIdentifier, int dstIdentifier) {
+//         String IP = "218.199.84.171";
+//         String APP_ID = "org.stratumproject.basic-tna";  // 这个app_id决定go的接口是什么
+//         String urlString = String.format("http://%s:8181/onos/v1/flows?appId=%s",IP,APP_ID);
+//         String auth = "onos:rocks";
+//         String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes());
+//
+//         // 生成请求的json数据
+//         JSONObject jsonData = null;
+//
+//         switch (modalType) {
+//             case "ip":
+//                 jsonData = generateIPFlows(switchID, port, srcIdentifier, dstIdentifier);
+//                 break;
+//             case "id":
+//                 jsonData = generateIDFlows(switchID, port, srcIdentifier, dstIdentifier);
+//                 break;
+//             case "geo":
+//                 // jsonData = generateGEOFlows(switchID, port, srcIdentifier, dstIdentifier);
+//                 break;
+//             case "mf":
+//                 jsonData = generateMFFlows(switchID, port, srcIdentifier, dstIdentifier);
+//                 break;
+//             case "ndn":
+//                 jsonData = generateNDNFlows(switchID, port, srcIdentifier, dstIdentifier);
+//                 break;
+//             default:
+//                 log.error("Invalid modal type: {}", modalType);
+//         }
+//
+//         // 发送请求
+//         try {
+//             log.warn("------------data------------\n");
+//             // 创建一个HTTP POST请求
+//             URL url = new URL(urlString);
+//             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//             connection.setRequestMethod("POST");
+//             // 设置 HTTP 请求头的属性
+//             // 例如 Content-Type 属性设置成 application/json，告知服务器客户端发送的数据类型是 JSON 格式。
+//             connection.setRequestProperty("Content-Type", "application/json");
+//             connection.setRequestProperty("Authorization", "Basic " + encodedAuth);  // HTTP 的认证格式
+//             connection.setDoOutput(true);  // 允许向服务器输出数据
+//
+//             // 发送JSON数据
+//             try (OutputStream os = connection.getOutputStream()) {
+//                 byte[] input = jsonData.toString().getBytes("utf-8");
+//                 os.write(input, 0, input.length);
+//             }
+//
+//             // 获取服务器的响应码 responseCode，如果响应码为 HTTP_OK（200）
+//             int responseCode = connection.getResponseCode();
+//             if (responseCode == HttpURLConnection.HTTP_OK) {
+//                 log.warn("Success: " + connection.getResponseMessage());
+//             } else {
+//                 log.warn("Status Code: " + responseCode);
+//                 log.warn("Response Body: " + connection.getResponseMessage());
+//             }
+//         } catch (Exception e) {
+//             e.printStackTrace();
+//         }
+//         return;
+//     }
 
 
     @Override

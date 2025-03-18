@@ -81,7 +81,7 @@ _mvn_package: _m2_vol
 	docker run --dns 8.8.8.8 --rm -v $(DIR):/mvn-src -w /mvn-src --user $(UID) \
 		-e MAVEN_OPTS=-Dmaven.repo.local=/.m2 \
 		-e MAVEN_CONFIG=/.m2 \
-		-v $(MVN_CACHE):/.m2 \
+		-v /root/.m2:/.m2 \
 		$(MVN_SETTINGS_MOUNT) $(MAVEN_DOCKER_IMAGE) mvn $(MVN_FLAGS) clean package
 
 pipeconf: _mvn_package

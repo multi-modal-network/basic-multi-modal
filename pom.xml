@@ -128,6 +128,18 @@ SPDX-License-Identifier: Apache-2.0
         <artifactId>json</artifactId>
         <version>20210307</version>
     </dependency>
+
+<!--    <dependency>-->
+<!--        <groupId>mysql</groupId>-->
+<!--        <artifactId>mysql-connector-java</artifactId>-->
+<!--        <version>8.0.23</version>-->
+<!--    </dependency>-->
+
+<!--    <dependency>-->
+<!--        <groupId>com.mchange</groupId>-->
+<!--        <artifactId>c3p0</artifactId>-->
+<!--        <version>0.9.5.5</version> &lt;!&ndash; 使用最新版本 &ndash;&gt;-->
+<!--    </dependency>-->
    <!-- <dependency>
         <groupId>org.apache.rocketmq</groupId>
         <artifactId>rocketmq-client-java</artifactId>

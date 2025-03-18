@@ -32,7 +32,7 @@ def get_group(i):
         return 3
 
 # 循环创建domain1
-for vmx in range(2,3):
+for vmx in range(1,3):
     for i in range(1, 256):
         device_id = f"device:domain1:group{get_group(vmx)}:{get_level(i)}:s{i+vmx*255}"  # 格式化设备ID，确保它是5位数
         devices[device_id] = {
