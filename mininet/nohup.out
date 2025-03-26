@@ -1,0 +1,49 @@
+Usage: <modal_type> <frequency> <source_host> <destination_host>
+python3: can't open file 'id': [Errno 2] No such file or directory
+Usage: <modal_type> <frequency> <source_host> <destination_host>
+pid=414,name=bash,cmd=['bash', '--norc', '--noediting', '-is', 'mininet:h1500']
+执行命令:['mnexec', '-a', '414', 'python3', 'send.py', 'id', '1', 'h1500', 'h638']
+标准输出: modal_type:id, frequency:1, source_host:1500, destination_host:638
+generate_id_pkt 5 225 2 128
+###[ Ethernet ]### 
+  dst       = 02:42:0a:01:00:04
+  src       = 02:42:0a:01:00:07
+  type      = 0x812
+###[ Raw ]### 
+     load      = '\x0c\x16\r\\xa9\x0c\x11yh'
+
+sending on interface h1500-eth0 form 1500 to 638, model : id 
+
+{'datetime': 1742886130, 'src_host': 1500, 'dst_host': 638, 'mode_name': 'id'}
+POST 请求失败: HTTPConnectionPool(host='218.199.84.172', port=8188): Max retries exceeded with url: /api/traffic (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5d2627cd68>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+pid=414,name=bash,cmd=['bash', '--norc', '--noediting', '-is', 'mininet:h1500']
+执行命令:['mnexec', '-a', '414', 'python3', 'send.py', 'id', '1', 'h1500', 'h638']
+标准输出: modal_type:id, frequency:1, source_host:1500, destination_host:638
+generate_id_pkt 5 225 2 128
+###[ Ethernet ]### 
+  dst       = 02:42:0a:01:00:04
+  src       = 02:42:0a:01:00:07
+  type      = 0x812
+###[ Raw ]### 
+     load      = '\x0c\x16\r\\xa9\x0c\x11yh'
+
+sending on interface h1500-eth0 form 1500 to 638, model : id 
+
+{'datetime': 1742886131, 'src_host': 1500, 'dst_host': 638, 'mode_name': 'id'}
+POST 请求失败: HTTPConnectionPool(host='218.199.84.172', port=8188): Max retries exceeded with url: /api/traffic (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5d262206a0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+pid=414,name=bash,cmd=['bash', '--norc', '--noediting', '-is', 'mininet:h1500']
+执行命令:['mnexec', '-a', '414', 'python3', 'send.py', 'id', '1', 'h1500', 'h638']
+标准输出: modal_type:id, frequency:1, source_host:1500, destination_host:638
+generate_id_pkt 5 225 2 128
+###[ Ethernet ]### 
+  dst       = 02:42:0a:01:00:04
+  src       = 02:42:0a:01:00:07
+  type      = 0x812
+###[ Raw ]### 
+     load      = '\x0c\x16\r\\xa9\x0c\x11yh'
+
+sending on interface h1500-eth0 form 1500 to 638, model : id 
+
+{'datetime': 1742886131, 'src_host': 1500, 'dst_host': 638, 'mode_name': 'id'}
+POST 请求失败: HTTPConnectionPool(host='218.199.84.172', port=8188): Max retries exceeded with url: /api/traffic (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5d26220f28>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+成功发送 3 个数据包

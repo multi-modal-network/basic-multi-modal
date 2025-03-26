@@ -1,0 +1,13 @@
+modal_type:id, frequency:3, source_host:1530, destination_host:1500
+generate_id_pkt 5 255 5 225
+###[ Ethernet ]### 
+  dst       = 02:42:0a:01:00:07
+  src       = 02:42:0a:01:00:07
+  type      = 0x812
+###[ Raw ]### 
+     load      = '\x0c\x16\r\\xc7\x0c\x16\r\\xa9'
+
+sending on interface h1530-eth0 form 1530 to 1500, model : id 
+['flexip', '128', '164'] 346 ['flexip', '128', '164'] 346
+['flexip', '128', '164'] 346 ['flexip', '128', '164'] 346
+['flexip', '128', '164'] 346 ['flexip', '128', '164'] 346

@@ -152,3 +152,9 @@ clean:
 
 deep-clean: clean
 	-docker volume rm $(MVN_CACHE_DOCKER_VOLUME) > /dev/null 2>&1
+
+onos-cli:
+	$(info *** Connecting to the ONOS CLI... password: rocks)
+	$(info *** Top exit press Ctrl-D)
+	@ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -o LogLevel=ERROR -p 8101 onos@localhost
+

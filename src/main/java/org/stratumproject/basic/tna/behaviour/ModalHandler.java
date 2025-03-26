@@ -184,22 +184,39 @@ public class ModalHandler {
         log.warn("------------sending request------------\n");
 
         JSONObject response = new JSONObject();
-        // 创建一个HTTP POST请求
+        // 创建一个HTTP请求
         try {
-            URL url = new URL(urlString);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("POST");
+            log.warn("front");
+            HttpURLConnection connection;
+            log.warn("back");
+            if (urlString.equals("http://218.199.84.172:8188/api/checkpipe")) {
+                // POST请求
+                log.warn("post_urlString: {}", urlString);
+                URL url = new URL(urlString);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);  // 允许向服务器输出数据
 
-            // 设置 HTTP 请求头的属性
-            // 例如 Content-Type 属性设置成 application/json，告知服务器客户端发送的数据类型是 JSON 格式。
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setRequestProperty("Authorization", "Basic " + encodedAuth);  // HTTP 的认证格式
-            connection.setDoOutput(true);  // 允许向服务器输出数据
+                // 设置 HTTP 请求头的属性
+                connection.setRequestProperty("Content-Type", "application/json");
+                connection.setRequestProperty("Authorization", "Basic " + encodedAuth);
 
-            // 发送JSON数据
-            try (OutputStream os = connection.getOutputStream()) {
-                byte[] input = jsonData.toString().getBytes("utf-8");
-                os.write(input, 0, input.length);
+                // 发送JSON数据
+                try (OutputStream os = connection.getOutputStream()) {
+                    byte[] input = jsonData.toString().getBytes("utf-8");
+                    os.write(input, 0, input.length);
+                }
+            } else {
+                // GET请求
+                String queryString = "switchID=" + jsonData.getInt("switchID") + "&modalType=" + jsonData.getString("modalType");
+                log.warn("queryString: {}", queryString);
+                URL url = new URL(urlString + "?" + queryString);
+                log.warn("url:"+url.toString());
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+
+                // 设置 HTTP 请求头的属性
+                connection.setRequestProperty("Authorization", "Basic " + encodedAuth);
             }
 
             // 获取服务器的响应码 responseCode，如果响应码为 HTTP_OK（200）
@@ -218,8 +235,7 @@ public class ModalHandler {
                 response.put("message", responseMessage);
                 response.put("data", responseData);
                 log.warn("onosutil response success, code:{}, message:{}, data:{}", responseCode, responseMessage, responseData);
-            }
-            else {
+            } else {
                 response.put("code", responseCode);
                 response.put("message", responseMessage);
                 log.warn("onosutil response success, code:{}, message:{}", responseCode, responseMessage);
@@ -247,6 +263,7 @@ public class ModalHandler {
         // 数据平面group内实际交换机都是s1-s255
         int srcSwitch = (srcHost-1) % 255 + 1;
         int dstSwitch = (dstHost-1) % 255 + 1;
+
         ArrayList<String> involvedSwitches = new ArrayList<>();
         // 发送给go程序带有deviceID的数组
         ArrayList<String> checkPipeDevices = new ArrayList<>();
@@ -352,13 +369,14 @@ public class ModalHandler {
                     getGroup(srcVmx), getLevel(srcSwitch), srcSwitch + 255 * srcVmx));
                 srcSwitch = (int) Math.floor(srcSwitch / 2);
             }
+            log.warn("query tofino port");
             // tofino交换机下发流表 （首先查询Tofino交换机模态对应转发端口）
             JSONObject domain2Response = utilityResponse("http://218.199.84.172:8188/api/tofino/port",
-                new JSONObject("").put("switchID", domain2TofinoSwitch).put("modalType", modalType)).getJSONObject("data");
+                new JSONObject().put("switchID", domain2TofinoSwitch).put("modalType", modalType)).getJSONObject("data");
             JSONObject domain4Response = utilityResponse("http://218.199.84.172:8188/api/tofino/port",
-                new JSONObject("").put("switchID", domain4TofinoSwitch).put("modalType", modalType)).getJSONObject("data");
+                new JSONObject().put("switchID", domain4TofinoSwitch).put("modalType", modalType)).getJSONObject("data");
             JSONObject domain6Response = utilityResponse("http://218.199.84.172:8188/api/tofino/port",
-                new JSONObject("").put("switchID", domain6TofinoSwitch).put("modalType", modalType)).getJSONObject("data");
+                new JSONObject().put("switchID", domain6TofinoSwitch).put("modalType", modalType)).getJSONObject("data");
 
             log.warn("domainResponse: {}, {}, {}", domain2Response, domain4Response, domain6Response);
 
@@ -366,7 +384,7 @@ public class ModalHandler {
                 case 6:
                     if (srcDomain < dstDomain) {        // 1->5 (对应的tofino交换机在domain2和domain4)
                         // domain2的Tofino交换机
-                        involvedSwitches.add(String.format("domain2-p%d", domain2Response.getInt("port")));
+                        involvedSwitches.add(String.format("domain2-p%d", domain2Response.getJSONObject("data").getInt("port")));
                         checkPipeDevices.add(String.format("device:domain2:p1"));
                         // 中间的卫星BMv2交换机 (三台都下发流表)
                         involvedSwitches.add(String.format("domain3-p%d", domain3SatellitePorts[1]));
@@ -375,7 +393,7 @@ public class ModalHandler {
                         involvedSwitches.add(String.format("domain4-p%d", domain4TofinoPorts[dstVmx % 3]));
                         checkPipeDevices.add(String.format("device:domain4:p4"));
                     } else {                            // 5->1
-                        involvedSwitches.add(String.format("domain4-p%d", domain4Response.getInt("port")));
+                        involvedSwitches.add(String.format("domain4-p%d", domain4Response.getJSONObject("data").getInt("port")));
                         checkPipeDevices.add(String.format("device:domain4:p4"));
                         involvedSwitches.add(String.format("domain3-p%d", domain3SatellitePorts[0]));
                         checkPipeDevices.add(String.format("device:satellite1"));
@@ -385,14 +403,14 @@ public class ModalHandler {
                     break;
                 case 8:
                     if (srcDomain < dstDomain) {        // 1->7 (对应的tofino交换机在domain2和domain6)
-                        involvedSwitches.add(String.format("domain2-p%d", domain2Response.getInt("port")));
+                        involvedSwitches.add(String.format("domain2-p%d", domain2Response.getJSONObject("data").getInt("port")));
                         checkPipeDevices.add(String.format("device:domain2:p1"));
                         involvedSwitches.add(String.format("domain3-p%d", domain3SatellitePorts[2]));
                         checkPipeDevices.add(String.format("device:satellite1"));
                         involvedSwitches.add(String.format("domain6-p%d", domain6TofinoPorts[(dstVmx+1) % 3]));
                         checkPipeDevices.add(String.format("device:domain6:p6"));
                     } else {                            // 7->1
-                        involvedSwitches.add(String.format("domain6-p%d", domain6Response.getInt("port")));
+                        involvedSwitches.add(String.format("domain6-p%d", domain6Response.getJSONObject("data").getInt("port")));
                         checkPipeDevices.add(String.format("device:domain6:p6"));
                         involvedSwitches.add(String.format("domain3-p%d", domain3SatellitePorts[0]));
                         checkPipeDevices.add(String.format("device:satellite1"));
@@ -402,14 +420,14 @@ public class ModalHandler {
                     break;
                 case 12:
                     if (srcDomain < dstDomain) {        // 5->7
-                        involvedSwitches.add(String.format("domain4-p%d", domain4Response.getInt("port")));
+                        involvedSwitches.add(String.format("domain4-p%d", domain4Response.getJSONObject("data").getInt("port")));
                         checkPipeDevices.add(String.format("device:domain4:p4"));
                         involvedSwitches.add(String.format("domain3-p%d", domain3SatellitePorts[2]));
                         checkPipeDevices.add(String.format("device:satellite1"));
                         involvedSwitches.add(String.format("domain6-p%d", domain6TofinoPorts[(dstVmx+1) % 3]));
                         checkPipeDevices.add(String.format("device:domain6:p6"));
                     } else {                            // 7->5
-                        involvedSwitches.add(String.format("domain6-p%d", domain6Response.getInt("port")));
+                        involvedSwitches.add(String.format("domain6-p%d", domain6Response.getJSONObject("data").getInt("port")));
                         checkPipeDevices.add(String.format("device:domain6:p6"));
                         involvedSwitches.add(String.format("domain3-p%d", domain3SatellitePorts[1]));
                         checkPipeDevices.add(String.format("device:satellite1"));
@@ -438,9 +456,9 @@ public class ModalHandler {
         log.warn("involvedSwitches:{}", involvedSwitches);
         log.warn("checkPipeDevices:{}", checkPipeDevices);
         JSONObject checkPipeResponse = utilityResponse("http://218.199.84.172:8188/api/checkpipe",
-            new JSONObject("").put("sendArray", new JSONArray(checkPipeDevices)).put("modalType", modalType)).getJSONObject("data");
+            new JSONObject().put("sendArray", new JSONArray(checkPipeDevices)).put("modalType", modalType)).getJSONObject("data");
 
-        JSONArray unsupportedArray = checkPipeResponse.getJSONArray("unsupported");
+        JSONArray unsupportedArray = checkPipeResponse.getJSONObject("data").getJSONArray("unsupported");
         log.warn("ModalType: {}, UnsupportedDevices: {}", modalType, unsupportedArray);
 
         Set<String> unsupportedSet = new HashSet<>();

@@ -1,5 +1,1790 @@
 {
   "devices": {
+    "device:domain1:group2:level1:s256": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51001?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level2:s257": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51002?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level2:s258": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51003?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level3:s259": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51004?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level3:s260": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51005?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level3:s261": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51006?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level3:s262": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51007?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level4:s263": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51008?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level4:s264": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51009?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level4:s265": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51010?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level4:s266": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51011?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level4:s267": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51012?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level4:s268": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51013?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level4:s269": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51014?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level4:s270": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51015?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s271": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51016?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s272": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51017?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s273": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51018?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s274": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51019?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s275": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51020?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s276": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51021?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s277": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51022?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s278": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51023?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s279": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51024?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s280": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51025?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s281": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51026?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s282": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51027?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s283": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51028?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s284": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51029?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s285": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51030?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level5:s286": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51031?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s287": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51032?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s288": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51033?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s289": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51034?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s290": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51035?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s291": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51036?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s292": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51037?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s293": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51038?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s294": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51039?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s295": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51040?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s296": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51041?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s297": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51042?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s298": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51043?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s299": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51044?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s300": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51045?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s301": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51046?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s302": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51047?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s303": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51048?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s304": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51049?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s305": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51050?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s306": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51051?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s307": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51052?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s308": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51053?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s309": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51054?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s310": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51055?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s311": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51056?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s312": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51057?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s313": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51058?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s314": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51059?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s315": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51060?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s316": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51061?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s317": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51062?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level6:s318": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51063?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s319": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51064?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s320": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51065?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s321": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51066?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s322": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51067?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s323": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51068?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s324": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51069?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s325": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51070?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s326": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51071?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s327": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51072?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s328": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51073?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s329": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51074?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s330": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51075?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s331": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51076?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s332": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51077?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s333": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51078?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s334": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51079?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s335": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51080?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s336": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51081?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s337": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51082?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s338": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51083?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s339": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51084?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s340": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51085?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s341": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51086?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s342": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51087?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s343": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51088?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s344": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51089?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s345": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51090?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s346": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51091?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s347": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51092?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s348": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51093?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s349": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51094?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s350": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51095?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s351": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51096?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s352": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51097?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s353": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51098?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s354": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51099?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s355": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51100?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s356": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51101?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s357": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51102?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s358": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51103?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s359": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51104?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s360": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51105?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s361": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51106?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s362": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51107?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s363": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51108?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s364": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51109?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s365": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51110?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s366": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51111?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s367": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51112?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s368": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51113?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s369": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51114?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s370": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51115?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s371": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51116?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s372": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51117?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s373": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51118?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s374": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51119?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s375": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51120?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s376": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51121?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s377": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51122?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s378": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51123?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s379": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51124?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s380": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51125?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s381": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51126?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level7:s382": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51127?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s383": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51128?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s384": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51129?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s385": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51130?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s386": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51131?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s387": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51132?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s388": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51133?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s389": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51134?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s390": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51135?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s391": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51136?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s392": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51137?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s393": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51138?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s394": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51139?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s395": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51140?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s396": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51141?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s397": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51142?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s398": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51143?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s399": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51144?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s400": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51145?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s401": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51146?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s402": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51147?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s403": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51148?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s404": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51149?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s405": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51150?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s406": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51151?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s407": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51152?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s408": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51153?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s409": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51154?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s410": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51155?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s411": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51156?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s412": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51157?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s413": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51158?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s414": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51159?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s415": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51160?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s416": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51161?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s417": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51162?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s418": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51163?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s419": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51164?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s420": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51165?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s421": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51166?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s422": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51167?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s423": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51168?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s424": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51169?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s425": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51170?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s426": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51171?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s427": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51172?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s428": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51173?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s429": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51174?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s430": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51175?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s431": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51176?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s432": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51177?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s433": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51178?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s434": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51179?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s435": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51180?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s436": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51181?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s437": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51182?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s438": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51183?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s439": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51184?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s440": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51185?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s441": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51186?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s442": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51187?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s443": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51188?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s444": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51189?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s445": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51190?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s446": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51191?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s447": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51192?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s448": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51193?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s449": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51194?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s450": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51195?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s451": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51196?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s452": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51197?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s453": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51198?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s454": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51199?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s455": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51200?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s456": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51201?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s457": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51202?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s458": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51203?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s459": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51204?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s460": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51205?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s461": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51206?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s462": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51207?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s463": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51208?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s464": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51209?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s465": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51210?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s466": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51211?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s467": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51212?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s468": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51213?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s469": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51214?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s470": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51215?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s471": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51216?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s472": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51217?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s473": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51218?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s474": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51219?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s475": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51220?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s476": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51221?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s477": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51222?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s478": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51223?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s479": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51224?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s480": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51225?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s481": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51226?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s482": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51227?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s483": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51228?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s484": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51229?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s485": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51230?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s486": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51231?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s487": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51232?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s488": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51233?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s489": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51234?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s490": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51235?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s491": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51236?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s492": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51237?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s493": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51238?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s494": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51239?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s495": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51240?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s496": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51241?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s497": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51242?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s498": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51243?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s499": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51244?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s500": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51245?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s501": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51246?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s502": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51247?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s503": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51248?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s504": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51249?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s505": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51250?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s506": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51251?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s507": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51252?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s508": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51253?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s509": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51254?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
+    "device:domain1:group2:level8:s510": {
+      "basic": {
+        "managementAddress": "grpc://218.199.84.172:51255?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
+      }
+    },
     "device:domain1:group3:level1:s511": {
       "basic": {
         "managementAddress": "grpc://218.199.84.172:52001?device_id=1",
@@ -1785,1787 +3570,1787 @@
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level1:s1021": {
+    "device:domain7:group1:level1:s1276": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54001?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55001?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level2:s1022": {
+    "device:domain7:group1:level2:s1277": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54002?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55002?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level2:s1023": {
+    "device:domain7:group1:level2:s1278": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54003?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55003?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level3:s1024": {
+    "device:domain7:group1:level3:s1279": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54004?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55004?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level3:s1025": {
+    "device:domain7:group1:level3:s1280": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54005?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55005?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level3:s1026": {
+    "device:domain7:group1:level3:s1281": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54006?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55006?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level3:s1027": {
+    "device:domain7:group1:level3:s1282": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54007?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55007?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level4:s1028": {
+    "device:domain7:group1:level4:s1283": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54008?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55008?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level4:s1029": {
+    "device:domain7:group1:level4:s1284": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54009?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55009?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level4:s1030": {
+    "device:domain7:group1:level4:s1285": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54010?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55010?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level4:s1031": {
+    "device:domain7:group1:level4:s1286": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54011?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55011?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level4:s1032": {
+    "device:domain7:group1:level4:s1287": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54012?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55012?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level4:s1033": {
+    "device:domain7:group1:level4:s1288": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54013?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55013?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level4:s1034": {
+    "device:domain7:group1:level4:s1289": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54014?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55014?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level4:s1035": {
+    "device:domain7:group1:level4:s1290": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54015?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55015?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1036": {
+    "device:domain7:group1:level5:s1291": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54016?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55016?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1037": {
+    "device:domain7:group1:level5:s1292": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54017?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55017?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1038": {
+    "device:domain7:group1:level5:s1293": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54018?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55018?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1039": {
+    "device:domain7:group1:level5:s1294": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54019?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55019?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1040": {
+    "device:domain7:group1:level5:s1295": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54020?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55020?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1041": {
+    "device:domain7:group1:level5:s1296": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54021?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55021?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1042": {
+    "device:domain7:group1:level5:s1297": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54022?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55022?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1043": {
+    "device:domain7:group1:level5:s1298": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54023?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55023?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1044": {
+    "device:domain7:group1:level5:s1299": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54024?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55024?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1045": {
+    "device:domain7:group1:level5:s1300": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54025?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55025?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1046": {
+    "device:domain7:group1:level5:s1301": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54026?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55026?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1047": {
+    "device:domain7:group1:level5:s1302": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54027?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55027?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1048": {
+    "device:domain7:group1:level5:s1303": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54028?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55028?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1049": {
+    "device:domain7:group1:level5:s1304": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54029?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55029?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1050": {
+    "device:domain7:group1:level5:s1305": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54030?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55030?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level5:s1051": {
+    "device:domain7:group1:level5:s1306": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54031?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55031?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1052": {
+    "device:domain7:group1:level6:s1307": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54032?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55032?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1053": {
+    "device:domain7:group1:level6:s1308": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54033?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55033?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1054": {
+    "device:domain7:group1:level6:s1309": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54034?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55034?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1055": {
+    "device:domain7:group1:level6:s1310": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54035?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55035?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1056": {
+    "device:domain7:group1:level6:s1311": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54036?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55036?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1057": {
+    "device:domain7:group1:level6:s1312": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54037?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55037?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1058": {
+    "device:domain7:group1:level6:s1313": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54038?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55038?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1059": {
+    "device:domain7:group1:level6:s1314": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54039?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55039?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1060": {
+    "device:domain7:group1:level6:s1315": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54040?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55040?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1061": {
+    "device:domain7:group1:level6:s1316": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54041?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55041?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1062": {
+    "device:domain7:group1:level6:s1317": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54042?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55042?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1063": {
+    "device:domain7:group1:level6:s1318": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54043?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55043?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1064": {
+    "device:domain7:group1:level6:s1319": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54044?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55044?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1065": {
+    "device:domain7:group1:level6:s1320": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54045?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55045?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1066": {
+    "device:domain7:group1:level6:s1321": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54046?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55046?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1067": {
+    "device:domain7:group1:level6:s1322": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54047?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55047?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1068": {
+    "device:domain7:group1:level6:s1323": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54048?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55048?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1069": {
+    "device:domain7:group1:level6:s1324": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54049?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55049?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1070": {
+    "device:domain7:group1:level6:s1325": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54050?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55050?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1071": {
+    "device:domain7:group1:level6:s1326": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54051?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55051?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1072": {
+    "device:domain7:group1:level6:s1327": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54052?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55052?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1073": {
+    "device:domain7:group1:level6:s1328": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54053?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55053?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1074": {
+    "device:domain7:group1:level6:s1329": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54054?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55054?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1075": {
+    "device:domain7:group1:level6:s1330": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54055?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55055?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1076": {
+    "device:domain7:group1:level6:s1331": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54056?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55056?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1077": {
+    "device:domain7:group1:level6:s1332": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54057?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55057?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1078": {
+    "device:domain7:group1:level6:s1333": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54058?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55058?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1079": {
+    "device:domain7:group1:level6:s1334": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54059?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55059?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1080": {
+    "device:domain7:group1:level6:s1335": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54060?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55060?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1081": {
+    "device:domain7:group1:level6:s1336": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54061?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55061?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1082": {
+    "device:domain7:group1:level6:s1337": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54062?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55062?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level6:s1083": {
+    "device:domain7:group1:level6:s1338": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54063?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55063?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1084": {
+    "device:domain7:group1:level7:s1339": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54064?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55064?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1085": {
+    "device:domain7:group1:level7:s1340": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54065?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55065?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1086": {
+    "device:domain7:group1:level7:s1341": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54066?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55066?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1087": {
+    "device:domain7:group1:level7:s1342": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54067?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55067?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1088": {
+    "device:domain7:group1:level7:s1343": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54068?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55068?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1089": {
+    "device:domain7:group1:level7:s1344": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54069?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55069?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1090": {
+    "device:domain7:group1:level7:s1345": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54070?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55070?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1091": {
+    "device:domain7:group1:level7:s1346": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54071?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55071?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1092": {
+    "device:domain7:group1:level7:s1347": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54072?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55072?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1093": {
+    "device:domain7:group1:level7:s1348": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54073?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55073?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1094": {
+    "device:domain7:group1:level7:s1349": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54074?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55074?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1095": {
+    "device:domain7:group1:level7:s1350": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54075?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55075?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1096": {
+    "device:domain7:group1:level7:s1351": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54076?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55076?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1097": {
+    "device:domain7:group1:level7:s1352": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54077?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55077?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1098": {
+    "device:domain7:group1:level7:s1353": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54078?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55078?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1099": {
+    "device:domain7:group1:level7:s1354": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54079?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55079?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1100": {
+    "device:domain7:group1:level7:s1355": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54080?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55080?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1101": {
+    "device:domain7:group1:level7:s1356": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54081?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55081?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1102": {
+    "device:domain7:group1:level7:s1357": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54082?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55082?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1103": {
+    "device:domain7:group1:level7:s1358": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54083?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55083?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1104": {
+    "device:domain7:group1:level7:s1359": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54084?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55084?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1105": {
+    "device:domain7:group1:level7:s1360": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54085?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55085?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1106": {
+    "device:domain7:group1:level7:s1361": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54086?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55086?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1107": {
+    "device:domain7:group1:level7:s1362": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54087?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55087?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1108": {
+    "device:domain7:group1:level7:s1363": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54088?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55088?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1109": {
+    "device:domain7:group1:level7:s1364": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54089?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55089?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1110": {
+    "device:domain7:group1:level7:s1365": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54090?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55090?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1111": {
+    "device:domain7:group1:level7:s1366": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54091?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55091?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1112": {
+    "device:domain7:group1:level7:s1367": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54092?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55092?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1113": {
+    "device:domain7:group1:level7:s1368": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54093?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55093?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1114": {
+    "device:domain7:group1:level7:s1369": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54094?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55094?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1115": {
+    "device:domain7:group1:level7:s1370": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54095?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55095?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1116": {
+    "device:domain7:group1:level7:s1371": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54096?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55096?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1117": {
+    "device:domain7:group1:level7:s1372": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54097?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55097?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1118": {
+    "device:domain7:group1:level7:s1373": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54098?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55098?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1119": {
+    "device:domain7:group1:level7:s1374": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54099?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55099?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1120": {
+    "device:domain7:group1:level7:s1375": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54100?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55100?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1121": {
+    "device:domain7:group1:level7:s1376": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54101?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55101?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1122": {
+    "device:domain7:group1:level7:s1377": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54102?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55102?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1123": {
+    "device:domain7:group1:level7:s1378": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54103?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55103?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1124": {
+    "device:domain7:group1:level7:s1379": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54104?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55104?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1125": {
+    "device:domain7:group1:level7:s1380": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54105?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55105?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1126": {
+    "device:domain7:group1:level7:s1381": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54106?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55106?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1127": {
+    "device:domain7:group1:level7:s1382": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54107?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55107?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1128": {
+    "device:domain7:group1:level7:s1383": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54108?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55108?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1129": {
+    "device:domain7:group1:level7:s1384": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54109?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55109?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1130": {
+    "device:domain7:group1:level7:s1385": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54110?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55110?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1131": {
+    "device:domain7:group1:level7:s1386": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54111?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55111?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1132": {
+    "device:domain7:group1:level7:s1387": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54112?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55112?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1133": {
+    "device:domain7:group1:level7:s1388": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54113?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55113?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1134": {
+    "device:domain7:group1:level7:s1389": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54114?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55114?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1135": {
+    "device:domain7:group1:level7:s1390": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54115?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55115?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1136": {
+    "device:domain7:group1:level7:s1391": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54116?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55116?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1137": {
+    "device:domain7:group1:level7:s1392": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54117?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55117?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1138": {
+    "device:domain7:group1:level7:s1393": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54118?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55118?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1139": {
+    "device:domain7:group1:level7:s1394": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54119?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55119?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1140": {
+    "device:domain7:group1:level7:s1395": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54120?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55120?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1141": {
+    "device:domain7:group1:level7:s1396": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54121?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55121?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1142": {
+    "device:domain7:group1:level7:s1397": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54122?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55122?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1143": {
+    "device:domain7:group1:level7:s1398": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54123?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55123?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1144": {
+    "device:domain7:group1:level7:s1399": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54124?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55124?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1145": {
+    "device:domain7:group1:level7:s1400": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54125?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55125?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1146": {
+    "device:domain7:group1:level7:s1401": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54126?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55126?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level7:s1147": {
+    "device:domain7:group1:level7:s1402": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54127?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55127?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1148": {
+    "device:domain7:group1:level8:s1403": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54128?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55128?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1149": {
+    "device:domain7:group1:level8:s1404": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54129?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55129?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1150": {
+    "device:domain7:group1:level8:s1405": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54130?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55130?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1151": {
+    "device:domain7:group1:level8:s1406": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54131?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55131?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1152": {
+    "device:domain7:group1:level8:s1407": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54132?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55132?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1153": {
+    "device:domain7:group1:level8:s1408": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54133?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55133?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1154": {
+    "device:domain7:group1:level8:s1409": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54134?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55134?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1155": {
+    "device:domain7:group1:level8:s1410": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54135?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55135?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1156": {
+    "device:domain7:group1:level8:s1411": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54136?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55136?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1157": {
+    "device:domain7:group1:level8:s1412": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54137?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55137?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1158": {
+    "device:domain7:group1:level8:s1413": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54138?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55138?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1159": {
+    "device:domain7:group1:level8:s1414": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54139?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55139?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1160": {
+    "device:domain7:group1:level8:s1415": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54140?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55140?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1161": {
+    "device:domain7:group1:level8:s1416": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54141?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55141?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1162": {
+    "device:domain7:group1:level8:s1417": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54142?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55142?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1163": {
+    "device:domain7:group1:level8:s1418": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54143?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55143?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1164": {
+    "device:domain7:group1:level8:s1419": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54144?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55144?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1165": {
+    "device:domain7:group1:level8:s1420": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54145?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55145?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1166": {
+    "device:domain7:group1:level8:s1421": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54146?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55146?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1167": {
+    "device:domain7:group1:level8:s1422": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54147?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55147?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1168": {
+    "device:domain7:group1:level8:s1423": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54148?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55148?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1169": {
+    "device:domain7:group1:level8:s1424": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54149?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55149?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1170": {
+    "device:domain7:group1:level8:s1425": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54150?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55150?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1171": {
+    "device:domain7:group1:level8:s1426": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54151?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55151?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1172": {
+    "device:domain7:group1:level8:s1427": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54152?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55152?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1173": {
+    "device:domain7:group1:level8:s1428": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54153?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55153?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1174": {
+    "device:domain7:group1:level8:s1429": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54154?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55154?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1175": {
+    "device:domain7:group1:level8:s1430": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54155?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55155?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1176": {
+    "device:domain7:group1:level8:s1431": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54156?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55156?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1177": {
+    "device:domain7:group1:level8:s1432": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54157?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55157?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1178": {
+    "device:domain7:group1:level8:s1433": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54158?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55158?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1179": {
+    "device:domain7:group1:level8:s1434": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54159?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55159?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1180": {
+    "device:domain7:group1:level8:s1435": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54160?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55160?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1181": {
+    "device:domain7:group1:level8:s1436": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54161?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55161?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1182": {
+    "device:domain7:group1:level8:s1437": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54162?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55162?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1183": {
+    "device:domain7:group1:level8:s1438": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54163?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55163?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1184": {
+    "device:domain7:group1:level8:s1439": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54164?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55164?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1185": {
+    "device:domain7:group1:level8:s1440": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54165?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55165?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1186": {
+    "device:domain7:group1:level8:s1441": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54166?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55166?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1187": {
+    "device:domain7:group1:level8:s1442": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54167?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55167?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1188": {
+    "device:domain7:group1:level8:s1443": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54168?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55168?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1189": {
+    "device:domain7:group1:level8:s1444": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54169?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55169?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1190": {
+    "device:domain7:group1:level8:s1445": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54170?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55170?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1191": {
+    "device:domain7:group1:level8:s1446": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54171?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55171?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1192": {
+    "device:domain7:group1:level8:s1447": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54172?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55172?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1193": {
+    "device:domain7:group1:level8:s1448": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54173?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55173?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1194": {
+    "device:domain7:group1:level8:s1449": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54174?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55174?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1195": {
+    "device:domain7:group1:level8:s1450": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54175?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55175?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1196": {
+    "device:domain7:group1:level8:s1451": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54176?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55176?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1197": {
+    "device:domain7:group1:level8:s1452": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54177?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55177?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1198": {
+    "device:domain7:group1:level8:s1453": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54178?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55178?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1199": {
+    "device:domain7:group1:level8:s1454": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54179?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55179?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1200": {
+    "device:domain7:group1:level8:s1455": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54180?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55180?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1201": {
+    "device:domain7:group1:level8:s1456": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54181?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55181?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1202": {
+    "device:domain7:group1:level8:s1457": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54182?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55182?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1203": {
+    "device:domain7:group1:level8:s1458": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54183?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55183?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1204": {
+    "device:domain7:group1:level8:s1459": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54184?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55184?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1205": {
+    "device:domain7:group1:level8:s1460": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54185?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55185?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1206": {
+    "device:domain7:group1:level8:s1461": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54186?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55186?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1207": {
+    "device:domain7:group1:level8:s1462": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54187?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55187?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1208": {
+    "device:domain7:group1:level8:s1463": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54188?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55188?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1209": {
+    "device:domain7:group1:level8:s1464": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54189?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55189?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1210": {
+    "device:domain7:group1:level8:s1465": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54190?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55190?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1211": {
+    "device:domain7:group1:level8:s1466": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54191?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55191?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1212": {
+    "device:domain7:group1:level8:s1467": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54192?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55192?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1213": {
+    "device:domain7:group1:level8:s1468": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54193?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55193?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1214": {
+    "device:domain7:group1:level8:s1469": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54194?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55194?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1215": {
+    "device:domain7:group1:level8:s1470": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54195?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55195?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1216": {
+    "device:domain7:group1:level8:s1471": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54196?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55196?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1217": {
+    "device:domain7:group1:level8:s1472": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54197?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55197?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1218": {
+    "device:domain7:group1:level8:s1473": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54198?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55198?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1219": {
+    "device:domain7:group1:level8:s1474": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54199?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55199?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1220": {
+    "device:domain7:group1:level8:s1475": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54200?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55200?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1221": {
+    "device:domain7:group1:level8:s1476": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54201?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55201?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1222": {
+    "device:domain7:group1:level8:s1477": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54202?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55202?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1223": {
+    "device:domain7:group1:level8:s1478": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54203?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55203?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1224": {
+    "device:domain7:group1:level8:s1479": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54204?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55204?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1225": {
+    "device:domain7:group1:level8:s1480": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54205?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55205?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1226": {
+    "device:domain7:group1:level8:s1481": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54206?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55206?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1227": {
+    "device:domain7:group1:level8:s1482": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54207?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55207?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1228": {
+    "device:domain7:group1:level8:s1483": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54208?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55208?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1229": {
+    "device:domain7:group1:level8:s1484": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54209?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55209?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1230": {
+    "device:domain7:group1:level8:s1485": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54210?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55210?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1231": {
+    "device:domain7:group1:level8:s1486": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54211?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55211?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1232": {
+    "device:domain7:group1:level8:s1487": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54212?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55212?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1233": {
+    "device:domain7:group1:level8:s1488": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54213?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55213?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1234": {
+    "device:domain7:group1:level8:s1489": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54214?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55214?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1235": {
+    "device:domain7:group1:level8:s1490": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54215?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55215?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1236": {
+    "device:domain7:group1:level8:s1491": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54216?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55216?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1237": {
+    "device:domain7:group1:level8:s1492": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54217?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55217?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1238": {
+    "device:domain7:group1:level8:s1493": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54218?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55218?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1239": {
+    "device:domain7:group1:level8:s1494": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54219?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55219?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1240": {
+    "device:domain7:group1:level8:s1495": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54220?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55220?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1241": {
+    "device:domain7:group1:level8:s1496": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54221?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55221?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1242": {
+    "device:domain7:group1:level8:s1497": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54222?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55222?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1243": {
+    "device:domain7:group1:level8:s1498": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54223?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55223?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1244": {
+    "device:domain7:group1:level8:s1499": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54224?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55224?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1245": {
+    "device:domain7:group1:level8:s1500": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54225?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55225?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1246": {
+    "device:domain7:group1:level8:s1501": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54226?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55226?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1247": {
+    "device:domain7:group1:level8:s1502": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54227?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55227?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1248": {
+    "device:domain7:group1:level8:s1503": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54228?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55228?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1249": {
+    "device:domain7:group1:level8:s1504": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54229?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55229?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1250": {
+    "device:domain7:group1:level8:s1505": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54230?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55230?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1251": {
+    "device:domain7:group1:level8:s1506": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54231?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55231?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1252": {
+    "device:domain7:group1:level8:s1507": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54232?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55232?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1253": {
+    "device:domain7:group1:level8:s1508": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54233?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55233?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1254": {
+    "device:domain7:group1:level8:s1509": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54234?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55234?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1255": {
+    "device:domain7:group1:level8:s1510": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54235?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55235?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1256": {
+    "device:domain7:group1:level8:s1511": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54236?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55236?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1257": {
+    "device:domain7:group1:level8:s1512": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54237?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55237?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1258": {
+    "device:domain7:group1:level8:s1513": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54238?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55238?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1259": {
+    "device:domain7:group1:level8:s1514": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54239?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55239?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1260": {
+    "device:domain7:group1:level8:s1515": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54240?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55240?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1261": {
+    "device:domain7:group1:level8:s1516": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54241?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55241?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1262": {
+    "device:domain7:group1:level8:s1517": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54242?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55242?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1263": {
+    "device:domain7:group1:level8:s1518": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54243?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55243?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1264": {
+    "device:domain7:group1:level8:s1519": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54244?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55244?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1265": {
+    "device:domain7:group1:level8:s1520": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54245?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55245?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1266": {
+    "device:domain7:group1:level8:s1521": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54246?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55246?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1267": {
+    "device:domain7:group1:level8:s1522": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54247?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55247?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1268": {
+    "device:domain7:group1:level8:s1523": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54248?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55248?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1269": {
+    "device:domain7:group1:level8:s1524": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54249?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55249?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1270": {
+    "device:domain7:group1:level8:s1525": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54250?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55250?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1271": {
+    "device:domain7:group1:level8:s1526": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54251?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55251?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1272": {
+    "device:domain7:group1:level8:s1527": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54252?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55252?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1273": {
+    "device:domain7:group1:level8:s1528": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54253?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55253?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1274": {
+    "device:domain7:group1:level8:s1529": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54254?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55254?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
     },
-    "device:domain5:group2:level8:s1275": {
+    "device:domain7:group1:level8:s1530": {
       "basic": {
-        "managementAddress": "grpc://218.199.84.172:54255?device_id=1",
+        "managementAddress": "grpc://218.199.84.172:55255?device_id=1",
         "driver": "stratum-bmv2",
         "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
       }
