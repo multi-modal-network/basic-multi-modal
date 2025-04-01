@@ -28,7 +28,7 @@ def sendPacket(modal_type, source_host, destination_host):
         return
 
     # 构造发包命令
-    command = ["mnexec", "-a", str(pid), "python3", "send.py", modal_type, "1", source_host, destination_host]
+    command = ["mnexec", "-a", str(pid), "nsenter", "-t", str(pid), "-n" ,"python3", "send.py", modal_type, "1", source_host, destination_host]
     print("执行命令:{}".format(command))
 
     # 子进程执行发包命令
@@ -78,6 +78,7 @@ def main():
     for i in range(frequency):
         sendPacket(modal_type, source_host, destination_host)
         postSendInfo(modal_type, source_host, destination_host)
+        time.sleep(1)
 
     print("成功发送 {} 个数据包".format(frequency))
 

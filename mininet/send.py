@@ -286,16 +286,7 @@ def main():
     
     # 发送数据包
     for i in range (1, frequency+1):
-        line_before, cnt_before = getFileInfo("/home/onos/Desktop/ngsdn/mininet/flows.out")
         sendp(pkt, iface=iface, verbose=False)
-        time.sleep(0.5)
-        line_after, cnt_after = getFileInfo("/home/onos/Desktop/ngsdn/mininet/flows.out")
-        print(line_before, cnt_before, line_after, cnt_after)
-        if cnt_after == cnt_before + 1:
-            print(line_after[0], line_after[1], line_after[2], modal_type, source_host, destination_host)
-            if line_after[0] == modal_type and int(line_after[1]) == source_host and int(line_after[2]) == destination_host:
-                print("resend!")
-                sendp(pkt, iface=iface, verbose=False)
 
 
 if __name__ == '__main__':

@@ -105,19 +105,19 @@ pipeconf-uninstall:
 netcfg-tofino:
 	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
 	$(ONOS_CURL) -X POST -H Content-Type:application/json \
-		$(ONOS_URL)/v1/network/configuration -d@./tofino.json
+		$(ONOS_UTIL_URL)/topo -d@./tofino.json
 	@echo
 
 netcfg-bmv2:
 	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
 	$(ONOS_CURL) -X POST -H Content-Type:application/json \
-		$(ONOS_URL)/v1/network/configuration -d@./domain1-5-7-new-oar.json
+		$(ONOS_UTIL_URL)/topo -d@./domain1-5-7-new-oar.json
 	@echo
 
 netcfg-satellite:
 	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
 	$(ONOS_CURL) -X POST -H Content-Type:application/json \
-		$(ONOS_URL)/v1/network/configuration -d@./domain3-satellite.json
+		$(ONOS_UTIL_URL)/topo -d@./domain3-satellite.json
 	@echo
 
 p4i:
