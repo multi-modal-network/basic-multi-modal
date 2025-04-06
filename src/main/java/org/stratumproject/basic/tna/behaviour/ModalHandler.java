@@ -184,7 +184,7 @@ public class ModalHandler {
     public void executeAddFlow(String modalType, int srcHost, int dstHost, ByteBuffer buffer) throws Exception {
         String urlString = String.format("http://127.0.0.1:8188/api/flows?src_host=%d&dst_host=%d&modal_type=%s", srcHost,dstHost,modalType);
         JSONObject response = utilityResponse(urlString, null, "GET");
-        String[] involvedSwitches = response.getString("data").split(",");
+        String[] involvedSwitches = response.getJSONObject("data").getString("data").split(",");
         log.info("involvedSwitches: {}", (Object) involvedSwitches);
         for(int i=0;i<involvedSwitches.length;i++){
             String[] parts = involvedSwitches[i].split("/");
