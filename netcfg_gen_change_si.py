@@ -3,7 +3,7 @@ import os
 
 # 拓扑所需的devices和links信息
 devices = {}
-links = []
+links = {}
 
 def get_level(i):
     if i == 1:
@@ -34,7 +34,7 @@ def get_group(i):
 # 循环创建domain1
 for vmx in range(1,3):
     for i in range(1, 256):
-        device_id = f"device:domain1:group{get_group(vmx)}:{get_level(i)}:s{i+vmx*255}"  # 格式化设备ID，确保它是5位数
+        device_id = f"device:domain1:group{get_group(vmx)}:{get_level(i)}:s{i+vmx*255}_IP_ID_GEO_MF_NDN_FLEXIP"  # 格式化设备ID，确保它是5位数
         devices[device_id] = {
             "basic": {
                 "managementAddress": f"grpc://218.199.84.172:{50000 + i + vmx * 1000}?device_id=1",
@@ -42,15 +42,15 @@ for vmx in range(1,3):
                 "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
             }
         }
-    # for i in range(1, 128):
-    #     links.append({
-    #         "endpoint1": f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}",
-    #         "endpoint2": f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2}"
-    #     })
-    #     links.append({
-    #         "endpoint1": f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i}",
-    #         "endpoint2": f"device:domain1:group{vmx + 1}:{get_level(i*2+1)}:s{i*2+1}"
-    #     })
+    for i in range(1, 128):
+        link1 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}/2" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}/1"
+        link2 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}/3" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}/1"
+        links[link1] = {
+            "basic": {}
+        }
+        links[link2] = {
+            "basic": {}
+        }
 
 # 循环创建domain5
 # for vmx in range(3,4):
@@ -76,7 +76,7 @@ for vmx in range(1,3):
 # 循环创建domain7
 for vmx in range(5,6):
     for i in range(1, 256):
-        device_id = f"device:domain7:group{get_group(vmx)}:{get_level(i)}:s{i+vmx*255}"  # 格式化设备ID，确保它是5位数
+        device_id = f"device:domain7:group{get_group(vmx)}:{get_level(i)}:s{i+vmx*255}_IP_ID_GEO_MF_NDN_FLEXIP"  # 格式化设备ID，确保它是5位数
         devices[device_id] = {
             "basic": {
                 "managementAddress": f"grpc://218.199.84.172:{50000 + i + vmx * 1000}?device_id=1",
@@ -84,19 +84,19 @@ for vmx in range(5,6):
                 "pipeconf": "org.stratumproject.IP_ID_GEO_MF_NDN_FLEXIP.bmv2"
             }
         }
-#     for i in range(1, 128):
-#         links.append({
-#             "endpoint1": f"device:domain7:group{vmx + 1}:{get_level(i)}:s{i}",
-#             "endpoint2": f"device:domain7:group{vmx + 1}:{get_level(i*2)}:s{i*2}"
-#         })
-#         links.append({
-#             "endpoint1": f"device:domain7:group{vmx + 1}:{get_level(i)}:s{i}",
-#             "endpoint2": f"device:domain7:group{vmx + 1}:{get_level(i*2+1)}:s{i*2+1}"
-#         })
+    for i in range(1, 128):
+        link1 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}/2" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}/1"
+        link2 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}/3" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}/1"
+        links[link1] = {
+            "basic": {}
+        }
+        links[link2] = {
+            "basic": {}
+        }
 
 
 # 创建最终的JSON对象
-json_data = {"devices": devices}
+json_data = {"devices": devices, "links": links}
 
 # 将JSON对象转换为字符串，格式化输出
 json_str = json.dumps(json_data, indent=2)
