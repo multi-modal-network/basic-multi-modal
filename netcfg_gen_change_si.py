@@ -43,8 +43,8 @@ for vmx in range(1,3):
             }
         }
     for i in range(1, 128):
-        link1 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}/2" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}/1"
-        link2 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}/3" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}/1"
+        link1 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/2" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
+        link2 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/3" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
         links[link1] = {
             "basic": {}
         }
@@ -85,8 +85,8 @@ for vmx in range(5,6):
             }
         }
     for i in range(1, 128):
-        link1 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}/2" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}/1"
-        link2 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}/3" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}/1"
+        link1 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/2" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
+        link2 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/3" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
         links[link1] = {
             "basic": {}
         }
