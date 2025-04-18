@@ -85,7 +85,7 @@ public class ModalHandler {
             case 0x8947:    // GEO
                 modalType = "geo";
                 String deviceIdStr = deviceId.toString();
-                srcHost = Integer.parseInt(deviceIdStr.substring(30));      // 源主机号就是对应的deviceID的switch号（注意switchID长度）
+                srcHost = Integer.parseInt(deviceIdStr.substring(30).split("_")[0]);      // 源主机号就是对应的deviceID的switch号（注意switchID长度）
                 dstHost = geo.transferGEO2Host(buffer.getInt(40) & 0xffffffff, buffer.getInt(44) & 0xffffffff);
                 break;
             case 0x27c0:    // MF
