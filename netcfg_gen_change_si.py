@@ -64,14 +64,14 @@ for vmx in range(1,3):
 #             }
 #         }
 #     for i in range(1, 128):
-#         links.append({
-#             "endpoint1": f"device:domain5:group{vmx + 1}:{get_level(i)}:s{i}",
-#             "endpoint2": f"device:domain5:group{vmx + 1}:{get_level(i*2)}:s{i*2}"
-#         })
-#         links.append({
-#             "endpoint1": f"device:domain5:group{vmx + 1}:{get_level(i)}:s{i}",
-#             "endpoint2": f"device:domain5:group{vmx + 1}:{get_level(i*2+1)}:s{i*2+1}"
-#         })
+#         link1 = f"device:domain5:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/2" + "-" + f"device:domain5:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
+#         link2 = f"device:domain5:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/3" + "-" + f"device:domain5:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
+#         links[link1] = {
+#             "basic": {}
+#         }
+#         links[link2] = {
+#             "basic": {}
+#         }
 
 # 循环创建domain7
 for vmx in range(5,6):
@@ -85,8 +85,8 @@ for vmx in range(5,6):
             }
         }
     for i in range(1, 128):
-        link1 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/2" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
-        link2 = f"device:domain1:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/3" + "-" + f"device:domain1:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
+        link1 = f"device:domain7:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/2" + "-" + f"device:domain7:group{vmx + 1}:{get_level(i*2)}:s{i*2+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
+        link2 = f"device:domain7:group{vmx + 1}:{get_level(i)}:s{i+vmx*255}_ip_id_geo_mf_ndn_flexip/3" + "-" + f"device:domain7:group{vmx + 1}:{get_level(i*2)}:s{i*2+1+vmx*255}_ip_id_geo_mf_ndn_flexip/1"
         links[link1] = {
             "basic": {}
         }
