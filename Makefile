@@ -120,6 +120,23 @@ netcfg-satellite:
 		$(ONOS_UTIL_URL)/topo -d@./domain3-satellite.json
 	@echo
 
+netcfg-domain1:
+	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
+	$(ONOS_CURL) -X POST -H Content-Type:application/json \
+		$(ONOS_UTIL_URL)/topo -d@./domain1_netcfg.json
+	@echo
+
+netcfg-domain5:
+	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
+	$(ONOS_CURL) -X POST -H Content-Type:application/json \
+		$(ONOS_UTIL_URL)/topo -d@./domain5_netcfg.json
+	@echo
+
+netcfg-domain7:
+	$(info *** Pushing tofino-netcfg.json to ONOS at $(ONOS_HOST)...)
+	$(ONOS_CURL) -X POST -H Content-Type:application/json \
+		$(ONOS_UTIL_URL)/topo -d@./domain7_netcfg.json
+	@echo
 p4i:
 	$(info *** Started p4i app at http://localhost:3000)
 	docker run -d --rm --name p4i -v$(DIR):$(DIR)/p4src/tna/build -w $(DIR)/p4src/tna/build -p 3000:3000/tcp --init --cap-add CAP_SYS_ADMIN --cap-add CAP_NET_ADMIN $(SDE_P4I_DOCKER_IMG) xvfb-run /opt/p4i/p4i
